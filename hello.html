@@ -490,6 +490,151 @@
   .asmx-home .areas-copy,.asmx-home .area-list{padding:22px 17px}
   .asmx-home .footer-trust span{font-size:8.5px}
 }
+
+
+/* =========================================================
+   V6 MOBILE UX — ONE PRIMARY CARD PER ROW
+   Designed for real phone widths, not a shrunken desktop grid.
+   ========================================================= */
+@media (max-width:767px){
+  .asmx-home{overflow-x:hidden}
+  .asmx-home .wrap{width:min(100% - 32px,1180px)}
+  .asmx-home .section{padding:64px 0}
+  .asmx-home .head{margin-bottom:32px}
+  .asmx-home .head.center{text-align:left;margin-inline:0}
+  .asmx-home .head.center .eyebrow{justify-content:flex-start}
+
+  /* One card per row on phones */
+  .asmx-home .trust-grid,
+  .asmx-home .package-grid,
+  .asmx-home .difference-grid,
+  .asmx-home .process-grid,
+  .asmx-home .about-mini,
+  .asmx-home .quick-links,
+  .asmx-home .footer-grid,
+  .asmx-home .article-side{
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+
+  .asmx-home .service-grid{
+    display:flex!important;
+    flex-direction:column;
+    gap:18px;
+  }
+  .asmx-home .service-card.large,
+  .asmx-home .service-card.small{
+    grid-column:auto!important;
+    width:100%;
+    min-width:0;
+  }
+
+  /* Trust cards become roomy horizontal cards */
+  .asmx-home .trust-grid{gap:12px;padding:14px 0}
+  .asmx-home .trust-item{
+    min-height:108px;
+    padding:20px 18px!important;
+    border:1px solid rgba(255,255,255,.12)!important;
+    border-radius:16px;
+    align-items:center;
+    gap:15px;
+  }
+  .asmx-home .trust-icon{
+    width:50px;height:50px;border-radius:14px;font-size:20px;
+  }
+  .asmx-home .trust-item strong{font-size:15px;line-height:1.35}
+  .asmx-home .trust-item span{font-size:12.5px;line-height:1.6;margin-top:4px}
+
+  /* Service cards: larger content & tap area */
+  .asmx-home .service-card.large{min-height:390px;border-radius:22px}
+  .asmx-home .service-card.small{
+    min-height:auto!important;
+    padding:28px 24px!important;
+    border-radius:20px;
+  }
+  .asmx-home .service-card.small .service-icon{
+    width:62px;height:62px;border-radius:17px;margin-bottom:20px;
+  }
+  .asmx-home .service-card.small h3{font-size:22px;margin-bottom:9px}
+  .asmx-home .service-card.small p{font-size:15px;line-height:1.7}
+  .asmx-home .service-card.small a{display:inline-flex;margin-top:18px;min-height:44px;align-items:center}
+
+  /* Cleaning packages */
+  .asmx-home .package-grid{gap:16px}
+  .asmx-home .package{padding:28px 24px!important;border-radius:20px}
+  .asmx-home .package h3{font-size:23px;margin-top:10px}
+  .asmx-home .package p{font-size:15px}
+  .asmx-home .package li{font-size:14px;line-height:1.55}
+  .asmx-home .package>a{display:inline-flex;align-items:center;min-height:46px;margin-top:2px}
+
+  /* Why-us cards */
+  .asmx-home .difference-grid{gap:14px}
+  .asmx-home .difference-card{
+    padding:26px 23px!important;
+    min-height:auto!important;
+    border-radius:19px;
+  }
+  .asmx-home .difference-card .di{width:50px;height:50px;margin-bottom:17px}
+  .asmx-home .difference-card h3{font-size:20px}
+  .asmx-home .difference-card p{font-size:14.5px;line-height:1.7;margin-top:8px}
+
+  /* Process cards */
+  .asmx-home .process-grid{gap:14px}
+  .asmx-home .process-card,
+  .asmx-home .step{
+    min-height:auto!important;
+    padding:26px 22px!important;
+  }
+
+  /* Included list and supporting blocks */
+  .asmx-home .check-grid{grid-template-columns:minmax(0,1fr)!important;gap:10px}
+  .asmx-home .check{padding:14px 13px;align-items:flex-start}
+  .asmx-home .about-mini{gap:10px}
+
+  /* Service-area chips remain readable instead of tiny pills */
+  .asmx-home .chips{display:grid!important;grid-template-columns:1fr 1fr;gap:9px}
+  .asmx-home .chip{display:flex;justify-content:center;align-items:center;min-height:43px;padding:9px 10px;font-size:11px;text-align:center}
+
+  /* Blog: full-width editorial cards */
+  .asmx-home .articles-grid{grid-template-columns:minmax(0,1fr)!important;gap:18px}
+  .asmx-home .article-side{gap:16px}
+  .asmx-home .article-card{grid-template-columns:minmax(0,1fr)!important;min-height:0;border-radius:20px}
+  .asmx-home .article-thumb{height:210px!important}
+  .asmx-home .article-content{padding:23px 21px!important}
+  .asmx-home .article-content h3{font-size:20px}
+
+  /* FAQ: comfortable touch targets */
+  .asmx-home .faq-list{gap:10px}
+  .asmx-home .faq-list summary{min-height:62px;padding:19px 52px 19px 18px!important;font-size:14px;line-height:1.5}
+  .asmx-home .faq-list .answer{padding:0 18px 20px!important}
+  .asmx-home .faq-list .answer p{font-size:14px;line-height:1.72}
+
+  /* Buttons should be thumb-friendly */
+  .asmx-home .hero-actions,
+  .asmx-home .cta-actions{width:100%;display:grid!important;grid-template-columns:1fr!important;gap:10px}
+  .asmx-home .hero-actions .btn,
+  .asmx-home .cta-actions .btn,
+  .asmx-home .articles-top .btn{width:100%;min-height:54px}
+
+  /* Footer becomes a real mobile stack */
+  .asmx-home .footer-grid{gap:32px!important}
+  .asmx-home .footer-col{min-width:0}
+  .asmx-home .footer-links a{padding:5px 0;min-height:35px;display:flex;align-items:center}
+}
+
+@media (max-width:430px){
+  .asmx-home .wrap{width:min(100% - 24px,1180px)}
+  .asmx-home .section{padding:56px 0}
+  .asmx-home h1{font-size:clamp(38px,11.8vw,48px);line-height:1.02}
+  .asmx-home h2{font-size:clamp(29px,8.8vw,35px)}
+  .asmx-home .service-card.large{min-height:350px}
+  .asmx-home .service-card.small{padding:25px 20px!important}
+  .asmx-home .package,.asmx-home .difference-card{padding:24px 20px!important}
+  .asmx-home .trust-item{min-height:112px;padding:18px 15px!important}
+  .asmx-home .chips{grid-template-columns:1fr!important}
+  .asmx-home .chip{justify-content:flex-start;text-align:left;padding-inline:14px}
+  .asmx-home .article-thumb{height:190px!important}
+}
+
 </style>
 
 <div class="asmx-home">
