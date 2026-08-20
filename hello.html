@@ -1,0 +1,783 @@
+<!--
+  Adelaide SuperMaids — Premium Homepage Redesign V3
+  Paste inside an Elementor HTML widget.
+  Styles are fully scoped under .asmx-home to reduce theme conflicts.
+  Brand colours retained: #0e3c7b / #237cf5 / #feea2b
+-->
+<style>
+.asmx-home,
+.asmx-home *{box-sizing:border-box}
+.asmx-home{--navy:#0e3c7b;--navy-950:#061b3d;--blue:#237cf5;--blue-2:#4b98ff;--yellow:#feea2b;--ink:#132238;--muted:#62748a;--soft:#f5f9ff;--soft-2:#eef6ff;--line:#dce8f5;--white:#fff;--shadow:0 24px 70px rgba(6,27,61,.12);--shadow-sm:0 14px 35px rgba(6,27,61,.08);font-family:Poppins,Inter,Arial,sans-serif;color:var(--ink);background:#fff;overflow:clip}
+.asmx-home a{color:inherit;text-decoration:none}
+.asmx-home img{display:block;max-width:100%}
+.asmx-home .wrap{width:min(1180px,calc(100% - 44px));margin-inline:auto}
+.asmx-home .section{padding:96px 0}
+.asmx-home h1,.asmx-home h2,.asmx-home h3,.asmx-home p{margin:0}
+.asmx-home h1{font-size:clamp(43px,5.5vw,76px);line-height:.98;letter-spacing:-.052em;font-weight:800;color:var(--navy-950)}
+.asmx-home h2{font-size:clamp(32px,4.1vw,52px);line-height:1.08;letter-spacing:-.042em;font-weight:800;color:var(--navy-950)}
+.asmx-home h3{font-size:21px;line-height:1.3;font-weight:800;color:var(--navy-950)}
+.asmx-home p{font-size:16px;line-height:1.78;color:var(--muted)}
+.asmx-home .lead{font-size:18px;line-height:1.75}
+.asmx-home .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.asmx-home .eyebrow:before{content:"";width:28px;height:4px;border-radius:99px;background:var(--yellow)}
+.asmx-home .head{max-width:760px;margin-bottom:44px}
+.asmx-home .head.center{margin-inline:auto;text-align:center}
+.asmx-home .head.center .eyebrow{justify-content:center}
+.asmx-home .head p{margin-top:16px}
+.asmx-home .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:12px;border:2px solid transparent;font-size:14px;font-weight:800;transition:transform .2s ease,box-shadow .2s ease,background .2s ease;color:var(--navy-950)}
+.asmx-home .btn:hover{transform:translateY(-2px)}
+.asmx-home .btn-primary{background:var(--yellow);box-shadow:0 14px 30px rgba(254,234,43,.28)}
+.asmx-home .btn-primary:hover{background:#fff164}
+.asmx-home .btn-blue{background:var(--blue);color:#fff;box-shadow:0 14px 30px rgba(35,124,245,.22)}
+.asmx-home .btn-blue:hover{background:#176ee0}
+.asmx-home .btn-light{background:#fff;border-color:var(--line);color:var(--navy)}
+.asmx-home .arrow{width:18px;height:18px;display:inline-block}
+
+/* HERO */
+.asmx-home .hero{position:relative;padding:90px 0 82px;background:radial-gradient(circle at 7% 12%,rgba(35,124,245,.14),transparent 29%),radial-gradient(circle at 88% 82%,rgba(254,234,43,.12),transparent 24%),linear-gradient(180deg,#fff 0%,#f7fbff 100%)}
+.asmx-home .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.asmx-home .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:64px;align-items:center}
+.asmx-home .hero-copy{position:relative;z-index:2}
+.asmx-home .hero-badge{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid #d9e7f6;border-radius:99px;background:#fff;color:#314b6b;font-size:12px;font-weight:700;box-shadow:0 8px 22px rgba(6,27,61,.05);margin-bottom:22px}
+.asmx-home .hero-badge i{width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 5px rgba(254,234,43,.2)}
+.asmx-home .hero h1 span{color:var(--blue);position:relative;white-space:nowrap}
+.asmx-home .hero h1 span:after{content:"";position:absolute;left:2%;right:2%;bottom:-5px;height:10px;background:var(--yellow);opacity:.55;z-index:-1;transform:rotate(-1deg);border-radius:4px}
+.asmx-home .hero-copy>p{max-width:650px;margin-top:24px;font-size:18px}
+.asmx-home .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.asmx-home .hero-proof{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px}
+.asmx-home .hero-proof span{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#3f5671}
+.asmx-home .hero-proof b{width:20px;height:20px;border-radius:50%;display:inline-grid;place-items:center;background:var(--yellow);font-size:11px;color:var(--navy-950)}
+.asmx-home .hero-quick{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
+.asmx-home .hero-quick>span{font-size:11px;font-weight:800;color:#8190a2;text-transform:uppercase;letter-spacing:.08em;margin-right:2px}
+.asmx-home .hero-quick a{padding:8px 11px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:11px;font-weight:800;color:var(--navy);transition:.2s ease}
+.asmx-home .hero-quick a:hover{background:var(--yellow);border-color:var(--yellow);transform:translateY(-1px)}
+.asmx-home .hero-visual{position:relative;min-height:590px}
+.asmx-home .hero-photo{position:absolute;inset:22px 0 18px 54px;border-radius:34px;overflow:hidden;box-shadow:0 34px 90px rgba(6,27,61,.20);background:var(--navy);border:7px solid rgba(255,255,255,.92)}
+.asmx-home .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+.asmx-home .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(6,27,61,.38) 100%)}
+.asmx-home .hero-dot{position:absolute;right:-34px;top:-28px;width:150px;height:150px;background-image:radial-gradient(var(--blue) 1.7px,transparent 1.7px);background-size:14px 14px;opacity:.22}
+.asmx-home .hero-ring{position:absolute;left:2px;bottom:12px;width:150px;height:150px;border:28px solid var(--yellow);border-radius:50%;opacity:.92}
+.asmx-home .floating-card{position:absolute;z-index:4;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm)}
+.asmx-home .guarantee-card{left:0;bottom:48px;width:250px;padding:20px}
+.asmx-home .guarantee-card .gc-icon{width:46px;height:46px;border-radius:14px;background:var(--yellow);display:grid;place-items:center;color:var(--navy-950);font-weight:900;font-size:22px;margin-bottom:13px}
+.asmx-home .guarantee-card strong{display:block;color:var(--navy-950);font-size:16px;line-height:1.35}
+.asmx-home .guarantee-card small{display:block;color:var(--muted);font-size:11px;line-height:1.55;margin-top:6px}
+.asmx-home .since-card{right:-6px;top:54px;padding:15px 18px;min-width:190px}
+.asmx-home .since-card strong{display:block;font-size:23px;color:var(--navy);line-height:1}
+.asmx-home .since-card span{font-size:11px;color:var(--muted);font-weight:700}
+
+/* TRUST STRIP */
+.asmx-home .trust-strip{padding:28px 0;background:var(--navy-950);color:#fff}
+.asmx-home .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.asmx-home .trust-item{padding:10px 24px;display:flex;align-items:center;gap:14px}
+.asmx-home .trust-item:not(:last-child){border-right:1px solid rgba(255,255,255,.13)}
+.asmx-home .trust-icon{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:var(--yellow);font-size:19px;flex:0 0 auto}
+.asmx-home .trust-item strong{display:block;font-size:13px;color:#fff}
+.asmx-home .trust-item span{display:block;font-size:11px;color:rgba(255,255,255,.62);margin-top:3px;line-height:1.4}
+
+/* SERVICE FINDER */
+.asmx-home .services{background:#fff}
+.asmx-home .service-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.asmx-home .service-card{position:relative;overflow:hidden;min-height:300px;border-radius:24px;background:var(--soft);border:1px solid var(--line);transition:.25s ease;isolation:isolate}
+.asmx-home .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm);border-color:transparent}
+.asmx-home .service-card.large{grid-column:span 6;min-height:410px}
+.asmx-home .service-card.small{grid-column:span 3}
+.asmx-home .service-bg{position:absolute;inset:0;z-index:-2}
+.asmx-home .service-bg img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.asmx-home .service-card:hover .service-bg img{transform:scale(1.04)}
+.asmx-home .service-card.large .service-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,27,61,.03) 20%,rgba(6,27,61,.9) 100%)}
+.asmx-home .service-content{position:absolute;left:24px;right:24px;bottom:24px;z-index:2}
+.asmx-home .service-card.large h3{font-size:28px;color:#fff}
+.asmx-home .service-card.large p{color:rgba(255,255,255,.78);max-width:480px;margin-top:8px;font-size:14px}
+.asmx-home .service-link{display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:var(--yellow);font-size:13px;font-weight:800}
+.asmx-home .service-card.small{padding:26px;display:flex;flex-direction:column}
+.asmx-home .service-card.small .service-icon{width:58px;height:58px;border-radius:16px;background:#fff;display:grid;place-items:center;margin-bottom:28px;box-shadow:0 8px 20px rgba(6,27,61,.05)}
+.asmx-home .service-card.small .service-icon img{max-width:39px;max-height:39px;object-fit:contain}
+.asmx-home .service-card.small p{font-size:13px;margin:9px 0 18px}
+.asmx-home .service-card.small .service-link{color:var(--blue);margin-top:auto}
+
+/* CHOOSE YOUR CLEAN */
+.asmx-home .choose{background:var(--soft)}
+.asmx-home .package-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.asmx-home .package{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;position:relative;overflow:hidden}
+.asmx-home .package.featured{border:2px solid var(--blue);box-shadow:0 20px 45px rgba(35,124,245,.12)}
+.asmx-home .package-tag{display:inline-flex;padding:6px 10px;border-radius:99px;background:var(--soft-2);color:var(--blue);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px}
+.asmx-home .package.featured .package-tag{background:var(--yellow);color:var(--navy-950)}
+.asmx-home .package h3{font-size:20px}
+.asmx-home .package p{font-size:13px;margin:9px 0 18px;min-height:70px}
+.asmx-home .package ul{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px}
+.asmx-home .package li{display:flex;gap:9px;font-size:12px;font-weight:700;color:#405873}
+.asmx-home .package li:before{content:"✓";width:19px;height:19px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);color:var(--navy-950);font-size:10px;flex:0 0 auto}
+.asmx-home .package a{font-size:12px;font-weight:800;color:var(--blue)}
+
+/* DIFFERENCE */
+.asmx-home .difference{background:var(--navy-950);position:relative;color:#fff}
+.asmx-home .difference:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 10%,rgba(35,124,245,.28),transparent 25%),radial-gradient(circle at 10% 90%,rgba(254,234,43,.08),transparent 28%)}
+.asmx-home .difference .wrap{position:relative;z-index:2}
+.asmx-home .difference .head h2{color:#fff}
+.asmx-home .difference .head p{color:rgba(255,255,255,.66)}
+.asmx-home .difference-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.asmx-home .difference-card{padding:24px 20px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(255,255,255,.045);min-height:230px}
+.asmx-home .difference-card .di{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:rgba(254,234,43,.13);color:var(--yellow);font-weight:900;margin-bottom:20px}
+.asmx-home .difference-card h3{color:#fff;font-size:17px}
+.asmx-home .difference-card p{color:rgba(255,255,255,.62);font-size:12px;line-height:1.65;margin-top:8px}
+
+/* WHAT'S INCLUDED */
+.asmx-home .included{background:#fff}
+.asmx-home .included-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:58px;align-items:center}
+.asmx-home .included-media{position:relative;min-height:520px}
+.asmx-home .included-media img{width:86%;height:500px;object-fit:cover;border-radius:26px;box-shadow:var(--shadow)}
+.asmx-home .included-note{position:absolute;right:0;bottom:34px;width:245px;background:var(--yellow);padding:22px;border-radius:18px;box-shadow:0 18px 36px rgba(6,27,61,.15)}
+.asmx-home .included-note strong{display:block;font-size:18px;color:var(--navy-950);line-height:1.3}
+.asmx-home .included-note span{display:block;margin-top:6px;font-size:11px;line-height:1.55;color:#344359;font-weight:600}
+.asmx-home .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.asmx-home .check{display:flex;gap:11px;align-items:flex-start;padding:14px;border-radius:13px;background:var(--soft);border:1px solid #e8f0f8}
+.asmx-home .check b{width:24px;height:24px;display:grid;place-items:center;border-radius:8px;background:var(--blue);color:#fff;font-size:11px;flex:0 0 auto}
+.asmx-home .check span{font-size:12px;font-weight:700;color:#40556f;line-height:1.5}
+.asmx-home .included-copy .btn{margin-top:26px}
+
+/* PROCESS */
+.asmx-home .process{background:var(--soft)}
+.asmx-home .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.asmx-home .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;position:relative;min-height:220px}
+.asmx-home .step-no{font-size:46px;line-height:1;font-weight:900;color:#e6eff9;letter-spacing:-.05em;margin-bottom:26px}
+.asmx-home .step:nth-child(2) .step-no,.asmx-home .step:nth-child(4) .step-no{color:#fff1a8}
+.asmx-home .step h3{font-size:17px}
+.asmx-home .step p{font-size:12px;margin-top:8px}
+
+/* ABOUT */
+.asmx-home .about{background:#fff}
+.asmx-home .about-panel{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 20px 55px rgba(6,27,61,.08)}
+.asmx-home .about-photo{min-height:530px;background:url('https://adelaide-supermaids.com.au/wp-content/uploads/2019/10/about-2.jpg.webp') center/cover no-repeat;position:relative}
+.asmx-home .about-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(6,27,61,.46))}
+.asmx-home .about-year{position:absolute;left:28px;bottom:28px;z-index:2;color:#fff}
+.asmx-home .about-year strong{display:block;font-size:40px;line-height:1;font-weight:900}
+.asmx-home .about-year span{font-size:12px;font-weight:700;color:rgba(255,255,255,.72)}
+.asmx-home .about-copy{padding:54px 52px}
+.asmx-home .about-copy p{margin-top:16px}
+.asmx-home .about-mini{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 28px}
+.asmx-home .about-mini div{padding:14px;border-radius:13px;background:var(--soft);font-size:12px;font-weight:700;color:#415870}
+.asmx-home .about-mini b{color:var(--blue)}
+
+/* AREAS */
+.asmx-home .areas{background:linear-gradient(180deg,#f7fbff,#fff)}
+.asmx-home .areas-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:28px;align-items:stretch}
+.asmx-home .areas-copy{background:var(--navy);border-radius:24px;padding:42px;color:#fff;position:relative;overflow:hidden}
+.asmx-home .areas-copy:after{content:"";position:absolute;right:-80px;bottom:-80px;width:220px;height:220px;border:45px solid rgba(254,234,43,.12);border-radius:50%}
+.asmx-home .areas-copy h2{color:#fff;font-size:clamp(30px,3.4vw,43px)}
+.asmx-home .areas-copy p{color:rgba(255,255,255,.7);margin-top:16px}
+.asmx-home .areas-copy .btn{margin-top:24px;position:relative;z-index:2}
+.asmx-home .area-list{background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;display:flex;flex-direction:column;justify-content:center}
+.asmx-home .area-list>strong{font-size:14px;color:var(--navy-950);margin-bottom:18px}
+.asmx-home .chips{display:flex;flex-wrap:wrap;gap:10px}
+.asmx-home .chip{padding:9px 12px;border-radius:999px;background:var(--soft);border:1px solid #e4edf7;font-size:11px;font-weight:700;color:#425a75}
+.asmx-home .area-note{font-size:11px;color:#8796a8;margin-top:16px;line-height:1.6}
+
+/* FAQ */
+.asmx-home .faq{background:#fff}
+.asmx-home .faq-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:58px;align-items:start}
+.asmx-home .faq-intro{position:sticky;top:30px}
+.asmx-home .faq-intro p{margin-top:16px}
+.asmx-home .faq-contact{margin-top:24px;padding:18px;border-radius:16px;background:var(--soft);border:1px solid var(--line)}
+.asmx-home .faq-contact strong{display:block;color:var(--navy-950);font-size:13px}
+.asmx-home .faq-contact a{display:inline-block;color:var(--blue);font-weight:800;font-size:12px;margin-top:5px}
+.asmx-home .faq-list{display:grid;gap:12px}
+.asmx-home details{border:1px solid var(--line);border-radius:16px;background:#fff;overflow:clip}
+.asmx-home details[open]{box-shadow:0 12px 30px rgba(6,27,61,.06);border-color:#c8ddf3}
+.asmx-home summary{list-style:none;cursor:pointer;padding:20px 54px 20px 20px;font-size:14px;font-weight:800;color:var(--navy-950);position:relative}
+.asmx-home summary::-webkit-details-marker{display:none}
+.asmx-home summary:after{content:"+";position:absolute;right:19px;top:50%;transform:translateY(-50%);width:27px;height:27px;border-radius:8px;background:var(--soft-2);display:grid;place-items:center;color:var(--blue);font-size:18px}
+.asmx-home details[open] summary:after{content:"−";background:var(--yellow);color:var(--navy-950)}
+.asmx-home .answer{padding:0 20px 20px}
+.asmx-home .answer p{font-size:13px;line-height:1.72}
+.asmx-home .answer a{color:var(--blue);font-weight:700}
+
+/* SEO CONTENT */
+.asmx-home .local-seo{background:var(--soft)}
+.asmx-home .local-seo-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+.asmx-home .local-seo p{margin-top:15px}
+.asmx-home .link-box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px}
+.asmx-home .link-box strong{display:block;font-size:13px;color:var(--navy-950);margin-bottom:14px}
+.asmx-home .quick-links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.asmx-home .quick-links a{padding:11px 12px;border-radius:10px;background:var(--soft);font-size:11px;font-weight:800;color:var(--blue)}
+.asmx-home .quick-links a:hover{background:var(--yellow);color:var(--navy-950)}
+
+
+/* LATEST ARTICLES */
+.asmx-home .articles{background:#fff}
+.asmx-home .articles-top{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:38px}
+.asmx-home .articles-top .head{margin:0}
+.asmx-home .articles-top .btn{flex:0 0 auto}
+.asmx-home .articles-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}
+.asmx-home .article-featured{min-height:520px;position:relative;overflow:hidden;border-radius:28px;background:var(--navy-950);box-shadow:var(--shadow-sm);isolation:isolate}
+.asmx-home .article-featured .article-image{position:absolute;inset:0;z-index:-2}
+.asmx-home .article-featured .article-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.asmx-home .article-featured:hover .article-image img{transform:scale(1.035)}
+.asmx-home .article-featured:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,27,61,.05) 18%,rgba(6,27,61,.92) 91%)}
+.asmx-home .article-featured .article-body{position:absolute;left:34px;right:34px;bottom:34px}
+.asmx-home .article-tag{display:inline-flex;align-items:center;padding:7px 11px;border-radius:999px;background:var(--yellow);color:var(--navy-950);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.asmx-home .article-featured h3{max-width:680px;margin-top:16px;font-size:clamp(27px,3vw,40px);line-height:1.14;color:#fff;letter-spacing:-.035em}
+.asmx-home .article-featured p{max-width:660px;color:rgba(255,255,255,.75);font-size:13px;margin-top:12px}
+.asmx-home .article-read{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:12px;font-weight:900;color:var(--yellow)}
+.asmx-home .article-side{display:grid;grid-template-rows:1fr 1fr;gap:22px}
+.asmx-home .article-card{display:grid;grid-template-columns:150px 1fr;gap:0;min-height:249px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;transition:.25s ease}
+.asmx-home .article-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);border-color:transparent}
+.asmx-home .article-thumb{min-height:100%;overflow:hidden;background:var(--soft)}
+.asmx-home .article-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.asmx-home .article-card:hover .article-thumb img{transform:scale(1.04)}
+.asmx-home .article-content{padding:24px 22px;display:flex;flex-direction:column;align-items:flex-start}
+.asmx-home .article-content .article-tag{background:var(--soft-2);color:var(--blue)}
+.asmx-home .article-content h3{font-size:18px;margin-top:13px;line-height:1.38}
+.asmx-home .article-content p{font-size:12px;line-height:1.65;margin-top:8px}
+.asmx-home .article-content .article-read{color:var(--blue);margin-top:auto;padding-top:14px}
+.asmx-home .articles-note{margin-top:18px;font-size:10px;color:#8b99aa;line-height:1.55}
+
+/* CTA */
+.asmx-home .final-cta{padding:84px 0;background:linear-gradient(135deg,var(--blue) 0%,var(--navy) 76%);position:relative;overflow:hidden}
+.asmx-home .final-cta:before{content:"";position:absolute;left:-110px;top:-120px;width:310px;height:310px;border:60px solid rgba(255,255,255,.08);border-radius:50%}
+.asmx-home .final-cta:after{content:"";position:absolute;right:-100px;bottom:-150px;width:380px;height:380px;border:70px solid rgba(254,234,43,.1);border-radius:50%}
+.asmx-home .cta-grid{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:44px}
+.asmx-home .final-cta h2{color:#fff;max-width:690px}
+.asmx-home .final-cta p{color:rgba(255,255,255,.75);max-width:650px;margin-top:14px}
+.asmx-home .cta-actions{display:flex;gap:10px;flex-wrap:wrap;flex:0 0 auto}
+.asmx-home .final-cta .btn-light{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35);color:#fff}
+
+
+/* PREMIUM SITE HEADER */
+.asmx-home .asmx-site-header{position:sticky;top:0;z-index:999;background:#fff;box-shadow:0 1px 0 rgba(6,27,61,.08);font-family:inherit}
+.asmx-home .header-top{background:var(--navy-950);color:#fff;font-size:11px}
+.asmx-home .header-top-inner{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.asmx-home .header-top-left,.asmx-home .header-top-right{display:flex;align-items:center;gap:18px}
+.asmx-home .header-top a,.asmx-home .header-top span{color:rgba(255,255,255,.78);font-size:11px;font-weight:600}
+.asmx-home .header-top a:hover{color:var(--yellow)}
+.asmx-home .header-top .top-highlight{display:inline-flex;align-items:center;gap:7px;color:#fff;font-weight:700}
+.asmx-home .header-top .top-highlight:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px rgba(254,234,43,.12)}
+.asmx-home .top-social{display:flex;align-items:center;gap:8px}
+.asmx-home .top-social a{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.08);color:#fff}
+.asmx-home .top-social svg{width:12px;height:12px;fill:currentColor}
+.asmx-home .main-nav{background:rgba(255,255,255,.97);backdrop-filter:blur(12px)}
+.asmx-home .nav-inner{min-height:80px;display:flex;align-items:center;gap:28px}
+.asmx-home .site-logo{display:flex;align-items:center;flex:0 0 auto}
+.asmx-home .site-logo img{width:auto;height:54px;max-width:185px;object-fit:contain}
+.asmx-home .desktop-nav{display:flex;align-items:center;gap:6px;margin-left:auto}
+.asmx-home .desktop-nav>a,.asmx-home .nav-dropdown-label{height:44px;padding:0 11px;display:flex;align-items:center;gap:5px;border-radius:9px;color:#233a57;font-size:12px;font-weight:800;transition:.2s ease;white-space:nowrap}
+.asmx-home .desktop-nav>a:hover,.asmx-home .nav-dropdown:hover .nav-dropdown-label{background:var(--soft);color:var(--blue)}
+.asmx-home .nav-dropdown{position:relative;height:44px;display:flex;align-items:center}
+.asmx-home .nav-dropdown-label svg{width:12px;height:12px;transition:transform .2s ease}
+.asmx-home .nav-dropdown:hover .nav-dropdown-label svg{transform:rotate(180deg)}
+.asmx-home .nav-dropdown-menu{position:absolute;left:-14px;top:44px;width:290px;padding:10px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 22px 50px rgba(6,27,61,.16);opacity:0;visibility:hidden;transform:translateY(8px);transition:.18s ease}
+.asmx-home .nav-dropdown:hover .nav-dropdown-menu,.asmx-home .nav-dropdown:focus-within .nav-dropdown-menu{opacity:1;visibility:visible;transform:none}
+.asmx-home .nav-dropdown-menu a{display:grid;grid-template-columns:38px 1fr;align-items:center;gap:10px;padding:9px;border-radius:11px}
+.asmx-home .nav-dropdown-menu a:hover{background:var(--soft)}
+.asmx-home .nav-menu-icon{width:36px;height:36px;border-radius:10px;background:var(--soft-2);display:grid;place-items:center;color:var(--blue);font-size:15px;font-weight:900}
+.asmx-home .nav-dropdown-menu strong{display:block;font-size:11px;color:var(--navy-950);line-height:1.3}
+.asmx-home .nav-dropdown-menu small{display:block;font-size:9px;color:var(--muted);margin-top:2px;line-height:1.35}
+.asmx-home .nav-actions{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.asmx-home .nav-phone{width:46px;height:46px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--navy);transition:.2s ease}
+.asmx-home .nav-phone:hover{background:var(--soft);color:var(--blue);transform:translateY(-1px)}
+.asmx-home .nav-phone svg{width:18px;height:18px}
+.asmx-home .nav-book{min-height:46px;padding:0 19px;border-radius:11px;font-size:12px}
+.asmx-home .asmx-mobile-menu{display:none;margin-left:auto;position:relative}
+.asmx-home .asmx-mobile-menu>summary{list-style:none;width:46px;height:46px;border:1px solid var(--line);border-radius:11px;display:grid;place-items:center;cursor:pointer;background:#fff}
+.asmx-home .asmx-mobile-menu>summary::-webkit-details-marker{display:none}
+.asmx-home .mobile-bars{width:20px;height:14px;position:relative;border-top:2px solid var(--navy);border-bottom:2px solid var(--navy)}
+.asmx-home .mobile-bars:after{content:"";position:absolute;left:0;right:0;top:4px;border-top:2px solid var(--navy)}
+.asmx-home .mobile-menu-panel{position:absolute;right:0;top:57px;width:min(360px,calc(100vw - 28px));padding:14px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 24px 60px rgba(6,27,61,.18)}
+.asmx-home .mobile-menu-panel>a{display:flex;align-items:center;justify-content:space-between;padding:13px 11px;border-bottom:1px solid var(--line);font-size:12px;font-weight:800;color:var(--navy-950)}
+.asmx-home .mobile-menu-panel>a:last-of-type{border-bottom:0}
+.asmx-home .mobile-menu-panel>a span{color:var(--blue)}
+.asmx-home .mobile-menu-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.asmx-home .mobile-menu-actions .btn{min-height:48px;padding:0 12px;font-size:11px}
+
+/* PREMIUM FOOTER */
+.asmx-home .site-footer{background:var(--navy-950);color:#fff;position:relative;overflow:hidden}
+.asmx-home .site-footer:before{content:"";position:absolute;right:-110px;top:-150px;width:360px;height:360px;border:70px solid rgba(35,124,245,.12);border-radius:50%}
+.asmx-home .footer-main{position:relative;z-index:2;padding:72px 0 54px}
+.asmx-home .footer-grid{display:grid;grid-template-columns:1.35fr .85fr .85fr 1fr;gap:48px}
+.asmx-home .footer-logo{display:inline-flex;background:#fff;border-radius:14px;padding:10px 14px;margin-bottom:20px}
+.asmx-home .footer-logo img{height:57px;width:auto;max-width:190px;object-fit:contain}
+.asmx-home .footer-brand p{max-width:350px;color:rgba(255,255,255,.62);font-size:12px;line-height:1.8}
+.asmx-home .footer-trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.asmx-home .footer-trust span{padding:7px 9px;border:1px solid rgba(255,255,255,.12);border-radius:999px;font-size:9px;font-weight:800;color:rgba(255,255,255,.78)}
+.asmx-home .footer-social{display:flex;gap:8px;margin-top:22px}
+.asmx-home .footer-social a{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#fff;transition:.2s ease}
+.asmx-home .footer-social a:hover{background:var(--yellow);color:var(--navy-950);transform:translateY(-2px)}
+.asmx-home .footer-social svg{width:16px;height:16px;fill:currentColor}
+.asmx-home .footer-col h3{color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.08em;margin:4px 0 18px}
+.asmx-home .footer-links{display:grid;gap:10px}
+.asmx-home .footer-links a{color:rgba(255,255,255,.63);font-size:11px;font-weight:600;line-height:1.5;transition:.2s ease}
+.asmx-home .footer-links a:hover{color:var(--yellow);transform:translateX(2px)}
+.asmx-home .footer-contact{display:grid;gap:12px}
+.asmx-home .footer-contact-item{display:grid;grid-template-columns:36px 1fr;gap:10px;align-items:start}
+.asmx-home .footer-contact-icon{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:var(--yellow)}
+.asmx-home .footer-contact-icon svg{width:15px;height:15px}
+.asmx-home .footer-contact-item small{display:block;color:rgba(255,255,255,.42);font-size:9px;text-transform:uppercase;letter-spacing:.07em;font-weight:800;margin-bottom:3px}
+.asmx-home .footer-contact-item a,.asmx-home .footer-contact-item span{color:rgba(255,255,255,.78);font-size:11px;font-weight:700;line-height:1.5}
+.asmx-home .footer-contact-item a:hover{color:var(--yellow)}
+.asmx-home .footer-book-box{margin-top:20px;padding:16px;border-radius:14px;background:linear-gradient(135deg,rgba(35,124,245,.22),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.1)}
+.asmx-home .footer-book-box strong{display:block;color:#fff;font-size:12px}
+.asmx-home .footer-book-box p{font-size:10px;color:rgba(255,255,255,.58);margin:5px 0 11px;line-height:1.5}
+.asmx-home .footer-book-box .btn{min-height:42px;width:100%;padding:0 12px;font-size:10px}
+.asmx-home .footer-bottom{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.1)}
+.asmx-home .footer-bottom-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.asmx-home .footer-bottom p,.asmx-home .footer-bottom a{font-size:9px;color:rgba(255,255,255,.42)}
+.asmx-home .footer-bottom-links{display:flex;align-items:center;gap:18px}
+.asmx-home .footer-bottom a:hover{color:var(--yellow)}
+
+@media(max-width:1100px){
+ .asmx-home .desktop-nav>a{padding:0 8px}.asmx-home .desktop-nav{gap:2px}.asmx-home .nav-inner{gap:16px}.asmx-home .footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:36px}.asmx-home .footer-brand{grid-column:1/-1}.asmx-home .footer-brand p{max-width:640px}
+ .asmx-home .articles-grid{grid-template-columns:1fr}.asmx-home .article-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}.asmx-home .article-card{grid-template-columns:130px 1fr}.asmx-home .hero-grid{gap:36px}.asmx-home .hero-visual{min-height:520px}.asmx-home .difference-grid{grid-template-columns:repeat(3,1fr)}.asmx-home .difference-card:nth-child(4),.asmx-home .difference-card:nth-child(5){grid-column:span 1}.asmx-home .package-grid{grid-template-columns:1fr 1fr}.asmx-home .faq-grid{grid-template-columns:1fr}.asmx-home .faq-intro{position:static;max-width:760px}.asmx-home .local-seo-grid{grid-template-columns:1fr}
+}
+@media(max-width:900px){
+ .asmx-home .desktop-nav,.asmx-home .nav-actions{display:none}.asmx-home .asmx-mobile-menu{display:block}.asmx-home .nav-inner{min-height:72px}.asmx-home .site-logo img{height:48px}.asmx-home .footer-grid{grid-template-columns:1fr 1fr}.asmx-home .footer-brand{grid-column:1/-1}.asmx-home .footer-main{padding-top:58px}
+ .asmx-home .articles-top{align-items:flex-start;flex-direction:column}.asmx-home .article-featured{min-height:470px}.asmx-home .article-side{grid-template-columns:1fr}.asmx-home .article-card{grid-template-columns:190px 1fr}.asmx-home .section{padding:78px 0}.asmx-home .hero{padding-top:58px}.asmx-home .hero-grid{grid-template-columns:1fr}.asmx-home .hero-copy{max-width:760px}.asmx-home .hero-visual{max-width:720px;width:100%;margin:auto}.asmx-home .trust-grid{grid-template-columns:1fr 1fr}.asmx-home .trust-item:nth-child(2){border-right:0}.asmx-home .trust-item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.13)}.asmx-home .service-card.large{grid-column:span 12}.asmx-home .service-card.small{grid-column:span 6}.asmx-home .difference-grid{grid-template-columns:1fr 1fr}.asmx-home .included-grid{grid-template-columns:1fr}.asmx-home .included-media{max-width:720px;width:100%}.asmx-home .process-grid{grid-template-columns:1fr 1fr}.asmx-home .about-panel{grid-template-columns:1fr}.asmx-home .about-photo{min-height:440px}.asmx-home .areas-grid{grid-template-columns:1fr}.asmx-home .cta-grid{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:620px){
+ .asmx-home .header-top{display:none}.asmx-home .nav-inner{min-height:66px}.asmx-home .site-logo img{height:44px;max-width:165px}.asmx-home .mobile-menu-panel{top:54px}.asmx-home .footer-grid{grid-template-columns:1fr;gap:34px}.asmx-home .footer-brand{grid-column:auto}.asmx-home .footer-main{padding:48px 0 36px}.asmx-home .footer-bottom-inner{padding:18px 0;min-height:0;align-items:flex-start;flex-direction:column}.asmx-home .footer-bottom-links{gap:12px;flex-wrap:wrap}.asmx-home .mobile-menu-actions{grid-template-columns:1fr}
+ .asmx-home .article-featured{min-height:430px;border-radius:22px}.asmx-home .article-featured .article-body{left:22px;right:22px;bottom:24px}.asmx-home .article-featured h3{font-size:28px}.asmx-home .article-card{grid-template-columns:1fr}.asmx-home .article-thumb{height:190px}.asmx-home .articles-top .btn{width:100%}.asmx-home .hero-quick{gap:7px}.asmx-home .hero-quick>span{width:100%;margin-bottom:2px}.asmx-home .wrap{width:min(100% - 28px,1180px)}.asmx-home .section{padding:62px 0}.asmx-home h1{font-size:clamp(39px,13vw,56px)}.asmx-home h2{font-size:34px}.asmx-home .lead,.asmx-home .hero-copy>p{font-size:16px}.asmx-home .hero-actions{flex-direction:column}.asmx-home .hero-actions .btn{width:100%}.asmx-home .hero-proof{flex-direction:column;gap:10px}.asmx-home .hero-visual{min-height:445px}.asmx-home .hero-photo{inset:12px 0 12px 26px;border-radius:22px}.asmx-home .hero-dot{right:-48px}.asmx-home .hero-ring{width:100px;height:100px;border-width:19px}.asmx-home .guarantee-card{width:210px;left:0;bottom:26px;padding:16px}.asmx-home .since-card{right:0;top:28px;min-width:160px;padding:12px}.asmx-home .trust-grid{grid-template-columns:1fr}.asmx-home .trust-item{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.13)}.asmx-home .trust-item:last-child{border-bottom:0}.asmx-home .service-card.large{min-height:360px}.asmx-home .service-card.small{grid-column:span 12;min-height:240px}.asmx-home .package-grid,.asmx-home .difference-grid,.asmx-home .process-grid{grid-template-columns:1fr}.asmx-home .package p{min-height:0}.asmx-home .included-media{min-height:390px}.asmx-home .included-media img{height:365px;width:92%}.asmx-home .included-note{width:220px;bottom:0}.asmx-home .check-grid{grid-template-columns:1fr}.asmx-home .about-copy{padding:36px 24px}.asmx-home .about-mini{grid-template-columns:1fr}.asmx-home .areas-copy,.asmx-home .area-list{padding:28px 22px}.asmx-home .quick-links{grid-template-columns:1fr}.asmx-home .final-cta{padding:64px 0}.asmx-home .cta-actions{width:100%;flex-direction:column}.asmx-home .cta-actions .btn{width:100%}
+}
+</style>
+
+<div class="asmx-home">
+
+  <!-- PREMIUM HEADER -->
+  <header class="asmx-site-header" id="top">
+    <div class="header-top">
+      <div class="wrap header-top-inner">
+        <div class="header-top-left">
+          <span class="top-highlight">Professional cleaning across Adelaide</span>
+          <span>Family owned &amp; operated</span>
+        </div>
+        <div class="header-top-right">
+          <a href="mailto:info@adelaide-supermaids.com.au">info@adelaide-supermaids.com.au</a>
+          <a href="tel:+61451787887">0451 787 887</a>
+          <div class="top-social" aria-label="Social media">
+            <a href="https://www.facebook.com/AdelaideSupermaids/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.7 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.1-2.8-.1-2.8 0-4.7 1.7-4.7 4.8v2.7H6.8V13H10v9h3.7Z"/></svg></a>
+            <a href="https://www.instagram.com/adelaide_supermaids/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm0 1.8a3.4 3.4 0 0 0-3.4 3.4v9.6a3.4 3.4 0 0 0 3.4 3.4h9.6a3.4 3.4 0 0 0 3.4-3.4V7.2a3.4 3.4 0 0 0-3.4-3.4H7.2Zm10.1 1.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 6.9a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2Zm0 1.8a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6Z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-nav">
+      <div class="wrap nav-inner">
+        <a class="site-logo" href="https://adelaide-supermaids.com.au/" aria-label="Adelaide SuperMaids home">
+          <img src="https://adelaide-supermaids.com.au/wp-content/uploads/2020/12/cropped-Adelaide-SuperMaids-Professional-Cleaning-Services-smallLogo-e1608213282658.png" alt="Adelaide SuperMaids Professional Cleaning Services">
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#top">Home</a>
+          <div class="nav-dropdown">
+            <a class="nav-dropdown-label" href="#services">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+            <div class="nav-dropdown-menu">
+              <a href="https://adelaide-supermaids.com.au/house-cleaning-adelaide/"><span class="nav-menu-icon">H</span><span><strong>House Cleaning</strong><small>Regular, custom &amp; deep cleans</small></span></a>
+              <a href="https://adelaide-supermaids.com.au/end-of-lease-cleaning/"><span class="nav-menu-icon">E</span><span><strong>End of Lease</strong><small>Move-in &amp; move-out cleaning</small></span></a>
+              <a href="https://adelaide-supermaids.com.au/commercial-cleaning-service/"><span class="nav-menu-icon">C</span><span><strong>Commercial Cleaning</strong><small>Offices &amp; workplaces</small></span></a>
+              <a href="https://adelaide-supermaids.com.au/carpet-cleaning-adelaide/"><span class="nav-menu-icon">◎</span><span><strong>Carpet Cleaning</strong><small>Deeper carpet care</small></span></a>
+              <a href="https://adelaide-supermaids.com.au/window-cleaning-adelaide/"><span class="nav-menu-icon">W</span><span><strong>Window Cleaning</strong><small>Clearer interior &amp; exterior glass</small></span></a>
+            </div>
+          </div>
+          <a href="#why-us">Why Us</a>
+          <a href="#service-areas">Areas</a>
+          <a href="#faq">FAQ</a>
+          <a href="#latest-articles">Blog</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="nav-phone" href="tel:+61451787887" aria-label="Call Adelaide SuperMaids"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></a>
+          <a class="btn btn-primary nav-book" href="https://adelaide-supermaids.com.au/book-online/">Book Online →</a>
+        </div>
+
+        <details class="asmx-mobile-menu">
+          <summary aria-label="Open navigation"><span class="mobile-bars"></span></summary>
+          <div class="mobile-menu-panel">
+            <a href="#services">Cleaning Services <span>→</span></a>
+            <a href="https://adelaide-supermaids.com.au/house-cleaning-adelaide/">House Cleaning <span>→</span></a>
+            <a href="https://adelaide-supermaids.com.au/end-of-lease-cleaning/">End of Lease <span>→</span></a>
+            <a href="https://adelaide-supermaids.com.au/commercial-cleaning-service/">Commercial Cleaning <span>→</span></a>
+            <a href="#why-us">Why Choose Us <span>→</span></a>
+            <a href="#service-areas">Service Areas <span>→</span></a>
+            <a href="#faq">FAQ <span>→</span></a>
+            <a href="#latest-articles">Latest Articles <span>→</span></a>
+            <div class="mobile-menu-actions">
+              <a class="btn btn-primary" href="https://adelaide-supermaids.com.au/book-online/">Book Online</a>
+              <a class="btn btn-light" href="tel:+61451787887">Call 0451 787 887</a>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="hero-badge"><i></i> Adelaide cleaners serving local homes &amp; businesses since 2008</div>
+        <h1>Adelaide cleaning that gives you <span>your time back.</span></h1>
+        <p>Reliable residential and commercial cleaning across Adelaide — from recurring house cleans and end-of-lease to carpets, windows, tile &amp; grout and workplace cleaning.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://adelaide-supermaids.com.au/book-online/">Book Your Clean
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-light" href="https://adelaide-supermaids.com.au/cleaning-services/">Services &amp; Pricing</a>
+        </div>
+        <div class="hero-proof">
+          <span><b>✓</b> Public liability insured</span>
+          <span><b>✓</b> Police &amp; security checks</span>
+          <span><b>✓</b> 48-hour satisfaction guarantee</span>
+        </div>
+        <div class="hero-quick" aria-label="Popular cleaning services">
+          <span>Popular:</span>
+          <a href="https://adelaide-supermaids.com.au/house-cleaning-adelaide/">House Cleaning</a>
+          <a href="https://adelaide-supermaids.com.au/end-of-lease-cleaning/">End of Lease</a>
+          <a href="https://adelaide-supermaids.com.au/carpet-cleaning-adelaide/">Carpet Cleaning</a>
+          <a href="https://adelaide-supermaids.com.au/commercial-cleaning-service/">Commercial</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Adelaide SuperMaids professional cleaning">
+        <div class="hero-dot"></div>
+        <div class="hero-ring"></div>
+        <div class="hero-photo"><img src="https://adelaide-supermaids.com.au/wp-content/uploads/2025/07/imgi_35_slide-1-min.webp" alt="Professional cleaning service in Adelaide"></div>
+        <div class="floating-card since-card"><strong>Home + Business</strong><span>One local team for everyday &amp; specialist cleaning</span></div>
+        <div class="floating-card guarantee-card">
+          <div class="gc-icon">✓</div>
+          <strong>48-hour satisfaction guarantee</strong>
+          <small>If something is missed, contact Adelaide SuperMaids within 48 hours so the team can make it right under the satisfaction guarantee.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="trust-strip" aria-label="Why customers choose Adelaide SuperMaids">
+    <div class="wrap trust-grid">
+      <div class="trust-item"><div class="trust-icon">✓</div><div><strong>Satisfaction Guarantee</strong><span>Contact us within 48 hours if something is missed</span></div></div>
+      <div class="trust-item"><div class="trust-icon">◈</div><div><strong>Insured & Protected</strong><span>Comprehensive public liability insurance</span></div></div>
+      <div class="trust-item"><div class="trust-icon">⌁</div><div><strong>Local & Family Owned</strong><span>Personal service from an Adelaide business</span></div></div>
+      <div class="trust-item"><div class="trust-icon">↗</div><div><strong>Easy Online Booking</strong><span>Book online at a time that suits you</span></div></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Cleaning services</div>
+        <h2>One trusted team for the cleaning jobs that matter most</h2>
+        <p>Choose the service that matches your home, move, workplace or specialised cleaning need.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card large">
+          <div class="service-bg"><img src="https://adelaide-supermaids.com.au/wp-content/uploads/2019/10/about-1.jpg.webp" alt="House cleaning Adelaide" loading="lazy"></div>
+          <div class="service-content"><h3>House Cleaning</h3><p>Regular, custom and deep cleaning options for busy households that want a cleaner home without losing hours every week.</p><a class="service-link" href="https://adelaide-supermaids.com.au/house-cleaning-adelaide/">Explore house cleaning →</a></div>
+        </article>
+
+        <article class="service-card large">
+          <div class="service-bg"><img src="https://adelaide-supermaids.com.au/wp-content/uploads/2019/10/about-2.jpg.webp" alt="Commercial cleaning Adelaide" loading="lazy"></div>
+          <div class="service-content"><h3>Commercial Cleaning</h3><p>Cleaning for offices and commercial spaces with service options designed around the needs of your workplace.</p><a class="service-link" href="https://adelaide-supermaids.com.au/commercial-cleaning-service/">Explore commercial cleaning →</a></div>
+        </article>
+
+        <article class="service-card small"><div class="service-icon"><img src="https://adelaide-supermaids.com.au/wp-content/uploads/2020/12/brushSpunge.png.webp" alt="End of lease cleaning icon" loading="lazy"></div><h3>End of Lease</h3><p>Detailed move-out cleaning for tenants, landlords and property handovers.</p><a class="service-link" href="https://adelaide-supermaids.com.au/end-of-lease-cleaning/">View service →</a></article>
+        <article class="service-card small"><div class="service-icon"><img src="https://adelaide-supermaids.com.au/wp-content/uploads/2020/12/SprayAndSpunges.png.webp" alt="Carpet cleaning icon" loading="lazy"></div><h3>Carpet Cleaning</h3><p>Deep carpet and steam-cleaning services for homes and businesses.</p><a class="service-link" href="https://adelaide-supermaids.com.au/carpet-cleaning-adelaide/">View service →</a></article>
+        <article class="service-card small"><div class="service-icon"><img src="https://adelaide-supermaids.com.au/wp-content/uploads/2020/12/windowCleaning.png.webp" alt="Window cleaning icon" loading="lazy"></div><h3>Window Cleaning</h3><p>Professional window cleaning to give your property a brighter, cleaner finish.</p><a class="service-link" href="https://adelaide-supermaids.com.au/window-cleaning-adelaide/">View service →</a></article>
+        <article class="service-card small"><div class="service-icon"><img src="https://adelaide-supermaids.com.au/wp-content/uploads/2020/12/broom.png.webp" alt="Tile and grout cleaning icon" loading="lazy"></div><h3>Tile & Grout</h3><p>Hard-floor, tile and grout cleaning for high-use areas and stubborn build-up.</p><a class="service-link" href="https://adelaide-supermaids.com.au/tile-cleaning-service/">View service →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHOOSE YOUR CLEAN -->
+  <section class="section choose">
+    <div class="wrap">
+      <div class="head center">
+        <div class="eyebrow">Find the right clean</div>
+        <h2>Not sure which service you need?</h2>
+        <p>Start with the outcome you want. These four common options make it easier to choose the right type of house clean.</p>
+      </div>
+      <div class="package-grid">
+        <article class="package featured"><span class="package-tag">Best for ongoing upkeep</span><h3>Regular Cleaning</h3><p>For households that want consistent cleaning on a recurring schedule.</p><ul><li>Weekly options</li><li>Fortnightly options</li><li>Monthly options</li></ul><a href="https://adelaide-supermaids.com.au/house-cleaning-adelaide/#regular">See regular cleaning →</a></article>
+        <article class="package"><span class="package-tag">Best for a reset</span><h3>Super / Spring Clean</h3><p>For a more thorough one-off clean, seasonal reset or inspection preparation.</p><ul><li>One-off service</li><li>Deeper cleaning focus</li><li>Ideal before special occasions</li></ul><a href="https://adelaide-supermaids.com.au/house-cleaning-adelaide/#super">See super cleaning →</a></article>
+        <article class="package"><span class="package-tag">Best for flexibility</span><h3>Custom Cleaning</h3><p>For customers who want to specify priorities and tailor the cleaning time to their needs.</p><ul><li>One-off option</li><li>Hourly-style flexibility</li><li>Cleaning focused on your priorities</li></ul><a href="https://adelaide-supermaids.com.au/house-cleaning-adelaide/#custom">See custom cleaning →</a></article>
+        <article class="package"><span class="package-tag">Best for moving</span><h3>Vacate Cleaning</h3><p>For moving out and preparing a property for handover or inspection.</p><ul><li>Move-out cleaning</li><li>Property handover focus</li><li>Optional specialist services available</li></ul><a href="https://adelaide-supermaids.com.au/end-of-lease-cleaning/">See end-of-lease cleaning →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENCE -->
+  <section class="section difference" id="why-us">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow" style="color:#fff">The SuperMaids difference</div>
+        <h2>More confidence when you invite a cleaner into your property</h2>
+        <p>Booking a cleaner means trusting someone with your home or workplace. Adelaide SuperMaids backs its service with practical protections, convenient booking and a local family-run approach.</p>
+      </div>
+      <div class="difference-grid">
+        <article class="difference-card"><div class="di">48h</div><h3>Satisfaction Guarantee</h3><p>If you are not completely satisfied, contact Adelaide SuperMaids within 48 hours and the team will return to re-clean under the satisfaction guarantee.</p></article>
+        <article class="difference-card"><div class="di">✓</div><h3>Insured & Protected</h3><p>Adelaide SuperMaids states that it carries comprehensive public liability insurance for customer and property protection.</p></article>
+        <article class="difference-card"><div class="di">ID</div><h3>Police & Security Checks</h3><p>Relevant police and security checks help give customers greater confidence when welcoming a cleaner into their property.</p></article>
+        <article class="difference-card"><div class="di">⌂</div><h3>Family Owned</h3><p>A local, family-owned and operated business with a more personal approach to service and reputation.</p></article>
+        <article class="difference-card"><div class="di">24</div><h3>Book & Pay Online</h3><p>Book online 24/7 and choose the payment option that suits your booking, including online payment or cash on the day.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS INCLUDED -->
+  <section class="section included">
+    <div class="wrap included-grid">
+      <div class="included-media">
+        <img src="https://adelaide-supermaids.com.au/wp-content/uploads/2019/10/about-1.jpg.webp" alt="Adelaide house cleaner at work" loading="lazy">
+        <div class="included-note"><strong>Cleaning built around the job you actually need.</strong><span>Regular, custom, super, vacate and specialist services let customers choose a more appropriate level of cleaning.</span></div>
+      </div>
+      <div class="included-copy">
+        <div class="eyebrow">Complete cleaning coverage</div>
+        <h2>One booking can take care of much more than the basics</h2>
+        <p class="lead">Choose the level of home cleaning you need, then add specialist services for carpets, upholstery, windows, tiles and grout when your property needs extra attention.</p>
+        <div class="check-grid">
+          <div class="check"><b>✓</b><span>Regular home cleaning</span></div>
+          <div class="check"><b>✓</b><span>Custom / one-off cleaning</span></div>
+          <div class="check"><b>✓</b><span>Super / spring cleaning</span></div>
+          <div class="check"><b>✓</b><span>End-of-lease cleaning</span></div>
+          <div class="check"><b>✓</b><span>Carpet steam cleaning</span></div>
+          <div class="check"><b>✓</b><span>Upholstery steam cleaning</span></div>
+          <div class="check"><b>✓</b><span>Window cleaning</span></div>
+          <div class="check"><b>✓</b><span>Tile & grout cleaning</span></div>
+        </div>
+        <a class="btn btn-blue" href="https://adelaide-supermaids.com.au/cleaning-services/">View All Services & Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section process">
+    <div class="wrap">
+      <div class="head center"><div class="eyebrow">How it works</div><h2>From booking to a cleaner space in four simple steps</h2><p>Choose what you need, book at a convenient time and leave the cleaning to the team.</p></div>
+      <div class="process-grid">
+        <article class="step"><div class="step-no">01</div><h3>Choose your service</h3><p>Pick regular, custom, deep, move-out or specialist cleaning based on what your property needs.</p></article>
+        <article class="step"><div class="step-no">02</div><h3>Book online or contact us</h3><p>Use the online booking page or ask the team for a quote if you need help choosing.</p></article>
+        <article class="step"><div class="step-no">03</div><h3>Your cleaner gets to work</h3><p>The team completes the agreed cleaning service with attention to the requested scope.</p></article>
+        <article class="step"><div class="step-no">04</div><h3>Enjoy the clean</h3><p>Come back to a fresher home, office or property ready for the next part of your day.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about">
+    <div class="wrap about-panel">
+      <div class="about-photo"><div class="about-year"><strong>2008</strong><span>Adelaide SuperMaids began serving local customers</span></div></div>
+      <div class="about-copy">
+        <div class="eyebrow">Local cleaning experience</div>
+        <h2>Family owned. Adelaide focused. Built around reliable service.</h2>
+        <p>Adelaide SuperMaids provides residential and commercial cleaning services across Adelaide, with a broad service range that includes routine home cleaning, move-out cleans and specialist floor, carpet, upholstery and window cleaning.</p>
+        <p>The advantage for customers is simple: one local cleaning business can handle more of the property, with online booking and flexible service options.</p>
+        <div class="about-mini"><div><b>Residential:</b> recurring, custom, deep and vacate cleaning</div><div><b>Specialist:</b> carpets, upholstery, windows, tiles and grout</div></div>
+        <a class="btn btn-light" href="https://adelaide-supermaids.com.au/about-us/">Learn More About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section class="section areas" id="service-areas">
+    <div class="wrap areas-grid">
+      <div class="areas-copy">
+        <div class="eyebrow" style="color:#fff">Service areas</div>
+        <h2>Cleaning across Adelaide and surrounding suburbs</h2>
+        <p>Adelaide SuperMaids services a wide range of suburbs across the Adelaide metro area. If you are unsure about coverage for your address or service type, contact the team before booking.</p>
+        <a class="btn btn-primary" href="https://adelaide-supermaids.com.au/contact-us/">Check My Suburb</a>
+      </div>
+      <div class="area-list">
+        <strong>Popular Adelaide service areas</strong>
+        <div class="chips">
+          <span class="chip">Adelaide CBD</span><span class="chip">North Adelaide</span><span class="chip">Glenelg</span><span class="chip">Norwood</span><span class="chip">Prospect</span><span class="chip">Unley</span><span class="chip">Burnside</span><span class="chip">Mawson Lakes</span><span class="chip">Brighton</span><span class="chip">Campbelltown</span><span class="chip">Goodwood</span><span class="chip">Kensington</span><span class="chip">Marion</span><span class="chip">Port Adelaide</span><span class="chip">Salisbury</span><span class="chip">Semaphore</span><span class="chip">Tea Tree Gully</span><span class="chip">West Adelaide</span>
+        </div>
+        <div class="area-note">Availability can vary by service. Use the booking or contact page to confirm your address and required cleaning type.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
+    <div class="wrap faq-grid">
+      <div class="faq-intro">
+        <div class="eyebrow">Frequently asked questions</div>
+        <h2>Questions customers usually ask before booking</h2>
+        <p>Get clear answers about services, recurring cleans, end-of-lease work, insurance, the satisfaction guarantee and online booking before you choose your clean.</p>
+        <div class="faq-contact"><strong>Still not sure which clean is right?</strong><a href="tel:+61451787887">Call 0451 787 887 →</a></div>
+      </div>
+      <div class="faq-list">
+        <details open><summary>What types of cleaning services do you offer?</summary><div class="answer"><p>Adelaide SuperMaids offers regular house cleaning, custom cleaning, super/spring cleaning, end-of-lease cleaning, carpet cleaning, tile and grout cleaning, upholstery steam cleaning, window cleaning and commercial cleaning.</p></div></details>
+        <details><summary>Can I book a regular weekly, fortnightly or monthly clean?</summary><div class="answer"><p>Yes. Regular cleaning is available on weekly, fortnightly and monthly schedules. You can review the <a href="https://adelaide-supermaids.com.au/house-cleaning-adelaide/#regular">regular house cleaning</a> information before booking.</p></div></details>
+        <details><summary>What if I only need a one-off or customised clean?</summary><div class="answer"><p>Custom cleaning is available for customers who want a one-off service built around their priorities, while Super / Spring Cleaning is designed for a more thorough reset.</p></div></details>
+        <details><summary>Do you offer end-of-lease or vacate cleaning?</summary><div class="answer"><p>Yes. Adelaide SuperMaids offers move-in/move-out and end-of-lease cleaning. You can view the <a href="https://adelaide-supermaids.com.au/end-of-lease-cleaning/">end-of-lease cleaning service</a> for more information.</p></div></details>
+        <details><summary>Are your cleaners insured and checked?</summary><div class="answer"><p>Yes. Adelaide SuperMaids uses relevant police and security checks and is covered by comprehensive public liability insurance.</p></div></details>
+        <details><summary>What happens if I am not satisfied with the clean?</summary><div class="answer"><p>If you are not completely satisfied, contact Adelaide SuperMaids within 48 hours and the team will return to re-clean your home or property under the satisfaction guarantee.</p></div></details>
+        <details><summary>Can I book and pay online?</summary><div class="answer"><p>Yes. Online booking is available 24 hours a day, and customers can pay online or choose cash on the day.</p></div></details>
+        <details><summary>Do you clean offices and commercial properties?</summary><div class="answer"><p>Yes. Commercial cleaning is one of the core services listed by Adelaide SuperMaids. Visit the <a href="https://adelaide-supermaids.com.au/commercial-cleaning-service/">commercial cleaning page</a> for service information.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LATEST ARTICLES -->
+  <section class="section articles" id="latest-articles">
+    <div class="wrap">
+      <div class="articles-top">
+        <div class="head">
+          <div class="eyebrow">Cleaning tips &amp; advice</div>
+          <h2>Fresh advice for a cleaner home and workplace</h2>
+          <p>Practical guides from Adelaide SuperMaids covering workplace cleaning, fast cleaning needs and carpet care.</p>
+        </div>
+        <a class="btn btn-light" href="https://adelaide-supermaids.com.au/blog/">View All Articles →</a>
+      </div>
+
+      <div class="articles-grid">
+        <article class="article-featured">
+          <div class="article-image"><img src="https://adelaide-supermaids.com.au/wp-content/uploads/2019/10/about-2.jpg.webp" alt="Office cleaning advice in Adelaide" loading="lazy"></div>
+          <div class="article-body">
+            <span class="article-tag">Commercial Cleaning</span>
+            <h3>Office Cleaning Checklist Adelaide: Complete Workplace Cleaning Guide</h3>
+            <p>A practical guide for creating a more consistent cleaning routine across desks, shared areas, kitchens, bathrooms and high-touch workplace surfaces.</p>
+            <a class="article-read" href="https://adelaide-supermaids.com.au/blog/office-cleaning-checklist-adelaide/">Read the guide →</a>
+          </div>
+        </article>
+
+        <div class="article-side">
+          <article class="article-card">
+            <div class="article-thumb"><img src="https://adelaide-supermaids.com.au/wp-content/uploads/2025/07/imgi_35_slide-1-min.webp" alt="Fast cleaning service advice" loading="lazy"></div>
+            <div class="article-content">
+              <span class="article-tag">Cleaning Advice</span>
+              <h3>What Are Same Day Dry Cleaning Services and Why Do They Matter?</h3>
+              <p>Explore when express cleaning can be useful and what customers should consider when they need a faster turnaround.</p>
+              <a class="article-read" href="https://adelaide-supermaids.com.au/blog/same-day-dry-cleaning-services/">Read article →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-thumb"><img src="https://adelaide-supermaids.com.au/wp-content/uploads/2019/10/about-1.jpg.webp" alt="Carpet cleaning advice Adelaide" loading="lazy"></div>
+            <div class="article-content">
+              <span class="article-tag">Carpet Care</span>
+              <h3>Carpet Washing Service in Adelaide: Restore Freshness to Your Carpets</h3>
+              <p>Learn why deeper carpet care matters for trapped dirt, stains and the overall freshness of busy homes and workplaces.</p>
+              <a class="article-read" href="https://adelaide-supermaids.com.au/blog/carpet-washing-service-in-adelaide-restore-freshness-to-your-carpets/">Read article →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO / INTERNAL LINKS -->
+  <section class="section local-seo">
+    <div class="wrap local-seo-grid">
+      <div>
+        <div class="eyebrow">Cleaning services Adelaide</div>
+        <h2>Cleaning for homes, offices, move-outs and specialist jobs</h2>
+        <p>Adelaide SuperMaids helps customers across Adelaide manage routine cleaning as well as the jobs that need extra attention. Homeowners can choose recurring, custom or deep cleaning, while tenants and property managers can use dedicated end-of-lease services. Specialist options such as carpet, upholstery, window, tile and grout cleaning make it easier to coordinate multiple cleaning needs through one local provider.</p>
+        <p>For business customers, commercial cleaning services support offices and other workplaces. If you are unsure which service fits your property, use the online booking page or contact Adelaide SuperMaids for guidance.</p>
+      </div>
+      <aside class="link-box">
+        <strong>Quick links to high-intent services</strong>
+        <div class="quick-links">
+          <a href="https://adelaide-supermaids.com.au/house-cleaning-adelaide/">House Cleaning Adelaide</a>
+          <a href="https://adelaide-supermaids.com.au/end-of-lease-cleaning/">End of Lease Cleaning</a>
+          <a href="https://adelaide-supermaids.com.au/carpet-cleaning-adelaide/">Carpet Cleaning Adelaide</a>
+          <a href="https://adelaide-supermaids.com.au/window-cleaning-adelaide/">Window Cleaning Adelaide</a>
+          <a href="https://adelaide-supermaids.com.au/tile-cleaning-service/">Tile & Grout Cleaning</a>
+          <a href="https://adelaide-supermaids.com.au/upholstery-cleaning-adelaide/">Upholstery Cleaning</a>
+          <a href="https://adelaide-supermaids.com.au/commercial-cleaning-service/">Commercial Cleaning</a>
+          <a href="https://adelaide-supermaids.com.au/cleaning-services/">Services & Pricing</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="wrap cta-grid">
+      <div><h2>Spend less time cleaning and more time on everything else.</h2><p>Choose your service and book online, or contact Adelaide SuperMaids for help selecting the right clean for your home or business.</p></div>
+      <div class="cta-actions"><a class="btn btn-primary" href="https://adelaide-supermaids.com.au/book-online/">Book Online</a><a class="btn btn-light" href="tel:+61451787887">Call 0451 787 887</a></div>
+    </div>
+  </section>
+
+
+  <!-- PREMIUM FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <a class="footer-logo" href="https://adelaide-supermaids.com.au/" aria-label="Adelaide SuperMaids home"><img src="https://adelaide-supermaids.com.au/wp-content/uploads/2020/12/cropped-Adelaide-SuperMaids-Professional-Cleaning-Services-smallLogo-e1608213282658.png" alt="Adelaide SuperMaids"></a>
+          <p>Professional residential and commercial cleaning across Adelaide. From regular house cleaning to end-of-lease, carpets, windows, tile &amp; grout and workplace cleaning.</p>
+          <div class="footer-trust"><span>Public Liability Insured</span><span>Police &amp; Security Checks</span><span>48-Hour Satisfaction Guarantee</span></div>
+          <div class="footer-social" aria-label="Follow Adelaide SuperMaids">
+            <a href="https://www.facebook.com/AdelaideSupermaids/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.7 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.1-2.8-.1-2.8 0-4.7 1.7-4.7 4.8v2.7H6.8V13H10v9h3.7Z"/></svg></a>
+            <a href="https://www.instagram.com/adelaide_supermaids/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm0 1.8a3.4 3.4 0 0 0-3.4 3.4v9.6a3.4 3.4 0 0 0 3.4 3.4h9.6a3.4 3.4 0 0 0 3.4-3.4V7.2a3.4 3.4 0 0 0-3.4-3.4H7.2Zm10.1 1.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 6.9a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2Zm0 1.8a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6Z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Cleaning Services</h3>
+          <div class="footer-links">
+            <a href="https://adelaide-supermaids.com.au/house-cleaning-adelaide/">House Cleaning Adelaide</a>
+            <a href="https://adelaide-supermaids.com.au/end-of-lease-cleaning/">End of Lease Cleaning</a>
+            <a href="https://adelaide-supermaids.com.au/commercial-cleaning-service/">Commercial Cleaning</a>
+            <a href="https://adelaide-supermaids.com.au/carpet-cleaning-adelaide/">Carpet Cleaning</a>
+            <a href="https://adelaide-supermaids.com.au/window-cleaning-adelaide/">Window Cleaning</a>
+            <a href="https://adelaide-supermaids.com.au/tile-cleaning-service/">Tile &amp; Grout Cleaning</a>
+            <a href="https://adelaide-supermaids.com.au/upholstery-cleaning-adelaide/">Upholstery Cleaning</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Useful Links</h3>
+          <div class="footer-links">
+            <a href="https://adelaide-supermaids.com.au/">Home</a>
+            <a href="https://adelaide-supermaids.com.au/cleaning-services/">Services &amp; Pricing</a>
+            <a href="#why-us">Why Choose Us</a>
+            <a href="#service-areas">Service Areas</a>
+            <a href="#faq">Frequently Asked Questions</a>
+            <a href="https://adelaide-supermaids.com.au/blog/">Cleaning Tips &amp; Blog</a>
+            <a href="https://adelaide-supermaids.com.au/book-online/">Book Online</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <div class="footer-contact">
+            <div class="footer-contact-item"><span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></span><span><small>Call us</small><a href="tel:+61451787887">0451 787 887</a></span></div>
+            <div class="footer-contact-item"><span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg></span><span><small>Email</small><a href="mailto:info@adelaide-supermaids.com.au">info@adelaide-supermaids.com.au</a></span></div>
+            <div class="footer-contact-item"><span class="footer-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><small>Service area</small><span>Adelaide, South Australia</span></span></div>
+          </div>
+          <div class="footer-book-box"><strong>Ready for a cleaner space?</strong><p>Choose your service and secure your clean online.</p><a class="btn btn-primary" href="https://adelaide-supermaids.com.au/book-online/">Book Your Clean →</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="wrap footer-bottom-inner">
+        <p>© Adelaide SuperMaids. Professional Cleaning Services Adelaide.</p>
+        <div class="footer-bottom-links"><a href="#top">Back to top ↑</a><a href="https://adelaide-supermaids.com.au/blog/">Blog</a><a href="https://adelaide-supermaids.com.au/book-online/">Book Online</a></div>
+      </div>
+    </div>
+  </footer>
+
+
+</div>
+
+<!-- FAQ structured data mirrors the visible FAQ above. Remove this block if your SEO plugin already outputs FAQ schema for the same questions. -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What types of cleaning services do you offer?","acceptedAnswer":{"@type":"Answer","text":"Adelaide SuperMaids offers regular house cleaning, custom cleaning, super/spring cleaning, end-of-lease cleaning, carpet cleaning, tile and grout cleaning, upholstery steam cleaning, window cleaning and commercial cleaning."}},
+    {"@type":"Question","name":"Can I book a regular weekly, fortnightly or monthly clean?","acceptedAnswer":{"@type":"Answer","text":"Yes. Regular cleaning is available on weekly, fortnightly and monthly schedules."}},
+    {"@type":"Question","name":"What if I only need a one-off or customised clean?","acceptedAnswer":{"@type":"Answer","text":"Custom cleaning is available for one-off services built around customer priorities, plus a deeper Super / Spring Cleaning option."}},
+    {"@type":"Question","name":"Do you offer end-of-lease or vacate cleaning?","acceptedAnswer":{"@type":"Answer","text":"Yes. Adelaide SuperMaids offers move-in/move-out and end-of-lease cleaning services."}},
+    {"@type":"Question","name":"Are your cleaners insured and checked?","acceptedAnswer":{"@type":"Answer","text":"Adelaide SuperMaids uses relevant police and security checks and is covered by comprehensive public liability insurance."}},
+    {"@type":"Question","name":"What happens if I am not satisfied with the clean?","acceptedAnswer":{"@type":"Answer","text":"Customers can contact Adelaide SuperMaids within 48 hours if they are not completely satisfied, with a re-clean offered under the satisfaction guarantee."}},
+    {"@type":"Question","name":"Can I book and pay online?","acceptedAnswer":{"@type":"Answer","text":"Yes. Online booking is available 24 hours a day, and customers can pay online or choose cash on the day."}},
+    {"@type":"Question","name":"Do you clean offices and commercial properties?","acceptedAnswer":{"@type":"Answer","text":"Yes. Commercial cleaning is one of the core services listed by Adelaide SuperMaids."}}
+  ]
+}
+</script>
