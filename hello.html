@@ -1,5 +1,5 @@
 <!--
-  Adelaide SuperMaids — Premium Homepage Redesign V3
+  Adelaide SuperMaids — Premium Homepage Redesign V5 — Responsive Checked
   Paste inside an Elementor HTML widget.
   Styles are fully scoped under .asmx-home to reduce theme conflicts.
   Brand colours retained: #0e3c7b / #237cf5 / #feea2b
@@ -335,6 +335,160 @@
 @media(max-width:620px){
  .asmx-home .header-top{display:none}.asmx-home .nav-inner{min-height:66px}.asmx-home .site-logo img{height:44px;max-width:165px}.asmx-home .mobile-menu-panel{top:54px}.asmx-home .footer-grid{grid-template-columns:1fr;gap:34px}.asmx-home .footer-brand{grid-column:auto}.asmx-home .footer-main{padding:48px 0 36px}.asmx-home .footer-bottom-inner{padding:18px 0;min-height:0;align-items:flex-start;flex-direction:column}.asmx-home .footer-bottom-links{gap:12px;flex-wrap:wrap}.asmx-home .mobile-menu-actions{grid-template-columns:1fr}
  .asmx-home .article-featured{min-height:430px;border-radius:22px}.asmx-home .article-featured .article-body{left:22px;right:22px;bottom:24px}.asmx-home .article-featured h3{font-size:28px}.asmx-home .article-card{grid-template-columns:1fr}.asmx-home .article-thumb{height:190px}.asmx-home .articles-top .btn{width:100%}.asmx-home .hero-quick{gap:7px}.asmx-home .hero-quick>span{width:100%;margin-bottom:2px}.asmx-home .wrap{width:min(100% - 28px,1180px)}.asmx-home .section{padding:62px 0}.asmx-home h1{font-size:clamp(39px,13vw,56px)}.asmx-home h2{font-size:34px}.asmx-home .lead,.asmx-home .hero-copy>p{font-size:16px}.asmx-home .hero-actions{flex-direction:column}.asmx-home .hero-actions .btn{width:100%}.asmx-home .hero-proof{flex-direction:column;gap:10px}.asmx-home .hero-visual{min-height:445px}.asmx-home .hero-photo{inset:12px 0 12px 26px;border-radius:22px}.asmx-home .hero-dot{right:-48px}.asmx-home .hero-ring{width:100px;height:100px;border-width:19px}.asmx-home .guarantee-card{width:210px;left:0;bottom:26px;padding:16px}.asmx-home .since-card{right:0;top:28px;min-width:160px;padding:12px}.asmx-home .trust-grid{grid-template-columns:1fr}.asmx-home .trust-item{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.13)}.asmx-home .trust-item:last-child{border-bottom:0}.asmx-home .service-card.large{min-height:360px}.asmx-home .service-card.small{grid-column:span 12;min-height:240px}.asmx-home .package-grid,.asmx-home .difference-grid,.asmx-home .process-grid{grid-template-columns:1fr}.asmx-home .package p{min-height:0}.asmx-home .included-media{min-height:390px}.asmx-home .included-media img{height:365px;width:92%}.asmx-home .included-note{width:220px;bottom:0}.asmx-home .check-grid{grid-template-columns:1fr}.asmx-home .about-copy{padding:36px 24px}.asmx-home .about-mini{grid-template-columns:1fr}.asmx-home .areas-copy,.asmx-home .area-list{padding:28px 22px}.asmx-home .quick-links{grid-template-columns:1fr}.asmx-home .final-cta{padding:64px 0}.asmx-home .cta-actions{width:100%;flex-direction:column}.asmx-home .cta-actions .btn{width:100%}
+}
+
+
+/* =========================================================
+   V5 RESPONSIVE HARDENING
+   Audited for desktop / tablet / mobile / small mobile.
+   ========================================================= */
+.asmx-home{max-width:100%}
+.asmx-home .hero-grid>*,
+.asmx-home .included-grid>*,
+.asmx-home .about-panel>*,
+.asmx-home .areas-grid>*,
+.asmx-home .faq-grid>*,
+.asmx-home .local-seo-grid>*,
+.asmx-home .articles-grid>*,
+.asmx-home .footer-grid>*{min-width:0}
+
+/* Prevent FAQ <details> styles from breaking the mobile navigation <details>. */
+.asmx-home details.asmx-mobile-menu,
+.asmx-home details.asmx-mobile-menu[open]{
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  overflow:visible;
+}
+.asmx-home .asmx-mobile-menu>summary{
+  padding:0;
+  font-size:0;
+  line-height:1;
+  position:relative;
+}
+.asmx-home .asmx-mobile-menu>summary:after{content:none!important;display:none!important}
+.asmx-home .mobile-menu-panel{
+  z-index:1002;
+  max-height:calc(100dvh - 92px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+}
+.asmx-home .footer-contact-item a,
+.asmx-home .footer-contact-item span,
+.asmx-home .footer-bottom a,
+.asmx-home .footer-bottom p{overflow-wrap:anywhere;word-break:normal}
+.asmx-home .hero h1,
+.asmx-home .hero-copy,
+.asmx-home .article-content,
+.asmx-home .about-copy{min-width:0}
+
+@media(max-width:900px){
+  .asmx-home .header-top-left>span:not(.top-highlight),
+  .asmx-home .header-top-right>a[href^="mailto:"]{display:none}
+  .asmx-home .header-top-inner{gap:12px}
+  .asmx-home .header-top-left,.asmx-home .header-top-right{gap:12px}
+  .asmx-home .mobile-menu-panel{top:56px}
+  .asmx-home .hero{padding-top:54px}
+  .asmx-home .hero-visual{min-height:500px}
+  .asmx-home .about-photo{min-height:400px}
+}
+
+@media(max-width:620px){
+  .asmx-home .mobile-menu-panel{
+    position:fixed;
+    top:74px;
+    left:14px;
+    right:14px;
+    width:auto;
+    max-height:calc(100dvh - 88px);
+  }
+  .asmx-home .asmx-site-header:has(.asmx-mobile-menu[open]) .main-nav{box-shadow:0 10px 30px rgba(6,27,61,.08)}
+  .asmx-home .hero{padding:46px 0 60px}
+  .asmx-home .hero h1 span{white-space:normal}
+  .asmx-home .hero-badge{max-width:100%;line-height:1.45;align-items:flex-start}
+  .asmx-home .hero-badge i{margin-top:5px;flex:0 0 auto}
+  .asmx-home .hero-visual{min-height:420px}
+  .asmx-home .about-photo{min-height:350px}
+  .asmx-home .article-featured p{font-size:12px;line-height:1.6}
+  .asmx-home .service-content{left:20px;right:20px;bottom:20px}
+  .asmx-home .footer-logo img{max-width:170px}
+}
+
+@media(max-width:480px){
+  .asmx-home .wrap{width:min(100% - 24px,1180px)}
+  .asmx-home .section{padding:56px 0}
+  .asmx-home h1{font-size:clamp(37px,12.2vw,49px);line-height:1.01}
+  .asmx-home h2{font-size:clamp(29px,9.2vw,35px)}
+  .asmx-home h3{font-size:19px}
+  .asmx-home p{font-size:15px;line-height:1.72}
+  .asmx-home .lead,.asmx-home .hero-copy>p{font-size:15px}
+  .asmx-home .head{margin-bottom:34px}
+  .asmx-home .btn{min-height:52px;padding:0 18px;font-size:13px}
+  .asmx-home .nav-inner{min-height:64px}
+  .asmx-home .site-logo img{height:41px;max-width:154px}
+  .asmx-home .asmx-mobile-menu>summary{width:44px;height:44px}
+  .asmx-home .mobile-menu-panel{top:72px;left:12px;right:12px;max-height:calc(100dvh - 84px);padding:10px}
+  .asmx-home .mobile-menu-panel>a{padding:12px 9px}
+  .asmx-home .hero{padding-top:40px}
+  .asmx-home .hero-badge{font-size:10.5px;padding:8px 10px;margin-bottom:18px}
+  .asmx-home .hero-actions{margin-top:24px}
+  .asmx-home .hero-proof{margin-top:22px}
+  .asmx-home .hero-proof span{font-size:12px}
+  .asmx-home .hero-visual{min-height:390px;margin-top:6px}
+  .asmx-home .hero-photo{inset:8px 0 8px 16px;border-width:5px;border-radius:20px}
+  .asmx-home .hero-dot{display:none}
+  .asmx-home .hero-ring{width:86px;height:86px;border-width:16px;left:0;bottom:4px}
+  .asmx-home .guarantee-card{width:190px;bottom:20px;padding:14px;border-radius:15px}
+  .asmx-home .guarantee-card .gc-icon{width:39px;height:39px;font-size:18px;margin-bottom:9px}
+  .asmx-home .guarantee-card strong{font-size:14px}
+  .asmx-home .guarantee-card small{font-size:10px}
+  .asmx-home .since-card{min-width:142px;right:0;top:20px;padding:11px 12px;border-radius:14px}
+  .asmx-home .since-card strong{font-size:20px}
+  .asmx-home .trust-item{padding:14px 8px}
+  .asmx-home .service-card.large{min-height:330px;border-radius:20px}
+  .asmx-home .service-card.large h3{font-size:24px}
+  .asmx-home .service-card.small{min-height:220px;padding:22px}
+  .asmx-home .package{padding:22px}
+  .asmx-home .difference-card{min-height:0}
+  .asmx-home .included-media{min-height:340px}
+  .asmx-home .included-media img{height:315px;width:94%;border-radius:20px}
+  .asmx-home .included-note{width:200px;padding:17px;border-radius:15px}
+  .asmx-home .about-photo{min-height:320px}
+  .asmx-home .about-year{left:20px;bottom:20px}
+  .asmx-home .about-year strong{font-size:34px}
+  .asmx-home .about-copy{padding:30px 20px}
+  .asmx-home .areas-copy,.asmx-home .area-list{padding:24px 19px}
+  .asmx-home .chip{padding:8px 10px;font-size:10px}
+  .asmx-home summary{padding:18px 50px 18px 17px;font-size:13px;line-height:1.45}
+  .asmx-home summary:after{right:15px}
+  .asmx-home .answer{padding:0 17px 18px}
+  .asmx-home .link-box{padding:21px}
+  .asmx-home .article-featured{min-height:390px;border-radius:20px}
+  .asmx-home .article-featured .article-body{left:18px;right:18px;bottom:20px}
+  .asmx-home .article-featured h3{font-size:clamp(23px,7.4vw,27px);line-height:1.18}
+  .asmx-home .article-featured p{display:none}
+  .asmx-home .article-thumb{height:175px}
+  .asmx-home .article-content{padding:20px 18px}
+  .asmx-home .final-cta{padding:58px 0}
+  .asmx-home .footer-main{padding-top:44px}
+}
+
+@media(max-width:360px){
+  .asmx-home .wrap{width:min(100% - 20px,1180px)}
+  .asmx-home h1{font-size:35px;letter-spacing:-.045em}
+  .asmx-home h2{font-size:28px}
+  .asmx-home .hero-quick a{font-size:10px;padding:7px 9px}
+  .asmx-home .hero-visual{min-height:365px}
+  .asmx-home .hero-photo{left:10px}
+  .asmx-home .guarantee-card{width:174px;padding:12px}
+  .asmx-home .since-card{min-width:130px;padding:10px}
+  .asmx-home .since-card strong{font-size:18px}
+  .asmx-home .service-card.large{min-height:310px}
+  .asmx-home .about-copy{padding:28px 17px}
+  .asmx-home .areas-copy,.asmx-home .area-list{padding:22px 17px}
+  .asmx-home .footer-trust span{font-size:8.5px}
 }
 </style>
 
