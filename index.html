@@ -2267,8 +2267,355 @@ body{
   .spot{flex-basis:88vw !important}
 }
 
+
+/* Product preview visibility */
+.product-panel{
+  position:relative;
+  overflow:hidden;
+  border-color:rgba(185,138,52,.22) !important;
+}
+.product-panel:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:4px;
+  height:100%;
+  background:var(--gold);
+}
+.product-panel>.panel-label,
+.product-panel>h2,
+.product-panel>.product-feature{
+  position:relative;
+  z-index:1;
+}
+@media(max-width:760px){
+  .product-panel:before{
+    width:100%;
+    height:3px;
+  }
+}
+
+
+/* =========================================================
+   FINAL TYPOGRAPHY SYSTEM
+   Manrope = interface/body
+   Cormorant Garamond = editorial headings
+   ========================================================= */
+:root{
+  --font-body:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  --font-display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+}
+
+/* Base */
+html,
+body,
+button,
+input,
+textarea,
+select{
+  font-family:var(--font-body) !important;
+}
+
+body{
+  font-weight:400 !important;
+  letter-spacing:-.006em !important;
+  line-height:1.62 !important;
+}
+
+/* Editorial hierarchy */
+.hero h1,
+.head h2,
+.spot-content h3,
+.card h3,
+.detail-copy h1,
+.panel h2,
+.product-feature-copy h3,
+.save-copy h2,
+.continue-panel h2{
+  font-family:var(--font-display) !important;
+  font-style:normal !important;
+  letter-spacing:-.032em !important;
+}
+
+/* Hero / page titles: strong but not overly bold */
+.hero h1,
+.detail-copy h1{
+  font-weight:600 !important;
+}
+
+/* Section titles */
+.head h2,
+.panel h2,
+.save-copy h2,
+.continue-panel h2{
+  font-weight:600 !important;
+}
+
+/* Card/product titles: one step lighter */
+.card h3,
+.spot-content h3,
+.product-feature-copy h3{
+  font-weight:600 !important;
+}
+
+/* Body copy: regular, readable */
+.hero p,
+.head p,
+.card p,
+.detail-copy p,
+.panel p,
+.note,
+.product-feature-copy p,
+.save-copy p,
+.continue-panel>p,
+.footer p{
+  font-family:var(--font-body) !important;
+  font-weight:400 !important;
+  letter-spacing:-.004em !important;
+}
+
+/* Step titles and resource names: medium */
+.step strong,
+.related strong,
+.continue-card strong,
+.summary-item strong,
+.fact strong{
+  font-family:var(--font-body) !important;
+  font-weight:600 !important;
+  letter-spacing:-.008em !important;
+}
+
+/* Secondary copy: never bold */
+.step span,
+.related span,
+.summary-item small,
+.hero-note-item span,
+.hero-facts span,
+.photo-label strong,
+.code{
+  font-family:var(--font-body) !important;
+  font-weight:400 !important;
+}
+
+/* Utility labels */
+.eyebrow,
+.hero-kicker,
+.panel-label,
+.card-meta,
+.badge,
+.time,
+.photo-label small,
+.spot-content small,
+.product-feature-copy small,
+.continue-card small,
+.detail-kicker,
+.finder-top,
+.finder-top strong,
+.hero-note-item small{
+  font-family:var(--font-body) !important;
+  font-weight:700 !important;
+  letter-spacing:.085em !important;
+  text-transform:uppercase;
+}
+
+/* Buttons: semibold, not extra-bold */
+.btn,
+.filter,
+.back,
+.detail-start,
+.card-foot span:first-child{
+  font-family:var(--font-body) !important;
+  font-weight:600 !important;
+  letter-spacing:-.004em !important;
+}
+
+/* Pills and compact metadata */
+.pill,
+.watch-chip,
+.product-feature-meta span{
+  font-family:var(--font-body) !important;
+  font-weight:500 !important;
+  letter-spacing:0 !important;
+}
+
+/* More natural title proportions */
+.hero h1{
+  font-size:clamp(4rem,6.1vw,6.25rem) !important;
+  line-height:.87 !important;
+}
+.head h2{
+  font-size:clamp(2.9rem,4.5vw,4.4rem) !important;
+  line-height:.96 !important;
+}
+.detail-copy h1{
+  font-size:clamp(3.5rem,5.5vw,5.5rem) !important;
+  line-height:.91 !important;
+}
+.panel h2{
+  font-size:2rem !important;
+  line-height:1.05 !important;
+}
+.card h3{
+  font-size:1.75rem !important;
+  line-height:1.02 !important;
+}
+.spot-content h3{
+  font-size:2.35rem !important;
+  line-height:.98 !important;
+}
+.product-feature-copy h3{
+  font-size:2rem !important;
+  line-height:1.02 !important;
+}
+
+/* Body rhythm */
+.hero p{
+  font-size:16px !important;
+  line-height:1.74 !important;
+}
+.head p,
+.detail-copy p,
+.panel p,
+.product-feature-copy p,
+.save-copy p,
+.continue-panel>p{
+  font-size:15px !important;
+  line-height:1.72 !important;
+}
+.card p{
+  font-size:14px !important;
+  line-height:1.62 !important;
+}
+
+/* Mobile hierarchy */
+@media(max-width:760px){
+  body{
+    font-size:16px !important;
+    line-height:1.62 !important;
+  }
+
+  .hero h1{
+    font-size:clamp(3.2rem,16vw,4.1rem) !important;
+    line-height:.89 !important;
+    font-weight:600 !important;
+  }
+
+  .head h2{
+    font-size:clamp(2.75rem,12.5vw,3.4rem) !important;
+    line-height:.96 !important;
+    font-weight:600 !important;
+  }
+
+  .detail-copy h1{
+    font-size:clamp(3rem,14vw,3.8rem) !important;
+    line-height:.93 !important;
+    font-weight:600 !important;
+  }
+
+  .panel h2,
+  .panel-headline h2{
+    font-size:1.85rem !important;
+    line-height:1.03 !important;
+    font-weight:600 !important;
+  }
+
+  .card h3{
+    font-size:1.7rem !important;
+    line-height:1.02 !important;
+    font-weight:600 !important;
+  }
+
+  .spot-content h3{
+    font-size:2rem !important;
+    line-height:1 !important;
+    font-weight:600 !important;
+  }
+
+  .product-feature-copy h3{
+    font-size:1.8rem !important;
+    line-height:1.02 !important;
+    font-weight:600 !important;
+  }
+
+  .hero p,
+  .detail-copy p,
+  .panel p,
+  .product-feature-copy p,
+  .save-copy p,
+  .continue-panel>p{
+    font-size:16px !important;
+    line-height:1.67 !important;
+    font-weight:400 !important;
+  }
+
+  .head p,
+  .card p{
+    font-size:15px !important;
+    line-height:1.62 !important;
+    font-weight:400 !important;
+  }
+
+  .step strong,
+  .related strong,
+  .continue-card strong{
+    font-size:15px !important;
+    font-weight:600 !important;
+  }
+
+  .step span,
+  .related span{
+    font-size:14px !important;
+    font-weight:400 !important;
+  }
+
+  .btn,
+  .filter,
+  .back,
+  .detail-start,
+  .card-foot span:first-child{
+    font-size:13px !important;
+    font-weight:600 !important;
+  }
+
+  .eyebrow,
+  .hero-kicker,
+  .panel-label,
+  .card-meta,
+  .badge,
+  .time,
+  .detail-kicker,
+  .finder-top,
+  .finder-top strong{
+    font-size:10px !important;
+    font-weight:700 !important;
+  }
+
+  .summary-item small{
+    font-size:10px !important;
+    font-weight:400 !important;
+    text-transform:none !important;
+    letter-spacing:0 !important;
+  }
+
+  .summary-item strong{
+    font-size:13px !important;
+    font-weight:600 !important;
+  }
+}
+
+/* Do not let generic strong tags make everything too heavy */
+.panel strong,
+.card strong,
+.detail strong{
+  font-weight:600;
+}
+
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <main id="app"></main>
@@ -2312,7 +2659,7 @@ const resources=[
   ["Finish at the neck","Complete with lighter movement around the neck."]
  ],
  notes:"Avoid prolonged stationary suction and irritated areas.",
- product:false,related:["neck-jaw-release","lymphatic-brushing","posture-reset"]
+ product:true,related:["neck-jaw-release","lymphatic-brushing","posture-reset"]
 },
 {
  slug:"posture-reset",title:"Posture Reset",category:"Posture & Alignment",
@@ -2326,7 +2673,7 @@ const resources=[
   ["Repeat","Move through the sequence within a comfortable range."]
  ],
  notes:"Keep the entire sequence within a comfortable range.",
- product:false,related:["sleep-position","fascia-tools","lymphatic-brushing"]
+ product:true,related:["sleep-position","fascia-tools","lymphatic-brushing"]
 },
 {
  slug:"sleep-position",title:"Sleep Position & Recovery",category:"Sleep & Recovery",
@@ -2339,7 +2686,7 @@ const resources=[
   ["Settle the neck","Keep the neck neutral and shoulders relaxed."],
   ["Reassess","Check comfort after several minutes and adjust."]
  ],
- notes:"",product:false,related:["posture-reset","lymphatic-brushing","fascia-tools"]
+ notes:"",product:true,related:["posture-reset","lymphatic-brushing","fascia-tools"]
 },
 {
  slug:"neck-jaw-release",title:"Neck & Jaw Release",category:"Face & Neck",
@@ -2352,7 +2699,7 @@ const resources=[
   ["Add rotation","Introduce slow neck rotation within comfort."],
   ["Return to neutral","Finish in a relaxed position."]
  ],
- notes:"",product:false,related:["facial-cupping","posture-reset","sleep-position"]
+ notes:"",product:true,related:["facial-cupping","posture-reset","sleep-position"]
 },
 {
  slug:"fascia-tools",title:"Fascia Tools: Getting Started",category:"Fascia Foundations",
@@ -2611,7 +2958,7 @@ function detail(r){
 
     ${r.product?`
     <section class="panel product-panel reveal">
-     <div class="panel-label"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>You May Also Like</div>
+     <div class="panel-label"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>Related YoungAF Product</div>
      <h2>Recommended for This Practice</h2>
      <div class="product-feature">
       <div class="product-feature-media">
