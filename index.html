@@ -1757,61 +1757,521 @@ p{letter-spacing:0}
   }
 }
 
+
+/* =========================================================
+   FINAL CLEANUP — header/footer free + Font Awesome + mobile
+   ========================================================= */
+body{
+  padding:0 !important;
+  margin:0 !important;
+  background:#f8f6f1 !important;
+}
+#app{width:100%;overflow:hidden}
+.fa-solid,.fa-regular,.fa-brands{line-height:1}
+
+.btn{
+  gap:9px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+.btn i{font-size:.95em}
+.search-wrap{position:relative}
+.search-icon{
+  position:absolute;
+  left:17px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:2;
+  color:#8d867a;
+  font-size:14px;
+  pointer-events:none;
+}
+.search{padding-left:44px !important}
+.play,.arrow{
+  display:grid !important;
+  place-items:center !important;
+}
+.panel-label{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+.panel-label i{width:15px;text-align:center;color:var(--gold-deep)}
+.continue-panel .panel-label i{color:#d9bd79}
+
+/* No sidebar anywhere: one stable content flow */
+.resource-shell{max-width:1180px}
+.detail-grid{display:block !important}
+.resource-content{
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  margin-top:14px;
+}
+.resource-content>.panel{
+  width:100%;
+  min-width:0;
+  height:auto !important;
+  min-height:0 !important;
+  align-self:start;
+}
+
+/* Compact information row: never stretches with another card */
+.resource-summary{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0;
+  margin-top:14px;
+  padding:8px 10px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:0 8px 26px rgba(34,27,17,.035);
+}
+.summary-item{
+  display:grid;
+  grid-template-columns:38px minmax(0,1fr);
+  align-items:center;
+  gap:10px;
+  padding:12px 16px;
+  min-width:0;
+  border-right:1px solid var(--line);
+}
+.summary-item:last-child{border-right:0}
+.summary-icon{
+  width:36px;height:36px;
+  display:grid;place-items:center;
+  border-radius:11px;
+  background:var(--gold-soft);
+  color:var(--gold-deep);
+  font-size:14px;
+}
+.summary-item small{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.3;
+  margin-bottom:3px;
+}
+.summary-item strong{
+  display:block;
+  font-size:14px;
+  line-height:1.3;
+  overflow-wrap:anywhere;
+}
+
+/* Resource hero */
+.detail-top{
+  align-items:stretch;
+  overflow:hidden;
+}
+.detail-copy{min-width:0}
+.pill{
+  display:inline-flex !important;
+  align-items:center;
+  gap:6px;
+}
+.pill i{font-size:11px;color:var(--gold-deep)}
+.detail-start span{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+/* Core panels */
+.panel{
+  box-shadow:0 8px 28px rgba(33,26,16,.035);
+}
+.video-panel{padding:26px !important}
+.watch-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.video-play button{
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.45) !important;
+}
+.video-play button i{margin-left:3px}
+.related b{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:#f1ece3;
+  color:#28241e;
+}
+
+/* Remove pointless product metadata chips */
+.product-feature-meta{display:none !important}
+.product-action{margin-top:5px}
+
+/* Save link: useful, compact and full width */
+.save-panel{
+  display:grid;
+  grid-template-columns:minmax(0,.75fr) minmax(360px,1.25fr);
+  gap:28px;
+  align-items:center;
+  background:linear-gradient(135deg,#f6efe2,#fff) !important;
+}
+.save-copy h2{margin-bottom:7px}
+.save-copy p{margin:0}
+.save-action{
+  min-width:0;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:8px;
+  align-items:center;
+}
+.save-action .code{
+  margin:0;
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  padding:10px 12px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:11px;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+.save-action .btn{
+  min-height:48px;
+  white-space:nowrap;
+}
+
+/* Continue learning */
+.continue-panel{
+  background:#0d0d0c !important;
+  color:#fff !important;
+  border-color:#0d0d0c !important;
+}
+.continue-panel h2{color:#fff !important}
+.continue-panel>p{color:#aaa49a !important}
+.continue-card{
+  position:relative;
+  text-align:left;
+}
+.continue-arrow{
+  position:absolute;
+  right:11px;
+  bottom:11px;
+  width:30px;height:30px;
+  display:grid;place-items:center;
+  border-radius:9px;
+  background:rgba(255,255,255,.09);
+  color:#fff;
+}
+
+/* Prevent giant empty cards caused by grid stretching */
+.stack,
+.panel,
+.quickfacts,
+.linkbox,
+.product-feature,
+.related-list,
+.continue-grid{
+  min-height:0 !important;
+  height:auto !important;
+  align-content:start !important;
+}
+
+/* Desktop hierarchy */
+@media(min-width:761px){
+  .resource-content>.panel{
+    max-width:none;
+  }
+  .panel.video-panel,
+  .panel.product-panel,
+  .panel.save-panel,
+  .panel.continue-panel{
+    padding:28px !important;
+  }
+}
+
+/* PHONE — every card is full width, no split columns at all */
+@media(max-width:760px){
+  :root{--mobile-gutter:16px}
+  .shell,.resource-shell{
+    width:calc(100% - 32px) !important;
+    max-width:none !important;
+    margin-inline:auto !important;
+  }
+
+  .hero{padding-top:16px !important}
+  .hero-wrap{grid-template-columns:1fr !important}
+  .hero-copy{
+    padding:27px 21px 24px !important;
+    border-radius:19px !important;
+  }
+  .hero h1{
+    font-size:clamp(3rem,15vw,3.75rem) !important;
+    line-height:.9 !important;
+  }
+  .hero p{font-size:16px !important}
+  .hero-actions{
+    grid-template-columns:1fr !important;
+    gap:9px !important;
+  }
+  .hero-actions .btn{
+    width:100% !important;
+    min-height:50px !important;
+  }
+  .hero-aside{
+    grid-template-columns:1fr 1fr !important;
+    grid-template-rows:220px 112px !important;
+  }
+  .hero-note-item strong{font-size:16px !important}
+  .hero-note-item span{font-size:14px !important}
+
+  .section{padding:50px 0 58px !important}
+  .head h2{font-size:clamp(2.55rem,12vw,3.25rem) !important}
+  .finder-shell{
+    position:relative !important;
+    top:auto !important;
+  }
+  .finder{display:block !important}
+  .search{font-size:16px !important;height:52px !important}
+  .filters{
+    overflow-x:auto !important;
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    padding-bottom:3px !important;
+  }
+  .filter{
+    flex:0 0 auto !important;
+    min-height:43px !important;
+    font-size:13px !important;
+  }
+
+  .spotlight{
+    display:flex !important;
+    overflow-x:auto !important;
+    grid-template-columns:none !important;
+    scroll-snap-type:x mandatory;
+  }
+  .spot{
+    flex:0 0 86vw !important;
+    min-width:0 !important;
+    scroll-snap-align:start;
+  }
+
+  .grid{grid-template-columns:1fr !important}
+  .card{width:100% !important}
+
+  /* Single resource mobile */
+  .detail{
+    padding:14px 0 58px !important;
+  }
+  .back{
+    min-height:44px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    gap:8px !important;
+  }
+  .detail-top{
+    display:block !important;
+    grid-template-columns:1fr !important;
+    border-radius:18px !important;
+  }
+  .detail-img{
+    display:none !important;
+  }
+  .detail-copy{
+    width:100% !important;
+    padding:24px 20px 22px !important;
+  }
+  .detail-copy h1{
+    font-size:clamp(2.75rem,13vw,3.55rem) !important;
+    line-height:.94 !important;
+  }
+  .detail-copy p{
+    font-size:16px !important;
+    line-height:1.64 !important;
+  }
+  .pills{
+    display:flex !important;
+    flex-wrap:wrap !important;
+  }
+  .pill{
+    font-size:12px !important;
+    min-height:34px;
+  }
+
+  /* Summary becomes 2x2 compact grid, never tall */
+  .resource-summary{
+    grid-template-columns:1fr 1fr !important;
+    padding:6px !important;
+    border-radius:15px !important;
+    gap:0 !important;
+  }
+  .summary-item{
+    grid-template-columns:32px minmax(0,1fr) !important;
+    gap:8px !important;
+    padding:11px 9px !important;
+    border-right:0 !important;
+    border-bottom:1px solid var(--line);
+  }
+  .summary-item:nth-child(odd){border-right:1px solid var(--line) !important}
+  .summary-item:nth-last-child(-n+2){border-bottom:0 !important}
+  .summary-icon{
+    width:31px;height:31px;
+    border-radius:9px;
+    font-size:12px;
+  }
+  .summary-item small{font-size:10px !important}
+  .summary-item strong{font-size:13px !important}
+
+  .resource-content{
+    display:block !important;
+    width:100% !important;
+    margin-top:10px !important;
+  }
+  .resource-content>.panel{
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    height:auto !important;
+    min-height:0 !important;
+    margin:0 0 10px !important;
+    padding:20px 17px !important;
+  }
+
+  .panel-headline{
+    display:flex !important;
+    align-items:flex-start !important;
+    gap:10px !important;
+  }
+  .panel-headline>div{min-width:0}
+  .panel h2,
+  .panel-headline h2{
+    font-size:25px !important;
+    line-height:1.08 !important;
+  }
+  .panel p{
+    font-size:16px !important;
+    line-height:1.65 !important;
+  }
+
+  .video-panel{padding:17px !important}
+  .video{
+    width:100% !important;
+    height:auto !important;
+    aspect-ratio:16/9 !important;
+  }
+
+  .step{
+    width:100% !important;
+    grid-template-columns:40px minmax(0,1fr) !important;
+  }
+  .step strong{font-size:16px !important}
+  .step span{font-size:15px !important}
+
+  .related-list{width:100% !important}
+  .related{
+    width:100% !important;
+    min-width:0 !important;
+    grid-template-columns:52px minmax(0,1fr) 34px !important;
+  }
+
+  /* Product: never 50/50 on phone */
+  .product-feature{
+    display:block !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+    padding:10px !important;
+  }
+  .product-feature-media{
+    width:100% !important;
+    min-height:0 !important;
+    aspect-ratio:16/9 !important;
+    margin-bottom:16px !important;
+  }
+  .product-feature-media img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+  }
+  .product-feature-copy{
+    width:100% !important;
+    padding:0 4px 4px !important;
+  }
+  .product-feature-copy h3{font-size:25px !important}
+  .product-action{
+    width:100% !important;
+    min-height:49px !important;
+  }
+
+  /* Save block: full width stack, no half-screen blank space */
+  .save-panel{
+    display:block !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+  }
+  .save-copy{
+    width:100% !important;
+    margin-bottom:15px !important;
+  }
+  .save-action{
+    display:block !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+  }
+  .save-action .code{
+    width:100% !important;
+    margin-bottom:9px !important;
+    min-height:0 !important;
+  }
+  .save-action .btn{
+    width:100% !important;
+    min-height:49px !important;
+    white-space:normal !important;
+  }
+
+  .continue-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+  }
+  .continue-card{
+    display:grid !important;
+    grid-template-columns:88px minmax(0,1fr) !important;
+    width:100% !important;
+    min-height:86px !important;
+  }
+  .continue-card img{
+    width:88px !important;
+    height:100% !important;
+    min-height:86px !important;
+  }
+  .continue-card div{
+    padding-right:40px !important;
+  }
+}
+
+@media(max-width:390px){
+  .shell,.resource-shell{width:calc(100% - 26px) !important}
+  .resource-summary{grid-template-columns:1fr !important}
+  .summary-item,
+  .summary-item:nth-child(odd),
+  .summary-item:nth-last-child(-n+2){
+    border-right:0 !important;
+    border-bottom:1px solid var(--line) !important;
+  }
+  .summary-item:last-child{border-bottom:0 !important}
+  .spot{flex-basis:88vw !important}
+}
+
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
 </head>
 <body>
-<div class="notice"><span>Included with The Fascia Fix</span><i></i><span>Private companion library</span></div>
-
-<header class="header">
-  <div class="shell header-in">
-    <a class="logo" href="#library" data-home>
-      <span class="logo-mark"></span>
-      <span class="logo-copy"><strong>YOUNGAF</strong><small>THE FASCIA FIX</small></span>
-    </a>
-    <nav class="nav">
-      <a href="#library">Library</a>
-      <a href="#featured">Featured</a>
-    </nav>
-    <div class="actions">
-      <button class="btn" id="searchJump">Find a resource</button>
-      <button class="icon-btn mobile-search-btn" id="mobileSearchJump" aria-label="Find a resource">⌕</button>
-      <button class="icon-btn" id="qrDemo" aria-label="Open QR demo">⌁</button>
-    </div>
-  </div>
-</header>
-
 <main id="app"></main>
-
-<footer class="footer">
-  <div class="shell">
-    <div class="footer-grid">
-      <div>
-        <a class="logo" href="#library" data-home>
-          <span class="logo-mark" style="background:#fff"></span>
-          <span class="logo-copy"><strong>YOUNGAF</strong><small>THE FASCIA FIX</small></span>
-        </a>
-        <p style="max-width:380px;margin-top:14px">A private companion library for video demonstrations, step-by-step guidance and educational resources from The Fascia Fix.</p>
-      </div>
-      <div>
-        <h4>Library</h4>
-        <div class="footer-links">
-          <a href="#library" data-home>All resources</a>
-          <a href="#featured">Featured</a>
-        </div>
-      </div>
-      <div>
-        <h4>Experience</h4>
-        <div class="footer-links">
-          <a href="javascript:void(0)">Education first</a>
-          <a href="javascript:void(0)">Mobile first</a>
-          <a href="javascript:void(0)">Permanent links</a>
-        </div>
-      </div>
-    </div>
-    <div class="foot-bottom">YoungAF · The Fascia Fix Companion Library</div>
-  </div>
-</footer>
-
 <div class="toast" id="toast">Copied</div>
 
 <script>
@@ -1928,8 +2388,8 @@ function home(){
     <h1>Watch it.<br><span>Then do it.</span></h1>
     <p>A focused companion to the book. Open the exact resource, see the movement clearly, understand the reason behind it, and follow the steps at your own pace.</p>
     <div class="hero-actions">
-     <a class="btn dark" href="#library">Browse resources</a>
-     <button class="btn" data-resource="lymphatic-brushing">Start with a Featured Resource</button>
+     <a class="btn dark" href="#library"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span>Browse resources</span></a>
+     <button class="btn" data-resource="lymphatic-brushing"><i class="fa-solid fa-circle-play" aria-hidden="true"></i><span>Start with a featured resource</span></button>
     </div>
     <div class="hero-facts">
       <div><strong>${resources.length}</strong><span>Guided resources</span></div>
@@ -1980,7 +2440,7 @@ function home(){
     <strong id="resultCount">${resources.length} resources</strong>
    </div>
    <div class="finder">
-    <div class="search-wrap"><input id="search" class="search" placeholder="Search technique, body area or goal…" value="${esc(search)}"></div>
+    <div class="search-wrap"><i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i><input id="search" class="search" placeholder="Search technique, body area or goal…" value="${esc(search)}"></div>
     <div class="filters">${cats.map(c=>`<button class="filter ${filter===c?"active":""}" data-filter="${esc(c)}">${esc(c)}</button>`).join("")}</div>
    </div>
   </div>
@@ -1992,7 +2452,7 @@ function home(){
      <small>Start Here · Lymphatic Flow</small>
      <h3>Full-Body Lymphatic Brushing</h3>
      <p>Watch the sequence, understand why it is being done, then follow the steps in order.</p>
-     <div class="spot-foot"><span>6 min · Video + Steps</span><span class="play">▶</span></div>
+     <div class="spot-foot"><span>6 min · Video + Steps</span><span class="play"><i class="fa-solid fa-play" aria-hidden="true"></i></span></div>
     </div>
    </article>
 
@@ -2002,7 +2462,7 @@ function home(){
      <small>Featured · Face & Neck</small>
      <h3>Facial Cupping</h3>
      <p>A focused visual demonstration of movement, control and sequence.</p>
-     <div class="spot-foot"><span>5 min · Video + Steps</span><span class="play">▶</span></div>
+     <div class="spot-foot"><span>5 min · Video + Steps</span><span class="play"><i class="fa-solid fa-play" aria-hidden="true"></i></span></div>
     </div>
    </article>
   </div>
@@ -2024,7 +2484,7 @@ function card(r){
    <div class="card-meta">${esc(r.body)} · ${esc(r.goal)}</div>
    <h3>${esc(r.title)}</h3>
    <p>${esc(r.short)}</p>
-   <div class="card-foot"><span>View resource</span><span class="arrow">→</span></div>
+   <div class="card-foot"><span>View resource</span><span class="arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div>
   </div>
  </article>`;
 }
@@ -2045,131 +2505,162 @@ function render(){
 
 function detail(r){
  const related=r.related.map(bySlug).filter(Boolean).slice(0,3);
+ const permanentUrl=`https://youngaf.vip/fascia-fix-videos/${esc(r.slug)}/`;
+
  return `<section class="detail">
-  <div class="shell">
-   <button class="back" data-home>← Back to library</button>
+  <div class="shell resource-shell">
+   <button class="back" data-home>
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    <span>Back to library</span>
+   </button>
 
    <div class="detail-top reveal">
     <div class="detail-img"><img src="${r.image}" alt="${esc(r.title)}"></div>
     <div class="detail-copy">
-     <div class="detail-kicker"><span>${esc(r.category)}</span><i></i><span>The Fascia Fix Companion</span></div>
+     <div class="detail-kicker">
+      <span>${esc(r.category)}</span><i></i><span>The Fascia Fix Companion</span>
+     </div>
      <h1>${esc(r.title)}</h1>
      <p>${esc(r.short)}</p>
+
      <div class="pills">
-      <span class="pill">${esc(r.body)}</span>
-      <span class="pill">${esc(r.goal)}</span>
-      <span class="pill">${esc(r.time)}</span>
+      <span class="pill"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${esc(r.body)}</span>
+      <span class="pill"><i class="fa-solid fa-bullseye" aria-hidden="true"></i>${esc(r.goal)}</span>
+      <span class="pill"><i class="fa-regular fa-clock" aria-hidden="true"></i>${esc(r.time)}</span>
      </div>
-     <a class="detail-start" href="#resource-video"><span>Start with the video</span><b>↓</b></a>
+
+     <a class="detail-start" href="#resource-video">
+      <span><i class="fa-solid fa-circle-play" aria-hidden="true"></i>Start with the video</span>
+      <b><i class="fa-solid fa-arrow-down" aria-hidden="true"></i></b>
+     </a>
     </div>
    </div>
 
-   <div class="detail-grid">
-    <div class="stack">
-     <section class="panel video-panel reveal" id="resource-video">
-      <div class="panel-headline"><div><div class="panel-label">01 · Watch</div><h2>Watch the Demonstration</h2></div><span class="watch-chip">${esc(r.time)}</span></div>
-      <div class="video">
-       <img src="${r.image}" alt="">
-       <div class="video-play"><button id="playBtn" aria-label="Play video">▶</button></div>
-      </div>
-     </section>
-
-     <section class="panel reveal">
-      <div class="panel-label">02 · Understand</div>
-      <h2>Why This Helps</h2>
-      <p>${esc(r.why)}</p>
-     </section>
-
-     <section class="panel reveal">
-      <div class="panel-label">03 · Follow Along</div>
-      <h2>Steps</h2>
-      <div class="steps">
-       ${r.steps.map((s,i)=>`
-        <div class="step">
-         <div class="no">${i+1}</div>
-         <div><strong>${esc(s[0])}</strong><span>${esc(s[1])}</span></div>
-        </div>`).join("")}
-      </div>
-     </section>
-
-     ${r.notes?`
-     <section class="panel reveal">
-      <div class="panel-label">Before You Begin</div>
-      <div class="note">${esc(r.notes)}</div>
-     </section>`:""}
-
-     <section class="panel reveal">
-      <div class="panel-label">Related Resources</div>
-      <h2>Related practices</h2>
-      <div class="related-list">
-       ${related.map(x=>`
-        <button class="related" data-resource="${x.slug}">
-         <img src="${x.image}" alt="">
-         <div><strong>${esc(x.title)}</strong><span>${esc(x.category)} · ${esc(x.time)}</span></div>
-         <b>→</b>
-        </button>`).join("")}
-      </div>
-     </section>
-
-     ${r.product?`
-     <section class="panel reveal">
-      <div class="panel-label">You May Also Like</div>
-      <h2>Recommended for this practice</h2>
-      <div class="product-feature">
-       <div class="product-feature-media">
-        <img src="${images.product}" alt="Temporary nature placeholder image">
-       </div>
-       <div class="product-feature-copy">
-        <small>A helpful companion for this practice</small>
-        <h3>YoungAF Fascia Support</h3>
-        <p>If you want to support this practice further, this YoungAF product may complement the technique and fit naturally into your routine.</p>
-        <div class="product-feature-meta">
-         <span>Pairs with this practice</span>
-         <span>Use if helpful</span>
-         <span>Explore the product</span>
-        </div>
-        <button class="btn" id="productBtn">Explore Product</button>
-       </div>
-      </div>
-     </section>`:""}
-
-     <section class="panel reveal" style="background:#0d0d0c;color:#fff;border-color:#0d0d0c">
-      <div class="panel-label" style="color:#d9bd79">Continue Learning</div>
-      <h2 style="color:#fff">Continue Your Practice</h2>
-      <p style="color:#aaa49a">Keep going with another practice that complements what you just learned.</p>
-      <div class="continue-grid">
-       ${related.map(x=>`
-        <button class="continue-card" data-resource="${x.slug}">
-         <img src="${x.image}" alt="">
-         <div><small>${esc(x.category)}</small><strong>${esc(x.title)}</strong></div>
-        </button>`).join("")}
-      </div>
-     </section>
+   <section class="resource-summary reveal" aria-label="Resource information">
+    <div class="summary-item">
+     <span class="summary-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+     <div><small>Body area</small><strong>${esc(r.body)}</strong></div>
     </div>
+    <div class="summary-item">
+     <span class="summary-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></span>
+     <div><small>Goal</small><strong>${esc(r.goal)}</strong></div>
+    </div>
+    <div class="summary-item">
+     <span class="summary-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></span>
+     <div><small>Estimated time</small><strong>${esc(r.time)}</strong></div>
+    </div>
+    <div class="summary-item">
+     <span class="summary-icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
+     <div><small>Section</small><strong>${esc(r.category)}</strong></div>
+    </div>
+   </section>
 
-    <aside class="stack">
-     <section class="panel reveal">
-      <div class="panel-label">At a Glance</div>
-      <div class="quickfacts">
-       <div class="fact"><span>Body area</span><strong>${esc(r.body)}</strong></div>
-       <div class="fact"><span>Goal</span><strong>${esc(r.goal)}</strong></div>
-       <div class="fact"><span>Estimated time</span><strong>${esc(r.time)}</strong></div>
-       <div class="fact"><span>Category</span><strong>${esc(r.category)}</strong></div>
+   <div class="resource-content">
+    <section class="panel video-panel reveal" id="resource-video">
+     <div class="panel-headline">
+      <div>
+       <div class="panel-label"><i class="fa-solid fa-circle-play" aria-hidden="true"></i>01 · Watch</div>
+       <h2>Watch the Demonstration</h2>
       </div>
-     </section>
+      <span class="watch-chip"><i class="fa-regular fa-clock" aria-hidden="true"></i>${esc(r.time)}</span>
+     </div>
+     <div class="video">
+      <img src="${r.image}" alt="">
+      <div class="video-play">
+       <button id="playBtn" aria-label="Play video"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+      </div>
+     </div>
+    </section>
 
-     <section class="panel linkbox reveal">
-      <div class="panel-label">Save This Resource</div>
-      <p style="font-size:.78rem">Save or copy this link so you can return to this resource anytime.</p>
-      <div class="code">https://youngaf.vip/fascia-fix-videos/${esc(r.slug)}/</div>
-      <button class="btn dark" style="width:100%" id="copyBtn">Copy Resource Link</button>
-     </section>
-    </aside>
+    <section class="panel reveal">
+     <div class="panel-label"><i class="fa-solid fa-circle-info" aria-hidden="true"></i>02 · Understand</div>
+     <h2>Why This Helps</h2>
+     <p>${esc(r.why)}</p>
+    </section>
+
+    <section class="panel reveal">
+     <div class="panel-label"><i class="fa-solid fa-list-check" aria-hidden="true"></i>03 · Follow Along</div>
+     <h2>Steps</h2>
+     <div class="steps">
+      ${r.steps.map((s,i)=>`
+       <div class="step">
+        <div class="no">${i+1}</div>
+        <div><strong>${esc(s[0])}</strong><span>${esc(s[1])}</span></div>
+       </div>`).join("")}
+     </div>
+    </section>
+
+    ${r.notes?`
+    <section class="panel reveal">
+     <div class="panel-label"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>Before You Begin</div>
+     <div class="note">${esc(r.notes)}</div>
+    </section>`:""}
+
+    <section class="panel reveal">
+     <div class="panel-label"><i class="fa-solid fa-link" aria-hidden="true"></i>Related Resources</div>
+     <h2>Related Practices</h2>
+     <div class="related-list">
+      ${related.map(x=>`
+       <button class="related" data-resource="${x.slug}">
+        <img src="${x.image}" alt="">
+        <div><strong>${esc(x.title)}</strong><span>${esc(x.category)} · ${esc(x.time)}</span></div>
+        <b><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></b>
+       </button>`).join("")}
+     </div>
+    </section>
+
+    ${r.product?`
+    <section class="panel product-panel reveal">
+     <div class="panel-label"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>You May Also Like</div>
+     <h2>Recommended for This Practice</h2>
+     <div class="product-feature">
+      <div class="product-feature-media">
+       <img src="${images.product}" alt="Temporary nature placeholder image">
+      </div>
+      <div class="product-feature-copy">
+       <small>A helpful companion for this practice</small>
+       <h3>YoungAF Fascia Support</h3>
+       <p>If you want to support this practice further, this YoungAF product may complement the technique and fit naturally into your routine.</p>
+       <button class="btn product-action" id="productBtn">
+        <span>Explore Product</span>
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+       </button>
+      </div>
+     </div>
+    </section>`:""}
+
+    <section class="panel save-panel reveal">
+     <div class="save-copy">
+      <div class="panel-label"><i class="fa-solid fa-bookmark" aria-hidden="true"></i>Save This Resource</div>
+      <h2>Come Back Anytime</h2>
+      <p>Copy this permanent link and keep it with your notes or bookmarks.</p>
+     </div>
+     <div class="save-action">
+      <div class="code">${permanentUrl}</div>
+      <button class="btn dark" id="copyBtn">
+       <i class="fa-regular fa-copy" aria-hidden="true"></i>
+       <span>Copy Resource Link</span>
+      </button>
+     </div>
+    </section>
+
+    <section class="panel continue-panel reveal">
+     <div class="panel-label"><i class="fa-solid fa-compass" aria-hidden="true"></i>Continue Learning</div>
+     <h2>Continue Your Practice</h2>
+     <p>Keep going with another practice that complements what you just learned.</p>
+     <div class="continue-grid">
+      ${related.map(x=>`
+       <button class="continue-card" data-resource="${x.slug}">
+        <img src="${x.image}" alt="">
+        <div><small>${esc(x.category)}</small><strong>${esc(x.title)}</strong></div>
+        <span class="continue-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+       </button>`).join("")}
+     </div>
+    </section>
    </div>
   </div>
  </section>`;
 }
-
 function bindResources(){
  document.querySelectorAll("[data-resource]").forEach(el=>{
   const fn=()=>openResource(el.dataset.resource);
@@ -2208,27 +2699,18 @@ function openResource(slug,push=true){
  };
  const cb=document.getElementById("copyBtn");
  if(cb)cb.onclick=async()=>{
-  const link=location.href.split("#")[0]+"#"+r.slug;
+  const link=`https://youngaf.vip/fascia-fix-videos/${r.slug}/`;
   try{await navigator.clipboard.writeText(link)}catch(e){}
-  notify("Permanent link copied")
+  notify("Resource link copied")
  };
  const prod=document.getElementById("productBtn");
- if(prod)prod.onclick=()=>notify("WooCommerce product preview");
+ if(prod)prod.onclick=()=>notify("Product details would open here");
  window.scrollTo({top:0,behavior:"smooth"})
 }
 function notify(msg){
  toast.textContent=msg;toast.classList.add("show");
  clearTimeout(window.tt);window.tt=setTimeout(()=>toast.classList.remove("show"),1600)
 }
-
-document.getElementById("searchJump").onclick=()=>{
- if(!document.getElementById("library"))showHome(false);
- setTimeout(()=>{document.getElementById("library")?.scrollIntoView({behavior:"smooth"});setTimeout(()=>document.getElementById("search")?.focus(),300)},40)
-};
-document.getElementById("qrDemo").onclick=()=>{
- const r=resources[Math.floor(Math.random()*resources.length)];
- openResource(r.slug)
-};
 window.addEventListener("popstate",route);
 function route(){
  const h=location.hash.replace("#","");
@@ -2238,17 +2720,6 @@ function route(){
 }
 route();
 
-const mobileSearchJump=document.getElementById("mobileSearchJump");
-if(mobileSearchJump){
-  mobileSearchJump.addEventListener("click",()=>{
-    showHome();
-    requestAnimationFrame(()=>{
-      const target=document.querySelector(".finder-shell")||document.getElementById("library");
-      if(target) target.scrollIntoView({behavior:"smooth",block:"start"});
-      setTimeout(()=>document.getElementById("search")?.focus({preventScroll:true}),380);
-    });
-  });
-}
 
 </script>
 </body>
