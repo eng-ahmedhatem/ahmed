@@ -1,0 +1,2453 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>دراسات نجاح SEO | نتائج قبل وبعد وتحسين الظهور في Google</title>
+<meta name="description" content="استعرض نماذج من نتائج تحسين محركات البحث قبل وبعد، وكيف ساعدنا المواقع على زيادة الظهور والزيارات العضوية وتحويل البحث إلى فرص عمل ومبيعات.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --brand:#3f46f3;
+  --brand-dark:#3037da;
+  --brand-soft:#eef0ff;
+  --brand-soft-2:#f7f8ff;
+  --ink:#17192f;
+  --muted:#6f738c;
+  --line:#e7e9f5;
+  --success:#087f52;
+  --danger:#c73f55;
+  --white:#fff;
+
+  --shadow-1:0 1px 2px rgba(26,31,82,.04),0 12px 34px rgba(45,53,146,.08);
+  --shadow-2:0 1px 2px rgba(26,31,82,.04),0 24px 64px rgba(45,53,146,.13);
+  --focus:0 0 0 4px rgba(63,70,243,.18);
+  --ease:cubic-bezier(.2,0,0,1);
+  --container:min(1200px,calc(100% - 32px));
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Alexandria",system-ui,sans-serif;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.8;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a,button{font:inherit}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer}
+.container{width:var(--container);margin-inline:auto}
+
+.btn{
+  min-height:48px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 22px;
+  border:0;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+  transition-property:background-color,color,box-shadow,transform;
+  transition-duration:150ms;
+  transition-timing-function:var(--ease);
+}
+.btn:active{transform:scale(.96)}
+.btn:focus-visible,
+.case-link:focus-visible,
+.close:focus-visible{
+  outline:0;
+  box-shadow:var(--focus);
+}
+.btn-primary{
+  color:#fff;
+  background:var(--brand);
+  box-shadow:0 12px 28px rgba(63,70,243,.22);
+}
+.btn-primary:hover{background:var(--brand-dark)}
+.btn-secondary{
+  color:var(--ink);
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(23,25,47,.10);
+}
+.btn-secondary:hover{
+  color:var(--brand);
+  box-shadow:0 0 0 1px rgba(63,70,243,.30);
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding-block:88px 72px;
+  background:
+    radial-gradient(circle at 8% 12%,rgba(91,100,255,.15),transparent 27%),
+    radial-gradient(circle at 88% 18%,rgba(63,70,243,.09),transparent 25%),
+    linear-gradient(180deg,#fbfbff 0%,#f4f5ff 100%);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(63,70,243,.038) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(63,70,243,.038) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.72),transparent 88%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:64px;
+  align-items:center;
+}
+.eyebrow{
+  width:max-content;
+  max-width:100%;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:8px 14px;
+  border-radius:999px;
+  color:var(--brand);
+  background:rgba(255,255,255,.88);
+  box-shadow:0 0 0 1px rgba(63,70,243,.14),0 8px 22px rgba(63,70,243,.05);
+  font-size:11px;
+  font-weight:800;
+}
+.eyebrow-dot{
+  width:7px;
+  height:7px;
+  flex:0 0 7px;
+  border-radius:50%;
+  background:var(--brand);
+  box-shadow:0 0 0 5px rgba(63,70,243,.10);
+}
+.hero h1{
+  margin-block:18px 16px;
+  max-width:720px;
+  font-size:clamp(40px,5.2vw,70px);
+  line-height:1.2;
+  letter-spacing:-1.7px;
+}
+.hero h1 span{
+  position:relative;
+  z-index:1;
+  color:var(--brand);
+}
+.hero h1 span::after{
+  content:"";
+  position:absolute;
+  inset-inline:0;
+  bottom:5px;
+  height:10px;
+  border-radius:999px;
+  background:rgba(63,70,243,.11);
+  z-index:-1;
+}
+.hero-copy>p{
+  max-width:640px;
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+}
+.hero-proof{
+  display:grid;
+  gap:10px;
+  max-width:560px;
+  margin-block-start:26px;
+}
+.proof-row{
+  display:grid;
+  grid-template-columns:32px 1fr;
+  gap:12px;
+  align-items:center;
+  padding:12px 14px;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(23,25,47,.07),0 8px 24px rgba(45,53,146,.04);
+  color:#585d76;
+  font-size:12px;
+}
+.proof-icon{
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border-radius:11px;
+  background:var(--brand-soft);
+  color:var(--brand);
+  font-size:11px;
+  font-weight:800;
+}
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-block-start:26px;
+}
+.hero-visual{
+  min-height:545px;
+  position:relative;
+  display:grid;
+  place-items:center;
+}
+.hero-panel{
+  width:min(100%,560px);
+  padding:14px;
+  border-radius:30px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 0 0 1px rgba(23,25,47,.08),0 34px 88px rgba(49,57,157,.17);
+  transform:rotate(-1deg);
+  backdrop-filter:blur(10px);
+}
+.browser-bar{
+  min-height:36px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding-inline:8px;
+}
+.browser-bar i{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#d6d9e8;
+}
+.browser-bar span{
+  margin-inline-start:auto;
+  color:#898da5;
+  font-size:9px;
+}
+.float-stat{
+  position:absolute;
+  z-index:3;
+  min-width:168px;
+  padding:14px 15px;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(23,25,47,.07),var(--shadow-1);
+}
+.float-stat b{
+  display:block;
+  color:var(--brand);
+  font-size:20px;
+  line-height:1.25;
+}
+.float-stat span{
+  display:block;
+  margin-block-start:2px;
+  color:var(--muted);
+  font-size:10px;
+}
+.float-stat--start{inset-inline-end:-10px;top:42px}
+.float-stat--end{inset-inline-start:-10px;bottom:40px}
+
+/* Animated before/after */
+.ba-compare{
+  --split:0%;
+  container-type:size;
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(23,25,47,.08);
+}
+.ba-compare--hero{aspect-ratio:1.04/1}
+.ba-compare--card{aspect-ratio:1.25/1}
+.ba-compare--modal{aspect-ratio:1.45/1}
+.ba-layer{
+  position:absolute;
+  inset:0;
+}
+.ba-layer img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+  outline:1px solid oklch(0 0 0 / .1);
+  outline-offset:-1px;
+}
+.ba-layer--after{
+  inset-block:0;
+  inset-inline-start:0;
+  width:var(--split);
+  overflow:hidden;
+}
+.ba-layer--after img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+.ba-divider{
+  position:absolute;
+  inset-block:0;
+  inset-inline-start:var(--split);
+  width:0;
+  z-index:4;
+}
+.ba-divider::before{
+  content:"";
+  position:absolute;
+  inset-block:0;
+  inset-inline-start:-1px;
+  width:2px;
+  background:rgba(255,255,255,.95);
+  box-shadow:0 0 0 1px rgba(23,25,47,.10),0 0 22px rgba(255,255,255,.55);
+}
+.ba-handle{
+  position:absolute;
+  top:50%;
+  inset-inline-start:-22px;
+  transform:translateY(-50%);
+  /* Scales with the box's own height so it can never poke past a short
+     container's clipped edges (that's what was cropping it to just the
+     arrow marks on narrow cards). */
+  width:clamp(26px,24cqh,44px);
+  height:clamp(26px,24cqh,44px);
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:var(--brand);
+  background:rgba(255,255,255,.96);
+  box-shadow:0 0 0 1px rgba(23,25,47,.10),0 12px 24px rgba(23,25,47,.10);
+  animation:ba-handle-glow 2.6s ease-in-out infinite;
+}
+.ba-handle svg{
+  width:52%;
+  height:52%;
+}
+@keyframes ba-handle-glow{
+  0%,100%{box-shadow:0 0 0 1px rgba(23,25,47,.10),0 12px 24px rgba(23,25,47,.10),0 0 0 0 rgba(63,70,243,.22)}
+  50%{box-shadow:0 0 0 1px rgba(23,25,47,.10),0 12px 24px rgba(23,25,47,.10),0 0 0 8px rgba(63,70,243,0)}
+}
+.ba-badge{
+  position:absolute;
+  z-index:3;
+  top:12px;
+  padding:7px 10px;
+  border-radius:999px;
+  font-size:9px;
+  font-weight:800;
+  background:rgba(20,24,46,.82);
+  color:#fff;
+  backdrop-filter:blur(8px);
+}
+.ba-badge--before{inset-inline-end:12px}
+.ba-badge--after{
+  inset-inline-start:12px;
+  background:rgba(8,127,82,.88);
+}
+.ba-fallback{
+  position:absolute;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+  background:var(--brand-soft-2);
+}
+.ba-layer.img-broken .ba-fallback{display:flex}
+.ba-layer.img-broken img{display:none}
+
+/* Summary */
+.summary{
+  padding-block-start:18px;
+  background:linear-gradient(180deg,#f4f5ff 0%,#fff 100%);
+}
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  padding:18px;
+  border-radius:24px;
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(23,25,47,.07),var(--shadow-1);
+}
+.summary-item{
+  padding:14px 16px;
+  border-radius:16px;
+  background:var(--brand-soft-2);
+}
+.summary-item b{
+  display:block;
+  color:var(--brand);
+  font-size:17px;
+  line-height:1.35;
+}
+.summary-item span{
+  display:block;
+  margin-block-start:4px;
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* Cases */
+.cases{padding-block:82px 104px}
+.section-head{
+  max-width:800px;
+  margin-block-end:38px;
+}
+.kicker{
+  margin-block-end:8px;
+  color:var(--brand);
+  font-size:11px;
+  font-weight:800;
+}
+.section-head h2{
+  margin:0 0 12px;
+  font-size:clamp(30px,4vw,48px);
+  line-height:1.35;
+  letter-spacing:-1px;
+}
+.section-head p{
+  max-width:720px;
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.case-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));
+  gap:24px;
+}
+.case-card{
+  overflow:hidden;
+  border-radius:30px;
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(23,25,47,.07),0 12px 34px rgba(54,62,151,.05);
+  transition-property:transform,box-shadow;
+  transition-duration:150ms;
+  transition-timing-function:var(--ease);
+}
+.case-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 0 1px rgba(63,70,243,.14),var(--shadow-2);
+}
+.case-copy{padding:26px 26px 0}
+.case-tag{
+  width:max-content;
+  max-width:100%;
+  padding:7px 11px;
+  border-radius:999px;
+  background:var(--brand-soft);
+  color:var(--brand);
+  font-size:10px;
+  font-weight:800;
+}
+.case-copy h3{
+  margin:14px 0 10px;
+  font-size:24px;
+  line-height:1.45;
+  letter-spacing:-.45px;
+}
+.case-copy p{
+  max-width:94%;
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+}
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  margin-block-start:20px;
+  padding:12px;
+  border-radius:18px;
+  background:var(--brand-soft-2);
+}
+.metric{
+  padding:10px;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(23,25,47,.06);
+}
+.metric b{
+  display:block;
+  color:var(--brand);
+  font-size:17px;
+  line-height:1.3;
+}
+.metric span{
+  display:block;
+  margin-block-start:3px;
+  color:var(--muted);
+  font-size:9px;
+}
+
+.case-compare{
+  padding:20px 26px 0;
+}
+.compare-label{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-block-end:12px;
+}
+.compare-label b{font-size:12px}
+.compare-label span{
+  padding:5px 9px;
+  border-radius:999px;
+  color:#fff;
+  background:var(--brand);
+  font-size:9px;
+  font-weight:800;
+}
+.compare-caption{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-block-start:10px;
+}
+.caption-box{
+  padding:10px 12px;
+  border-radius:14px;
+  background:#f8f9ff;
+  box-shadow:0 0 0 1px rgba(23,25,47,.06);
+}
+.caption-box span{
+  display:block;
+  color:var(--muted);
+  font-size:8px;
+}
+.caption-box b{
+  display:block;
+  margin-block-start:3px;
+  font-size:10px;
+}
+.caption-box--before b{color:var(--danger)}
+.caption-box--after b{color:var(--success)}
+
+.work{
+  padding:22px 26px 0;
+}
+.work h4{
+  margin:0 0 12px;
+  font-size:13px;
+}
+.work-list{
+  display:grid;
+  gap:10px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.work-list li{
+  display:grid;
+  grid-template-columns:28px 1fr;
+  gap:10px;
+  align-items:start;
+  color:#5c6079;
+  font-size:11px;
+}
+.work-list i{
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  margin-block-start:1px;
+  border-radius:10px;
+  background:var(--brand-soft);
+  color:var(--brand);
+  font-style:normal;
+  font-size:9px;
+  font-weight:800;
+}
+
+.case-footer{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:24px 26px 26px;
+}
+.case-footer p{
+  flex:1 1 260px;
+  min-width:0;
+  margin:0;
+  color:var(--muted);
+  font-size:11px;
+}
+.case-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  flex:0 0 auto;
+  justify-content:flex-end;
+}
+.case-link{
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  padding-inline:4px;
+  border:0;
+  background:transparent;
+  color:var(--brand);
+  font-size:10px;
+  font-weight:800;
+  text-decoration:underline;
+  text-decoration-color:transparent;
+  text-underline-offset:4px;
+  transition-property:color,text-decoration-color,transform;
+  transition-duration:150ms;
+  transition-timing-function:var(--ease);
+}
+.case-link:hover{text-decoration-color:currentColor}
+.case-link:active{transform:scale(.96)}
+
+.cta{padding-block:0 92px}
+.cta-card{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:28px;
+  align-items:center;
+  padding:40px;
+  border-radius:32px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 0 0,rgba(255,255,255,.13),transparent 25%),
+    linear-gradient(145deg,var(--brand),var(--brand-dark));
+  box-shadow:0 28px 72px rgba(63,70,243,.20);
+}
+.cta-card h3{
+  max-width:760px;
+  margin:0 0 8px;
+  font-size:32px;
+  line-height:1.4;
+  letter-spacing:-.7px;
+}
+.cta-card p{
+  max-width:730px;
+  margin:0;
+  color:rgba(255,255,255,.76);
+  font-size:13px;
+}
+.cta-card .btn-secondary{
+  min-width:190px;
+  color:var(--brand);
+}
+
+/* Dialog */
+dialog{
+  width:min(980px,calc(100% - 24px));
+  max-height:88vh;
+  padding:0;
+  border:0;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 40px 120px rgba(18,22,65,.34);
+}
+dialog::backdrop{
+  background:rgba(17,20,38,.72);
+  backdrop-filter:blur(7px);
+}
+.modal{background:#fff;max-height:88vh;overflow:auto}
+.modal-head{
+  position:sticky;
+  top:0;
+  z-index:4;
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding-inline:20px;
+  background:rgba(255,255,255,.96);
+  box-shadow:inset 0 -1px rgba(23,25,47,.08);
+  backdrop-filter:blur(10px);
+}
+.modal-head b{font-size:13px}
+.close{
+  width:44px;
+  height:44px;
+  border:0;
+  border-radius:50%;
+  background:#fff;
+  color:var(--ink);
+  box-shadow:0 0 0 1px rgba(23,25,47,.10);
+  font-size:20px;
+  transition-property:color,background-color,transform,box-shadow;
+  transition-duration:150ms;
+  transition-timing-function:var(--ease);
+}
+.close:hover{color:var(--brand);background:var(--brand-soft-2)}
+.close:active{transform:scale(.96)}
+.modal-body{padding:22px}
+.modal-intro{
+  padding:20px;
+  border-radius:20px;
+  background:var(--brand-soft-2);
+}
+.modal-intro h3{
+  margin:9px 0;
+  font-size:28px;
+  line-height:1.45;
+}
+.modal-intro p{
+  max-width:780px;
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+}
+.modal-info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-block-start:16px;
+}
+.modal-box{
+  padding:16px;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(23,25,47,.08);
+}
+.modal-box h4{margin:0 0 8px;font-size:13px}
+.modal-box p{margin:0;color:var(--muted);font-size:11px}
+.modal-compare{
+  margin-block-start:16px;
+}
+.demo-note{
+  margin-block-start:16px;
+  padding:14px 16px;
+  border-radius:16px;
+  background:#f9faff;
+  color:#777b93;
+  font-size:10px;
+  box-shadow:0 0 0 1px rgba(23,25,47,.07);
+}
+.demo-note b{color:var(--brand)}
+
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition-property:opacity,transform;
+  transition-duration:420ms;
+  transition-timing-function:var(--ease);
+  transition-delay:var(--reveal-delay,0ms);
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:none;
+}
+
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero-visual{min-height:500px}
+  .cta-card{grid-template-columns:1fr}
+  .cta-card .btn{width:max-content}
+}
+@media (max-width:860px){
+  .metrics{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .metric{padding:8px 6px}
+  .metric b{font-size:15px}
+  .case-footer p{flex-basis:100%}
+  .case-actions{justify-content:flex-start;width:100%}
+}
+@media (max-width:680px){
+  :root{--container:min(100% - 22px,1200px)}
+  .hero{padding-block:62px 48px}
+  .hero h1{font-size:39px;letter-spacing:-.9px}
+  .hero-copy>p{font-size:14px}
+  .hero-actions .btn{width:100%}
+  .hero-visual{min-height:410px}
+  .hero-panel{padding:10px;border-radius:26px;transform:none}
+  .float-stat{min-width:140px;padding:10px 12px}
+  .float-stat--start{inset-inline-end:0;top:6px}
+  .float-stat--end{inset-inline-start:0;bottom:6px}
+
+  .summary-grid{grid-template-columns:1fr}
+  .cases{padding-block:68px 84px}
+  .case-copy,.case-compare,.work,.case-footer{padding-inline:20px}
+  .case-copy h3{font-size:22px}
+  .metrics{grid-template-columns:1fr}
+  .compare-caption{grid-template-columns:1fr}
+  .case-footer{align-items:stretch;flex-direction:column}
+  .case-footer p{max-width:none}
+  .case-actions{justify-content:stretch}
+  .case-actions .btn{flex:1}
+  .cta{padding-block-end:76px}
+  .cta-card{padding:28px 22px}
+  .cta-card h3{font-size:27px}
+  .cta-card .btn{width:100%}
+  .modal-info{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    transition-delay:0ms!important;
+  }
+  .reveal{opacity:1;transform:none}
+  .hero-panel,.case-card:hover,.btn:active,.case-link:active,.close:active{transform:none}
+}
+
+
+/* =========================================================
+   TYPOGRAPHY — CAIRO
+   Tuned for professional Arabic readability and clear hierarchy.
+   ========================================================= */
+:root{
+  --font-ar:"Cairo","Tahoma","Arial",sans-serif;
+}
+
+html{
+  font-size:16px;
+}
+
+body{
+  font-family:var(--font-ar);
+  font-size:16px;
+  font-weight:400;
+  line-height:1.85;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+button,
+input,
+textarea,
+select,
+.btn{
+  font-family:var(--font-ar);
+}
+
+/* Hero */
+.hero h1{
+  font-family:var(--font-ar);
+  font-size:clamp(2.6rem,4.8vw,4.35rem);
+  font-weight:800;
+  line-height:1.28;
+  letter-spacing:0;
+  text-wrap:balance;
+}
+
+.hero-copy>p{
+  max-width:640px;
+  font-size:1.05rem;
+  font-weight:400;
+  line-height:1.95;
+  text-wrap:pretty;
+}
+
+.eyebrow{
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:0;
+  line-height:1.45;
+}
+
+.proof-row{
+  font-size:.9rem;
+  font-weight:500;
+  line-height:1.75;
+}
+
+.proof-icon{
+  font-size:.78rem;
+  font-weight:700;
+}
+
+.float-stat b{
+  font-size:1.25rem;
+  font-weight:800;
+  line-height:1.2;
+  font-variant-numeric:tabular-nums;
+}
+
+.float-stat span{
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.55;
+}
+
+.browser-bar span{
+  font-size:.72rem;
+  font-weight:500;
+}
+
+/* Summary */
+.summary-item b{
+  font-size:1.15rem;
+  font-weight:700;
+  line-height:1.45;
+}
+
+.summary-item span{
+  font-size:.86rem;
+  font-weight:400;
+  line-height:1.8;
+}
+
+/* Section heading */
+.kicker{
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:0;
+}
+
+.section-head h2{
+  font-size:clamp(2rem,3.4vw,2.9rem);
+  font-weight:800;
+  line-height:1.45;
+  letter-spacing:0;
+  text-wrap:balance;
+}
+
+.section-head p{
+  font-size:1rem;
+  font-weight:400;
+  line-height:1.9;
+  text-wrap:pretty;
+}
+
+/* Case cards */
+.case-tag{
+  font-size:.78rem;
+  font-weight:700;
+  line-height:1.5;
+}
+
+.case-copy h3{
+  font-size:clamp(1.28rem,1.8vw,1.55rem);
+  font-weight:700;
+  line-height:1.62;
+  letter-spacing:0;
+  text-wrap:balance;
+}
+
+.case-copy p{
+  max-width:96%;
+  font-size:.94rem;
+  font-weight:400;
+  line-height:1.9;
+  text-wrap:pretty;
+}
+
+.metric b{
+  font-size:1.32rem;
+  font-weight:800;
+  line-height:1.25;
+  font-variant-numeric:tabular-nums;
+}
+
+.metric span{
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.55;
+}
+
+.compare-label b{
+  font-size:.9rem;
+  font-weight:700;
+}
+
+.compare-label span{
+  font-size:.74rem;
+  font-weight:700;
+}
+
+.ba-badge{
+  font-family:var(--font-ar);
+  font-size:.73rem;
+  font-weight:700;
+  letter-spacing:0;
+}
+
+.caption-box span{
+  font-size:.74rem;
+  font-weight:500;
+  line-height:1.55;
+}
+
+.caption-box b{
+  font-size:.84rem;
+  font-weight:600;
+  line-height:1.75;
+}
+
+.work h4{
+  font-size:.98rem;
+  font-weight:700;
+}
+
+.work-list li{
+  font-size:.9rem;
+  font-weight:400;
+  line-height:1.85;
+}
+
+.work-list i{
+  font-size:.72rem;
+  font-weight:700;
+}
+
+.case-footer p{
+  font-size:.87rem;
+  font-weight:400;
+  line-height:1.85;
+}
+
+.case-link{
+  font-size:.84rem;
+  font-weight:700;
+}
+
+/* Buttons */
+.btn{
+  font-size:.91rem;
+  font-weight:700;
+  line-height:1.4;
+}
+
+/* CTA */
+.cta-card h3{
+  font-size:clamp(1.9rem,3vw,2.55rem);
+  font-weight:800;
+  line-height:1.5;
+  letter-spacing:0;
+}
+
+.cta-card p{
+  font-size:.96rem;
+  font-weight:400;
+  line-height:1.9;
+}
+
+/* Modal */
+.modal-head b{
+  font-size:.92rem;
+  font-weight:700;
+}
+
+.modal-intro h3{
+  font-size:clamp(1.55rem,2.5vw,2rem);
+  font-weight:800;
+  line-height:1.55;
+  letter-spacing:0;
+}
+
+.modal-intro p{
+  font-size:.92rem;
+  line-height:1.9;
+}
+
+.modal-box h4{
+  font-size:.94rem;
+  font-weight:700;
+}
+
+.modal-box p{
+  font-size:.88rem;
+  line-height:1.9;
+}
+
+.demo-note{
+  font-size:.82rem;
+  line-height:1.8;
+}
+
+/* Narrow screens */
+@media (max-width:680px){
+  html{
+    font-size:15.5px;
+  }
+
+  body{
+    line-height:1.85;
+  }
+
+  .hero h1{
+    font-size:clamp(2.15rem,9.7vw,2.85rem);
+    line-height:1.34;
+  }
+
+  .hero-copy>p{
+    font-size:1rem;
+    line-height:1.9;
+  }
+
+  .section-head h2{
+    font-size:clamp(1.7rem,7.5vw,2.2rem);
+    line-height:1.5;
+  }
+
+  .section-head p{
+    font-size:.96rem;
+  }
+
+  .case-copy h3{
+    font-size:1.24rem;
+    line-height:1.62;
+  }
+
+  .case-copy p,
+  .work-list li,
+  .case-footer p{
+    font-size:.9rem;
+  }
+
+  .metric b{
+    font-size:1.25rem;
+  }
+
+  .metric span{
+    font-size:.8rem;
+  }
+
+  .btn{
+    font-size:.92rem;
+  }
+}
+
+
+/* Client website link */
+.client-site-link{
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding-inline:10px;
+  border-radius:10px;
+  color:var(--brand);
+  background:var(--brand-soft-2);
+  box-shadow:0 0 0 1px rgba(63,70,243,.10);
+  font-size:.82rem;
+  font-weight:700;
+  line-height:1.4;
+  transition-property:background-color,color,box-shadow,transform;
+  transition-duration:150ms;
+  transition-timing-function:var(--ease);
+}
+.client-site-link:hover{
+  background:var(--brand-soft);
+  box-shadow:0 0 0 1px rgba(63,70,243,.22);
+}
+.client-site-link:active{transform:scale(.96)}
+.client-site-link:focus-visible{
+  outline:0;
+  box-shadow:var(--focus);
+}
+.client-site-link svg{
+  width:16px;
+  height:16px;
+  flex:0 0 16px;
+  stroke:currentColor;
+}
+@media (max-width:680px){
+  .client-site-link{
+    width:100%;
+    justify-content:center;
+  }
+}
+
+
+/* Search Console KPI row */
+.gsc-kpis{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-block-start:18px;
+  padding:12px;
+  border-radius:18px;
+  background:var(--brand-soft-2);
+}
+.gsc-kpi{
+  padding:12px 10px;
+  border-radius:13px;
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(23,25,47,.06);
+  text-align:center;
+}
+.gsc-kpi b{
+  display:block;
+  color:var(--brand);
+  font-size:1.18rem;
+  font-weight:800;
+  line-height:1.25;
+  font-variant-numeric:tabular-nums;
+}
+.gsc-kpi span{
+  display:block;
+  margin-block-start:4px;
+  color:var(--muted);
+  font-size:.74rem;
+  font-weight:500;
+  line-height:1.5;
+}
+@media (max-width:680px){
+  .gsc-kpis{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+
+/* =========================================================
+   HERO REFINEMENT — cleaner, calmer, more premium
+   ========================================================= */
+.hero{
+  padding-block:72px 64px;
+  background:
+    radial-gradient(circle at 14% 18%,rgba(63,70,243,.07),transparent 28%),
+    linear-gradient(180deg,#ffffff 0%,#f8f9ff 100%);
+  border-bottom:1px solid rgba(63,70,243,.07);
+}
+.hero::before{
+  opacity:.45;
+  background-size:52px 52px;
+}
+.hero-grid{
+  grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+  gap:56px;
+  align-items:center;
+}
+.hero-copy{
+  max-width:560px;
+}
+.hero h1{
+  max-width:610px;
+  margin-block:16px 14px;
+  font-size:clamp(2.05rem,3.7vw,3.4rem);
+  font-weight:800;
+  line-height:1.34;
+  letter-spacing:0;
+  text-wrap:balance;
+}
+.hero h1 span::after{
+  height:7px;
+  bottom:3px;
+  opacity:.75;
+}
+.hero-copy>p{
+  max-width:560px;
+  font-size:1rem;
+  line-height:1.95;
+  color:#666b84;
+}
+.eyebrow{
+  padding:7px 12px;
+  font-size:.78rem;
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(63,70,243,.11);
+}
+.hero-proof{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-block-start:22px;
+  max-width:590px;
+}
+.proof-row{
+  display:inline-flex;
+  grid-template-columns:none;
+  width:auto;
+  min-height:38px;
+  padding:8px 11px;
+  border-radius:999px;
+  gap:7px;
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(23,25,47,.065);
+  font-size:.78rem;
+  line-height:1.45;
+}
+.proof-icon{
+  width:22px;
+  height:22px;
+  flex:0 0 22px;
+  border-radius:50%;
+  font-size:.68rem;
+}
+.hero-actions{
+  margin-block-start:24px;
+}
+.hero-actions .btn{
+  min-height:46px;
+  padding:11px 20px;
+}
+.hero-visual{
+  min-height:440px;
+}
+.hero-panel{
+  width:min(100%,610px);
+  padding:12px;
+  border-radius:26px;
+  background:rgba(255,255,255,.96);
+  transform:none;
+  box-shadow:
+    0 0 0 1px rgba(23,25,47,.06),
+    0 24px 70px rgba(49,57,157,.12);
+}
+.browser-bar{
+  min-height:32px;
+  padding-inline:6px;
+}
+.browser-bar span{
+  font-size:.68rem;
+}
+.ba-compare--hero{
+  aspect-ratio:1.38/1;
+  border-radius:15px;
+}
+.float-stat{
+  min-width:146px;
+  padding:11px 13px;
+  border-radius:15px;
+  box-shadow:0 0 0 1px rgba(23,25,47,.06),0 12px 30px rgba(45,53,146,.08);
+}
+.float-stat b{
+  font-size:1.05rem;
+}
+.float-stat span{
+  font-size:.72rem;
+}
+.float-stat--start{
+  inset-inline-end:-6px;
+  top:30px;
+}
+.float-stat--end{
+  inset-inline-start:-6px;
+  bottom:28px;
+}
+
+/* small value strip under the visual */
+.hero-value-strip{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  margin-block-start:12px;
+}
+.hero-value-item{
+  padding:10px 11px;
+  border-radius:13px;
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(23,25,47,.06);
+}
+.hero-value-item b{
+  display:block;
+  color:var(--brand);
+  font-size:.78rem;
+  font-weight:700;
+  line-height:1.4;
+}
+.hero-value-item span{
+  display:block;
+  margin-block-start:2px;
+  color:var(--muted);
+  font-size:.7rem;
+  line-height:1.5;
+}
+
+@media (max-width:980px){
+  .hero{
+    padding-block:60px 52px;
+  }
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+  .hero-copy{
+    max-width:720px;
+  }
+  .hero-visual{
+    min-height:auto;
+  }
+}
+@media (max-width:680px){
+  .hero{
+    padding-block:48px 40px;
+  }
+  .hero h1{
+    font-size:clamp(1.85rem,8.8vw,2.45rem);
+    line-height:1.42;
+  }
+  .hero-copy>p{
+    font-size:.96rem;
+    line-height:1.9;
+  }
+  .hero-proof{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  .proof-row{
+    width:100%;
+    border-radius:14px;
+  }
+  .hero-panel{
+    padding:9px;
+    border-radius:21px;
+  }
+  .ba-compare--hero{
+    aspect-ratio:1.18/1;
+  }
+  .float-stat{
+    display:none;
+  }
+  .hero-value-strip{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* =========================================================
+   HERO V3 — premium editorial layout
+   ========================================================= */
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding-block:76px 70px;
+  background:
+    linear-gradient(180deg,#ffffff 0%,#f8f9ff 100%);
+  border-bottom:1px solid rgba(63,70,243,.07);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  border-radius:50%;
+  inset-inline-start:-250px;
+  top:-190px;
+  background:radial-gradient(circle,rgba(63,70,243,.12) 0%,rgba(63,70,243,0) 68%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  inset-inline-end:-170px;
+  bottom:-180px;
+  background:radial-gradient(circle,rgba(63,70,243,.08) 0%,rgba(63,70,243,0) 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:70px;
+  align-items:center;
+}
+.hero-copy{
+  max-width:560px;
+}
+.hero-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:var(--brand);
+  font-size:.8rem;
+  font-weight:700;
+  line-height:1.5;
+}
+.hero-kicker__dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--brand);
+  box-shadow:0 0 0 6px rgba(63,70,243,.08);
+}
+.hero h1{
+  max-width:590px;
+  margin-block:18px 16px;
+  font-size:clamp(2.25rem,3.45vw,3.35rem);
+  font-weight:800;
+  line-height:1.38;
+  letter-spacing:0;
+  text-wrap:balance;
+}
+.hero h1 span{
+  color:var(--brand);
+  position:relative;
+  display:inline;
+}
+.hero h1 span::after{
+  content:"";
+  position:absolute;
+  inset-inline:0;
+  bottom:2px;
+  height:6px;
+  border-radius:999px;
+  background:rgba(63,70,243,.10);
+  z-index:-1;
+}
+.hero-lead{
+  max-width:545px;
+  margin:0;
+  color:#666b83;
+  font-size:1rem;
+  font-weight:400;
+  line-height:2;
+  text-wrap:pretty;
+}
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-block-start:26px;
+}
+.hero-actions .btn{
+  min-height:46px;
+  padding:11px 21px;
+}
+.hero-trust{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin-block-start:34px;
+  padding-block-start:22px;
+  border-block-start:1px solid rgba(23,25,47,.07);
+}
+.hero-trust div{
+  min-width:0;
+}
+.hero-trust b{
+  display:block;
+  color:var(--ink);
+  font-size:.84rem;
+  font-weight:700;
+  line-height:1.45;
+}
+.hero-trust span{
+  display:block;
+  margin-block-start:3px;
+  color:var(--muted);
+  font-size:.73rem;
+  line-height:1.6;
+}
+
+.hero-visual{
+  position:relative;
+  min-height:auto;
+}
+.hero-orbit{
+  position:absolute;
+  width:78%;
+  aspect-ratio:1;
+  border-radius:50%;
+  inset-inline-start:11%;
+  top:50%;
+  transform:translateY(-50%);
+  border:1px solid rgba(63,70,243,.08);
+}
+.hero-orbit::before,
+.hero-orbit::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(63,70,243,.06);
+}
+.hero-orbit::before{inset:10%}
+.hero-orbit::after{inset:22%}
+
+.hero-showcase{
+  position:relative;
+  z-index:2;
+  width:min(100%,650px);
+  margin-inline:auto;
+  padding:18px;
+  border-radius:30px;
+  background:#fff;
+  box-shadow:
+    0 0 0 1px rgba(23,25,47,.06),
+    0 30px 80px rgba(42,49,137,.13);
+}
+.showcase-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:18px;
+  padding:2px 3px 15px;
+}
+.showcase-head>div{
+  min-width:0;
+}
+.showcase-label{
+  display:block;
+  color:var(--muted);
+  font-size:.7rem;
+  font-weight:600;
+  line-height:1.45;
+}
+.showcase-head strong{
+  display:block;
+  margin-block-start:4px;
+  color:var(--ink);
+  font-size:.95rem;
+  font-weight:700;
+  line-height:1.55;
+}
+.showcase-status{
+  flex:0 0 auto;
+  padding:6px 9px;
+  border-radius:999px;
+  background:rgba(8,127,82,.08);
+  color:var(--success);
+  font-size:.7rem;
+  font-weight:700;
+}
+.hero-panel{
+  width:100%;
+  padding:10px;
+  border-radius:20px;
+  background:#fafbff;
+  box-shadow:inset 0 0 0 1px rgba(23,25,47,.06);
+  transform:none;
+  backdrop-filter:none;
+}
+.browser-bar{
+  min-height:30px;
+  padding-inline:5px;
+}
+.browser-bar span{
+  font-size:.67rem;
+}
+.ba-compare--hero{
+  aspect-ratio:1.48/1;
+  border-radius:13px;
+}
+.showcase-metrics{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  margin-block-start:12px;
+}
+.showcase-metrics div{
+  padding:10px 9px;
+  border-radius:13px;
+  background:#fafbff;
+  box-shadow:inset 0 0 0 1px rgba(23,25,47,.055);
+}
+.showcase-metrics span{
+  display:block;
+  color:var(--muted);
+  font-size:.67rem;
+  font-weight:500;
+  line-height:1.5;
+}
+.showcase-metrics b{
+  display:block;
+  margin-block-start:3px;
+  color:var(--brand);
+  font-size:1.03rem;
+  font-weight:800;
+  line-height:1.25;
+  font-variant-numeric:tabular-nums;
+}
+
+@media (max-width:980px){
+  .hero{
+    padding-block:60px 54px;
+  }
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:42px;
+  }
+  .hero-copy{
+    max-width:720px;
+  }
+  .hero-trust{
+    max-width:620px;
+  }
+  .hero-showcase{
+    width:min(100%,720px);
+  }
+}
+@media (max-width:680px){
+  .hero{
+    padding-block:46px 42px;
+  }
+  .hero-grid{
+    gap:30px;
+  }
+  .hero h1{
+    font-size:clamp(1.85rem,8.5vw,2.4rem);
+    line-height:1.46;
+  }
+  .hero-lead{
+    font-size:.96rem;
+    line-height:1.95;
+  }
+  .hero-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  .hero-actions .btn{
+    width:100%;
+  }
+  .hero-trust{
+    grid-template-columns:1fr;
+    gap:10px;
+    margin-block-start:26px;
+    padding-block-start:18px;
+  }
+  .hero-showcase{
+    padding:12px;
+    border-radius:22px;
+  }
+  .showcase-head{
+    padding:1px 1px 11px;
+  }
+  .showcase-status{
+    display:none;
+  }
+  .showcase-head strong{
+    font-size:.88rem;
+  }
+  .hero-panel{
+    padding:8px;
+    border-radius:16px;
+  }
+  .ba-compare--hero{
+    aspect-ratio:1.18/1;
+  }
+  .showcase-metrics{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .hero-orbit{
+    display:none;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<!-- النسخة النصية مهيأة للنشر تسويقيًا. يجب استبدال أي أرقام/صور تجريبية ببيانات حقيقية قبل الإطلاق. -->
+
+
+<section class="hero" aria-labelledby="portfolio-title">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="hero-kicker">
+        <span class="hero-kicker__dot" aria-hidden="true"></span>
+        دراسات نجاح مبنية على نتائج فعلية
+      </div>
+
+      <h1 id="portfolio-title">
+        نتائج SEO تُقاس بالأرقام،
+        <span>وليست بالوعود</span>
+      </h1>
+
+      <p class="hero-lead">
+        نحلل أين يفقد موقعك فرص الظهور، نحسّن الصفحات التي تؤثر فعليًا على النمو،
+        ثم نقارن الأداء قبل وبعد حتى ترى أثر العمل بوضوح.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#case-studies">استعرض النتائج</a>
+        <a class="btn btn-secondary" href="#conversion">ناقش فرص موقعك</a>
+      </div>
+
+      <div class="hero-trust" aria-label="أهم ما تعرضه الصفحة">
+        <div>
+          <b>قبل / بعد</b>
+          <span>مقارنة مرئية للنتائج</span>
+        </div>
+        <div>
+          <b>بيانات واضحة</b>
+          <span>نقرات، ظهور، وترتيب</span>
+        </div>
+        <div>
+          <b>هدف تجاري</b>
+          <span>زيارات أقرب للتواصل والشراء</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-label="مثال على مقارنة أداء الموقع قبل وبعد">
+      <div class="hero-orbit" aria-hidden="true"></div>
+
+      <div class="hero-showcase">
+        <div class="showcase-head">
+          <div>
+            <span class="showcase-label">دراسة حالة مختارة</span>
+            <strong>تحسّن الأداء العضوي بعد التنفيذ</strong>
+          </div>
+          <span class="showcase-status">نتيجة موثقة</span>
+        </div>
+
+        <div class="hero-panel">
+          <div class="browser-bar" aria-hidden="true">
+            <i></i><i></i><i></i>
+            <span>Google Search Console</span>
+          </div>
+
+          <div class="ba-compare ba-compare--hero js-compare"
+               data-duration="3300"
+               data-hold="950"
+               aria-label="مقارنة متحركة بين حالة قبل وبعد">
+            <div class="ba-layer ba-layer--before">
+              <img src="https://developers.google.com/static/search/blog/images/performance-comparison-mode.png"
+                   alt="مثال تجريبي من Google Search Console قبل التحسين"
+                   fetchpriority="high" loading="eager">
+              <div class="ba-fallback">تعذّر تحميل لقطة الأداء</div>
+            </div>
+            <div class="ba-layer ba-layer--after">
+              <img src="https://developers.google.com/static/search/blog/images/search-console-performance-report.png"
+                   alt="مثال تجريبي من Google Search Console بعد التحسين"
+                   fetchpriority="high" loading="eager">
+              <div class="ba-fallback">تعذّر تحميل لقطة الأداء</div>
+            </div>
+            <span class="ba-badge ba-badge--before">قبل</span>
+            <span class="ba-badge ba-badge--after">بعد</span>
+            <div class="ba-divider" aria-hidden="true">
+              <span class="ba-handle" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 6 4 12 9 18"></polyline>
+                  <polyline points="15 6 20 12 15 18"></polyline>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-metrics">
+          <div>
+            <span>النقرات العضوية</span>
+            <b>616K</b>
+          </div>
+          <div>
+            <span>الظهور في البحث</span>
+            <b>26.8M</b>
+          </div>
+          <div>
+            <span>معدل النقر</span>
+            <b>2.3%</b>
+          </div>
+          <div>
+            <span>متوسط الترتيب</span>
+            <b>7.3</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="summary" aria-label="كيف نعرض نتائج المشاريع">
+  <div class="container summary-grid reveal">
+    <div class="summary-item">
+      <b>نبدأ من الفرصة الحقيقية</b>
+      <span>نحدد أين يفقد الموقع الظهور والعملاء، ثم نرتب الأولويات حسب التأثير المتوقع.</span>
+    </div>
+    <div class="summary-item">
+      <b>ننفّذ ما يخدم النمو</b>
+      <span>تحسين الصفحات والمحتوى والبنية بهدف جذب زيارات أكثر صلة بالخدمة أو المنتج.</span>
+    </div>
+    <div class="summary-item">
+      <b>نقيس ما تغيّر</b>
+      <span>نقارن الأداء قبل وبعد حتى تعرف بوضوح ماذا أضاف العمل إلى موقعك.</span>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="case-studies" aria-labelledby="cases-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <div class="kicker">دراسات الحالة</div>
+      <h2 id="cases-title">دراسات نجاح توضّح كيف يتحول تحسين SEO إلى أثر حقيقي على النشاط</h2>
+      <p>
+        هذه النماذج لا تعرض ترتيب كلمات فقط؛ بل توضح التحدي الذي بدأنا منه، ما الذي قمنا بتحسينه، وكيف انعكس ذلك على ظهور الموقع والزيارات العضوية وفرص الوصول إلى العملاء.
+      </p>
+    </header>
+
+    <div class="case-grid">
+
+      <article class="case-card reveal">
+        <div class="case-copy">
+          <span class="case-tag">شركة خدمات</span>
+          <h3>من حضور محدود في البحث إلى قناة تجذب زيارات وفرص تواصل باستمرار</h3>
+          <p>كان الموقع موجودًا، لكن الصفحات المهمة لا تصل إلى عدد كافٍ من الباحثين. أعدنا ترتيب الأولويات وطوّرنا صفحات الخدمات لتظهر بشكل أفضل أمام العملاء الأقرب لاتخاذ قرار.</p>
+
+          <!-- أرقام تجريبية: استبدلها ببيانات العميل الحقيقية -->
+          <div class="gsc-kpis" aria-label="مؤشرات الأداء من Google Search Console">
+            <div class="gsc-kpi"><b>616K</b><span>نقرة عضوية</span></div>
+            <div class="gsc-kpi"><b>26.8M</b><span>ظهور في البحث</span></div>
+            <div class="gsc-kpi"><b>2.3%</b><span>معدل النقر</span></div>
+            <div class="gsc-kpi"><b>7.3</b><span>متوسط الترتيب</span></div>
+          </div>
+        </div>
+
+        <div class="case-compare">
+          <div class="compare-label">
+            <b>قارن الأداء قبل وبعد</b>
+            <span>6 أشهر</span>
+          </div>
+
+          <div class="ba-compare ba-compare--card js-compare" data-duration="3000" data-hold="900" aria-label="مقارنة متحركة قبل وبعد لموقع خدمات">
+            <div class="ba-layer ba-layer--before">
+              <img src="https://developers.google.com/static/search/blog/images/performance-comparison-mode.png"
+                   alt="مثال Search Console قبل التحسين" loading="lazy">
+              <div class="ba-fallback">تعذّر تحميل لقطة الأداء</div>
+            </div>
+            <div class="ba-layer ba-layer--after">
+              <img src="https://developers.google.com/static/search/blog/images/search-console-performance-report.png"
+                   alt="مثال Search Console بعد التحسين" loading="lazy">
+              <div class="ba-fallback">تعذّر تحميل لقطة الأداء</div>
+            </div>
+            <span class="ba-badge ba-badge--before">قبل</span>
+            <span class="ba-badge ba-badge--after">بعد</span>
+            <div class="ba-divider" aria-hidden="true"><span class="ba-handle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 4 12 9 18"></polyline><polyline points="15 6 20 12 15 18"></polyline></svg></span></div>
+          </div>
+
+          <div class="compare-caption">
+            <div class="caption-box caption-box--before">
+              <span>في البداية</span>
+              <b>صفحات مهمة لا تحصل على الظهور الكافي</b>
+            </div>
+            <div class="caption-box caption-box--after">
+              <span>بعد التنفيذ</span>
+              <b>ظهور أوسع وزيارات أكثر ارتباطًا بالخدمات</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="work">
+          <h4>ماذا فعلنا؟</h4>
+          <ul class="work-list">
+            <li><i aria-hidden="true">01</i><span>طوّرنا صفحات الخدمات لتجيب بوضوح عن ما يبحث عنه العميل وتعرض قيمة الخدمة بسرعة.</span></li>
+            <li><i aria-hidden="true">02</i><span>وجّهنا المحتوى نحو عمليات البحث الأقرب للتواصل وطلب الخدمة.</span></li>
+            <li><i aria-hidden="true">03</i><span>سهّلنا انتقال الزائر بين الخدمات والمحتوى المرتبط حتى يصل إلى الخطوة التالية بدون تشتيت.</span></li>
+          </ul>
+        </div>
+
+        <footer class="case-footer">
+          <p>النتيجة: أصبح الموقع أصلًا تسويقيًا يدعم اكتساب العملاء، بدل أن يكون مجرد صفحة تعريفية على الإنترنت.</p>
+          
+          <div class="case-actions">
+            <!-- استبدل # برابط موقع العميل الحقيقي -->
+            <a class="client-site-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="زيارة المشروع">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 5h5v5"></path>
+                <path d="M10 14 19 5"></path>
+                <path d="M19 13v6H5V5h6"></path>
+              </svg>
+              زيارة المشروع
+            </a>
+            <button class="case-link open-case" type="button" data-case="services">اقرأ دراسة الحالة</button>
+            <a class="btn btn-primary" href="#conversion">ناقش فرص نمو موقعي</a>
+          </div>
+        </footer>
+      </article>
+
+      <article class="case-card reveal">
+        <div class="case-copy">
+          <span class="case-tag">متجر إلكتروني</span>
+          <h3>تقوية حضور متجر إلكتروني في البحث لبناء مصدر زيارات مستدام بجانب الإعلانات</h3>
+          <p>بدل توزيع الجهد على كل صفحات المتجر، ركزنا على الأقسام والمنتجات التي تمتلك فرصة بحث وقيمة تجارية أعلى، لتصل إلى العملاء في لحظة المقارنة والشراء.</p>
+
+          <!-- أرقام تجريبية: استبدلها ببيانات العميل الحقيقية -->
+          <div class="gsc-kpis" aria-label="مؤشرات الأداء من Google Search Console">
+            <div class="gsc-kpi"><b>265K</b><span>نقرة عضوية</span></div>
+            <div class="gsc-kpi"><b>10.8M</b><span>ظهور في البحث</span></div>
+            <div class="gsc-kpi"><b>2.5%</b><span>معدل النقر</span></div>
+            <div class="gsc-kpi"><b>11.2</b><span>متوسط الترتيب</span></div>
+          </div>
+        </div>
+
+        <div class="case-compare">
+          <div class="compare-label">
+            <b>قارن الأداء قبل وبعد</b>
+            <span>7 أشهر</span>
+          </div>
+
+          <div class="ba-compare ba-compare--card js-compare" data-duration="3100" data-hold="900" aria-label="مقارنة متحركة قبل وبعد لمتجر إلكتروني">
+            <div class="ba-layer ba-layer--before">
+              <img src="https://developers.google.com/static/search/blog/images/insights-report.png"
+                   alt="مثال Search Console Insights قبل التحسين" loading="lazy">
+              <div class="ba-fallback">تعذّر تحميل لقطة الأداء</div>
+            </div>
+            <div class="ba-layer ba-layer--after">
+              <img src="https://developers.google.com/static/search/blog/images/import/acc989ed580c0441bb5520641da3ebc4.png"
+                   alt="مثال Search Console بعد التحسين" loading="lazy">
+              <div class="ba-fallback">تعذّر تحميل لقطة الأداء</div>
+            </div>
+            <span class="ba-badge ba-badge--before">قبل</span>
+            <span class="ba-badge ba-badge--after">بعد</span>
+            <div class="ba-divider" aria-hidden="true"><span class="ba-handle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 4 12 9 18"></polyline><polyline points="15 6 20 12 15 18"></polyline></svg></span></div>
+          </div>
+
+          <div class="compare-caption">
+            <div class="caption-box caption-box--before">
+              <span>في البداية</span>
+              <b>اعتماد أكبر على القنوات المدفوعة وضعف في صفحات البيع</b>
+            </div>
+            <div class="caption-box caption-box--after">
+              <span>بعد التنفيذ</span>
+              <b>زيارات عضوية أكثر وصفحات أقرب لتحقيق المبيعات</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="work">
+          <h4>ماذا فعلنا؟</h4>
+          <ul class="work-list">
+            <li><i aria-hidden="true">01</i><span>حددنا صفحات الأقسام والمنتجات الأعلى قيمة ووجّهنا التحسين إليها أولًا.</span></li>
+            <li><i aria-hidden="true">02</i><span>حسّنا طريقة عرض الأقسام والمنتجات لتخدم نية الباحث وتساعده على المقارنة واتخاذ القرار.</span></li>
+            <li><i aria-hidden="true">03</i><span>خففنا تشتيت محركات البحث على الصفحات منخفضة القيمة وركزنا الإشارات على الصفحات التي يمكن أن تحقق عائدًا.</span></li>
+          </ul>
+        </div>
+
+        <footer class="case-footer">
+          <p>النتيجة: أصبح البحث العضوي قناة اكتساب إضافية تدعم المبيعات وتقلل الاعتماد الكامل على الإعلانات المدفوعة.</p>
+          
+          <div class="case-actions">
+            <!-- استبدل # برابط موقع العميل الحقيقي -->
+            <a class="client-site-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="زيارة المشروع">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 5h5v5"></path>
+                <path d="M10 14 19 5"></path>
+                <path d="M19 13v6H5V5h6"></path>
+              </svg>
+              زيارة المشروع
+            </a>
+            <button class="case-link open-case" type="button" data-case="store">اقرأ دراسة الحالة</button>
+            <a class="btn btn-primary" href="#conversion">ناقش فرص نمو موقعي</a>
+          </div>
+        </footer>
+      </article>
+
+      <article class="case-card reveal">
+        <div class="case-copy">
+          <span class="case-tag">سيو محلي</span>
+          <h3>زيادة الوصول إلى العملاء الباحثين عن الخدمة داخل المناطق المستهدفة</h3>
+          <p>كان النشاط يقدم خدمة قوية، لكن ظهوره لم يكن يعكس نطاق المناطق التي يخدمها. بنينا صفحات أكثر وضوحًا تربط الخدمة بالموقع الجغرافي واحتياج العميل.</p>
+
+          <!-- أرقام تجريبية: استبدلها ببيانات العميل الحقيقية -->
+          <div class="gsc-kpis" aria-label="مؤشرات الأداء من Google Search Console">
+            <div class="gsc-kpi"><b>193K</b><span>نقرة عضوية</span></div>
+            <div class="gsc-kpi"><b>5.6M</b><span>ظهور في البحث</span></div>
+            <div class="gsc-kpi"><b>3.4%</b><span>معدل النقر</span></div>
+            <div class="gsc-kpi"><b>6.3</b><span>متوسط الترتيب</span></div>
+          </div>
+        </div>
+
+        <div class="case-compare">
+          <div class="compare-label">
+            <b>قارن الأداء قبل وبعد</b>
+            <span>4 أشهر</span>
+          </div>
+
+          <div class="ba-compare ba-compare--card js-compare" data-duration="2900" data-hold="850" aria-label="مقارنة متحركة قبل وبعد لتحسين الظهور المحلي">
+            <div class="ba-layer ba-layer--before">
+              <img src="https://developers.google.com/static/search/blog/images/search-console-performance-report.png"
+                   alt="مثال Search Console قبل تحسين الظهور المحلي" loading="lazy">
+              <div class="ba-fallback">تعذّر تحميل لقطة الأداء</div>
+            </div>
+            <div class="ba-layer ba-layer--after">
+              <img src="https://developers.google.com/static/search/blog/images/import/acc989ed580c0441bb5520641da3ebc4.png"
+                   alt="مثال Search Console بعد تحسين الظهور المحلي" loading="lazy">
+              <div class="ba-fallback">تعذّر تحميل لقطة الأداء</div>
+            </div>
+            <span class="ba-badge ba-badge--before">قبل</span>
+            <span class="ba-badge ba-badge--after">بعد</span>
+            <div class="ba-divider" aria-hidden="true"><span class="ba-handle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 4 12 9 18"></polyline><polyline points="15 6 20 12 15 18"></polyline></svg></span></div>
+          </div>
+
+          <div class="compare-caption">
+            <div class="caption-box caption-box--before">
+              <span>في البداية</span>
+              <b>ظهور محدود أمام الباحثين داخل المناطق المهمة</b>
+            </div>
+            <div class="caption-box caption-box--after">
+              <span>بعد التنفيذ</span>
+              <b>وصول أكبر إلى عملاء قريبين من اتخاذ قرار التواصل</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="work">
+          <h4>ماذا فعلنا؟</h4>
+          <ul class="work-list">
+            <li><i aria-hidden="true">01</i><span>أنشأنا صفحات مناطق تقدم محتوى فعليًا مفيدًا بدل تكرار نفس النصوص بأسماء مدن مختلفة.</span></li>
+            <li><i aria-hidden="true">02</i><span>ربطنا كل منطقة بالخدمات المتاحة فيها والأسئلة التي يهتم بها العميل المحلي.</span></li>
+            <li><i aria-hidden="true">03</i><span>جعلنا مسار التواصل وطلب الخدمة واضحًا بعد وصول المستخدم إلى الصفحة المناسبة.</span></li>
+          </ul>
+        </div>
+
+        <footer class="case-footer">
+          <p>النتيجة: حضور أقوى في المناطق المستهدفة وفرص أكبر لتحويل البحث المحلي إلى مكالمات وطلبات خدمة.</p>
+          
+          <div class="case-actions">
+            <!-- استبدل # برابط موقع العميل الحقيقي -->
+            <a class="client-site-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="زيارة المشروع">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 5h5v5"></path>
+                <path d="M10 14 19 5"></path>
+                <path d="M19 13v6H5V5h6"></path>
+              </svg>
+              زيارة المشروع
+            </a>
+            <button class="case-link open-case" type="button" data-case="local">اقرأ دراسة الحالة</button>
+            <a class="btn btn-primary" href="#conversion">ناقش فرص نمو موقعي</a>
+          </div>
+        </footer>
+      </article>
+
+      <article class="case-card reveal">
+        <div class="case-copy">
+          <span class="case-tag">محتوى وصفحات خدمات</span>
+          <h3>تحويل صفحات الخدمات من محتوى تعريفي إلى صفحات تدعم الظهور والإقناع معًا</h3>
+          <p>كانت الصفحات تشرح الخدمة، لكنها لا تلتقط نية الباحث ولا تساعده على اتخاذ خطوة. أعدنا بناء الرسالة لتخدم البحث وقرار العميل في نفس الصفحة.</p>
+
+          <!-- أرقام تجريبية: استبدلها ببيانات العميل الحقيقية -->
+          <div class="gsc-kpis" aria-label="مؤشرات الأداء من Google Search Console">
+            <div class="gsc-kpi"><b>246K</b><span>نقرة عضوية</span></div>
+            <div class="gsc-kpi"><b>7.9M</b><span>ظهور في البحث</span></div>
+            <div class="gsc-kpi"><b>3.1%</b><span>معدل النقر</span></div>
+            <div class="gsc-kpi"><b>7.4</b><span>متوسط الترتيب</span></div>
+          </div>
+        </div>
+
+        <div class="case-compare">
+          <div class="compare-label">
+            <b>قارن الأداء قبل وبعد</b>
+            <span>5 أشهر</span>
+          </div>
+
+          <div class="ba-compare ba-compare--card js-compare" data-duration="3200" data-hold="900" aria-label="مقارنة متحركة قبل وبعد لتطوير المحتوى">
+            <div class="ba-layer ba-layer--before">
+              <img src="https://developers.google.com/static/search/blog/images/performance-comparison-mode.png"
+                   alt="مثال Search Console قبل تطوير المحتوى" loading="lazy">
+              <div class="ba-fallback">تعذّر تحميل لقطة الأداء</div>
+            </div>
+            <div class="ba-layer ba-layer--after">
+              <img src="https://developers.google.com/static/search/blog/images/insights-report.png"
+                   alt="مثال Search Console بعد تطوير المحتوى" loading="lazy">
+              <div class="ba-fallback">تعذّر تحميل لقطة الأداء</div>
+            </div>
+            <span class="ba-badge ba-badge--before">قبل</span>
+            <span class="ba-badge ba-badge--after">بعد</span>
+            <div class="ba-divider" aria-hidden="true"><span class="ba-handle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 4 12 9 18"></polyline><polyline points="15 6 20 12 15 18"></polyline></svg></span></div>
+          </div>
+
+          <div class="compare-caption">
+            <div class="caption-box caption-box--before">
+              <span>في البداية</span>
+              <b>محتوى عام لا يجيب بسرعة عن احتياج الباحث</b>
+            </div>
+            <div class="caption-box caption-box--after">
+              <span>بعد التنفيذ</span>
+              <b>صفحات أوضح للبحث وأكثر إقناعًا للزائر</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="work">
+          <h4>ماذا فعلنا؟</h4>
+          <ul class="work-list">
+            <li><i aria-hidden="true">01</i><span>أعدنا ترتيب المحتوى ليبدأ باحتياج العميل والنتيجة التي يريد الوصول إليها.</span></li>
+            <li><i aria-hidden="true">02</i><span>حسّنا العناوين وتسلسل المعلومات حتى يفهم الزائر قيمة الخدمة في وقت أقل.</span></li>
+            <li><i aria-hidden="true">03</i><span>ربطنا المحتوى بإجراء واضح يقود الزائر إلى التواصل أو طلب الخدمة في الوقت المناسب.</span></li>
+          </ul>
+        </div>
+
+        <footer class="case-footer">
+          <p>النتيجة: صفحات تعمل في اتجاهين معًا؛ جذب الباحث المناسب ثم مساعدته على الاقتراب من قرار التواصل أو الشراء.</p>
+          
+          <div class="case-actions">
+            <!-- استبدل # برابط موقع العميل الحقيقي -->
+            <a class="client-site-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="زيارة المشروع">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 5h5v5"></path>
+                <path d="M10 14 19 5"></path>
+                <path d="M19 13v6H5V5h6"></path>
+              </svg>
+              زيارة المشروع
+            </a>
+            <button class="case-link open-case" type="button" data-case="content">اقرأ دراسة الحالة</button>
+            <a class="btn btn-primary" href="#conversion">ناقش فرص نمو موقعي</a>
+          </div>
+        </footer>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="conversion" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div>
+        <h3 id="cta-title">هل موقعك يظهر أمام العملاء الذين يبحثون عن خدمتك الآن؟</h3>
+        <p>نراجع وضع الموقع الحالي، نحدد الصفحات والكلمات التي تحمل أكبر فرصة للنمو، ثم نرتب لك خطة واضحة بالأولويات وما يمكن قياسه بعد التنفيذ.</p>
+      </div>
+      <a class="btn btn-secondary" href="mailto:hello@example.com?subject=%D8%B7%D9%84%D8%A8%20%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D9%84%D9%84%D9%85%D9%88%D9%82%D8%B9">اطلب مراجعة موقعك</a>
+    </div>
+  </div>
+</section>
+
+<dialog id="caseDialog" aria-labelledby="dialog-title">
+  <div class="modal">
+    <div class="modal-head">
+      <b id="dialog-title">دراسة الحالة</b>
+      <button class="close" type="button" aria-label="إغلاق دراسة الحالة">×</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-intro">
+        <span class="case-tag" id="modalTag">مشروع</span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalIntro"></p>
+      </div>
+
+      <div class="modal-info">
+        <div class="modal-box">
+          <h4>نقطة البداية</h4>
+          <p id="modalProblem"></p>
+        </div>
+        <div class="modal-box">
+          <h4>ماذا فعلنا</h4>
+          <p id="modalWork"></p>
+        </div>
+      </div>
+
+      <div class="modal-compare">
+        <div class="compare-label">
+          <b>الأداء قبل وبعد</b>
+          <span>قبل / بعد</span>
+        </div>
+
+        <div class="ba-compare ba-compare--modal js-compare" data-duration="3400" data-hold="950" aria-label="مقارنة متحركة في النافذة المنبثقة">
+          <div class="ba-layer ba-layer--before">
+            <img id="modalBefore" src="" alt="لقطة الأداء نقطة البداية" loading="lazy">
+            <div class="ba-fallback">تعذّر تحميل لقطة الأداء</div>
+          </div>
+          <div class="ba-layer ba-layer--after">
+            <img id="modalAfter" src="" alt="لقطة الأداء بعد العمل" loading="lazy">
+            <div class="ba-fallback">تعذّر تحميل لقطة الأداء</div>
+          </div>
+          <span class="ba-badge ba-badge--before">قبل</span>
+          <span class="ba-badge ba-badge--after">بعد</span>
+          <div class="ba-divider" aria-hidden="true"><span class="ba-handle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 4 12 9 18"></polyline><polyline points="15 6 20 12 15 18"></polyline></svg></span></div>
+        </div>
+      </div>
+
+      <!-- قبل النشر الفعلي: استبدل صور Search Console وأي أرقام تجريبية ببيانات العميل الحقيقية فقط. -->
+    </div>
+  </div>
+</dialog>
+
+<script>
+const caseData={
+  services:{
+    tag:"شركة خدمات",
+    title:"من حضور ضعيف إلى مصدر ثابت للزيارات وفرص التواصل",
+    intro:"بدأنا من الصفحات الأقرب لقرار التواصل، ثم حسّنا ظهورها ورسالتها حتى تصل إلى الباحث المناسب وتشرح قيمة الخدمة بوضوح.",
+    problem:"الصفحات المهمة لم تكن تحصل على الظهور الكافي، والمحتوى لا يوضح للباحث بسرعة لماذا هذه الخدمة مناسبة له.",
+    work:"رتبنا الأولويات حول صفحات الخدمات، حسّنا المحتوى والعناوين، وربطنا الصفحات المهمة بمسار أوضح للوصول والتواصل.",
+    before:"https://developers.google.com/static/search/blog/images/performance-comparison-mode.png",
+    after:"https://developers.google.com/static/search/blog/images/search-console-performance-report.png"
+  },
+  store:{
+    tag:"متجر إلكتروني",
+    title:"زيارات ومبيعات من البحث بجانب الإعلانات",
+    intro:"الهدف كان جذب زيارات تحمل نية شراء أعلى، لذلك ركزنا على صفحات الأقسام والمنتجات ذات القيمة التجارية.",
+    problem:"المتجر يضم صفحات كثيرة، لكن الصفحات الأقرب للبيع لم تكن تستفيد بالكامل من فرص البحث المتاحة.",
+    work:"حددنا الصفحات الأعلى قيمة، حسّنا تجربة الأقسام والمنتجات، وركزنا الإشارات على الصفحات التي يمكن أن تدعم الإيراد.",
+    before:"https://developers.google.com/static/search/blog/images/insights-report.png",
+    after:"https://developers.google.com/static/search/blog/images/import/acc989ed580c0441bb5520641da3ebc4.png"
+  },
+  local:{
+    tag:"سيو محلي",
+    title:"وصول أقوى إلى العملاء في المناطق المستهدفة",
+    intro:"بنينـا حضورًا محليًا يربط الخدمة بالمناطق التي تمثل فرصة فعلية للنشاط ويجعل الوصول إلى العميل القريب أسهل.",
+    problem:"النشاط يخدم مناطق مهمة، لكن الموقع لا يظهر بالشكل الكافي أمام الباحثين داخلها ولا يوضح مسار طلب الخدمة.",
+    work:"أنشأنا صفحات مناطق مفيدة، حسّنا الرسائل المحلية، وجعلنا التواصل وطلب الخدمة خطوة واضحة.",
+    before:"https://developers.google.com/static/search/blog/images/search-console-performance-report.png",
+    after:"https://developers.google.com/static/search/blog/images/import/acc989ed580c0441bb5520641da3ebc4.png"
+  },
+  content:{
+    tag:"محتوى وصفحات خدمات",
+    title:"صفحات تخدم الظهور والمبيعات معًا",
+    intro:"أعدنا بناء صفحات الخدمات بحيث تصل إلى الفكرة أسرع، تشرح الفائدة بوضوح، وتقود الزائر إلى خطوة عملية.",
+    problem:"المحتوى كان عامًا؛ يصف الخدمة لكنه لا يعالج أسئلة الباحث ولا يساعده على الاقتراب من قرار.",
+    work:"أعدنا صياغة الرسائل والعناوين وتسلسل المحتوى، ثم ربطنا كل صفحة بإجراء واضح يخدم التحويل.",
+    before:"https://developers.google.com/static/search/blog/images/performance-comparison-mode.png",
+    after:"https://developers.google.com/static/search/blog/images/insights-report.png"
+  }
+};
+
+const dialog=document.getElementById("caseDialog");
+const closeButton=dialog.querySelector(".close");
+
+// Graceful fallback if a demo image fails to load (e.g. hotlink blocked).
+document.querySelectorAll(".ba-layer img").forEach(img=>{
+  img.addEventListener("error",()=>{
+    img.closest(".ba-layer")?.classList.add("img-broken");
+  });
+});
+
+document.querySelectorAll(".open-case").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const item=caseData[button.dataset.case];
+    if(!item)return;
+
+    document.getElementById("modalTag").textContent=item.tag;
+    document.getElementById("modalTitle").textContent=item.title;
+    document.getElementById("modalIntro").textContent=item.intro;
+    document.getElementById("modalProblem").textContent=item.problem;
+    document.getElementById("modalWork").textContent=item.work;
+
+    const modalBeforeImg=document.getElementById("modalBefore");
+    const modalAfterImg=document.getElementById("modalAfter");
+    modalBeforeImg.closest(".ba-layer")?.classList.remove("img-broken");
+    modalAfterImg.closest(".ba-layer")?.classList.remove("img-broken");
+    modalBeforeImg.src=item.before;
+    modalAfterImg.src=item.after;
+
+    const modalCompare=dialog.querySelector(".js-compare");
+    if(modalCompare){
+      modalCompare.style.setProperty("--split","0%");
+      modalCompare.dataset.started="false";
+      startCompareAnimation(modalCompare);
+    }
+
+    dialog.showModal();
+    document.body.style.overflow="hidden";
+    closeButton.focus();
+  });
+});
+
+function closeDialog(){
+  dialog.close();
+  document.body.style.overflow="";
+}
+closeButton.addEventListener("click",closeDialog);
+dialog.addEventListener("click",event=>{
+  const rect=dialog.getBoundingClientRect();
+  const outside=
+    event.clientX<rect.left||
+    event.clientX>rect.right||
+    event.clientY<rect.top||
+    event.clientY>rect.bottom;
+  if(outside)closeDialog();
+});
+dialog.addEventListener("close",()=>{document.body.style.overflow=""});
+
+/* Reveal entrance */
+const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const revealItems=[...document.querySelectorAll(".reveal")];
+
+if(reduceMotion){
+  revealItems.forEach(item=>item.classList.add("is-visible"));
+}else{
+  revealItems.forEach((item,index)=>{
+    item.style.setProperty("--reveal-delay",`${(index%3)*100}ms`);
+  });
+
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  },{threshold:.1});
+
+  revealItems.forEach(item=>observer.observe(item));
+}
+
+/* Before / after autoplay */
+const compareBlocks=[...document.querySelectorAll(".js-compare")];
+
+function startCompareAnimation(el){
+  if(el.dataset.started==="true") return;
+  el.dataset.started="true";
+
+  if(reduceMotion){
+    el.style.setProperty("--split","50%");
+    return;
+  }
+
+  const duration=parseInt(el.dataset.duration || "3000",10);
+  const hold=parseInt(el.dataset.hold || "900",10);
+
+  let state="hold-start";
+  let stateStart=0;
+
+  const setSplit=(value)=>{
+    el.style.setProperty("--split",`${Math.max(0,Math.min(100,value))}%`);
+  };
+
+  setSplit(0);
+
+  const animate=(time)=>{
+    // Stop the loop if this element's animation was reset (e.g. modal reopened).
+    if(el.dataset.started!=="true") return;
+
+    if(!stateStart) stateStart=time;
+    const elapsed=time-stateStart;
+
+    if(state==="hold-start"){
+      if(elapsed>=hold*.55){
+        state="forward";
+        stateStart=time;
+      }
+    }else if(state==="forward"){
+      const progress=Math.min(elapsed/duration,1);
+      setSplit(progress*100);
+      if(progress>=1){
+        state="hold-end";
+        stateStart=time;
+      }
+    }else if(state==="hold-end"){
+      setSplit(100);
+      if(elapsed>=hold){
+        state="rewind";
+        stateStart=time;
+      }
+    }else if(state==="rewind"){
+      const progress=Math.min(elapsed/(duration*.42),1);
+      setSplit(100-(progress*100));
+      if(progress>=1){
+        state="hold-start";
+        stateStart=time;
+      }
+    }
+
+    requestAnimationFrame(animate);
+  };
+
+  requestAnimationFrame(animate);
+}
+
+if(reduceMotion){
+  compareBlocks.forEach(startCompareAnimation);
+}else{
+  const compareObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting) startCompareAnimation(entry.target);
+    });
+  },{threshold:.25});
+
+  compareBlocks.forEach(block=>compareObserver.observe(block));
+}
+</script>
+
+</body>
+</html>
