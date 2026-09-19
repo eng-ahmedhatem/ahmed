@@ -1,0 +1,1259 @@
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#090806" name="theme-color"/>
+<meta content="THERMO Steakhouse — Premium homepage concept" name="description"/>
+<title>THERMO Steakhouse — A Cut Above</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{
+      --bg:#090806;
+      --bg-soft:#0d0b08;
+      --surface:#12100d;
+      --surface-2:#17130f;
+      --text:#f4eee7;
+      --muted:#aaa198;
+      --muted-2:#716a64;
+      --gold:#c69453;
+      --gold-soft:#e7c18c;
+      --red:#c81624;
+      --red-deep:#8f0d18;
+      --red-soft:#e83b47;
+      --line:rgba(255,255,255,.11);
+      --line-strong:rgba(255,255,255,.18);
+      --gold-line:rgba(198,148,83,.38);
+      --shadow:0 24px 80px rgba(0,0,0,.40);
+      --radius:26px;
+      --container:min(1500px, calc(100% - 72px));
+      --ease:cubic-bezier(.2,.75,.2,1);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 82% 15%, rgba(135,76,25,.12), transparent 26%),
+        radial-gradient(circle at 10% 65%, rgba(198,148,83,.045), transparent 26%),
+        var(--bg);
+      font-family:"Alexandria",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.8;
+      overflow-x:hidden;
+    }
+
+    body.menu-open{overflow:hidden}
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:9999;
+      opacity:.13;
+      mix-blend-mode:soft-light;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+    }
+
+    ::selection{background:var(--gold);color:#0b0907}
+    img{display:block;width:100%;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    .container{width:var(--container);margin-inline:auto}
+    .ltr{direction:ltr}
+    .serif{font-family:"Cormorant Garamond",serif}
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      color:var(--gold-soft);
+      letter-spacing:.24em;
+      text-transform:uppercase;
+      font-weight:600;
+      font-size:11px;
+      direction:ltr;
+    }
+    .kicker::after{content:"";width:45px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+
+    .display{
+      margin:14px 0 18px;
+      font-size:clamp(46px,6.4vw,104px);
+      line-height:.98;
+      letter-spacing:-.045em;
+      font-weight:600;
+    }
+
+    .section-title{
+      margin:12px 0 0;
+      font-size:clamp(30px,3.35vw,56px);
+      line-height:1.18;
+      letter-spacing:-.025em;
+      text-wrap:balance;
+      font-weight:600;
+    }
+
+    .muted{color:var(--muted)}
+
+    .btn{
+      min-height:56px;
+      padding:0 24px;
+      border-radius:14px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      border:1px solid transparent;
+      transition:transform .25s var(--ease),border-color .25s,color .25s,background .25s,box-shadow .25s;
+      font-weight:600;
+      font-size:14px;
+      white-space:nowrap;
+    }
+    .btn svg{width:18px;height:18px}
+    .btn-primary{
+      color:#fff;
+      background:linear-gradient(135deg,var(--red-soft) 0%,var(--red) 52%,var(--red-deep) 100%);
+      box-shadow:0 14px 44px rgba(200,22,36,.24);
+    }
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 54px rgba(200,22,36,.34)}
+    .btn-outline{
+      color:#f4eee7;
+      border-color:rgba(255,255,255,.24);
+      background:rgba(255,255,255,.025);
+      backdrop-filter:blur(16px);
+    }
+    .btn-outline:hover{transform:translateY(-3px);border-color:rgba(232,59,71,.72);color:#fff;background:rgba(200,22,36,.11)}
+    .btn i{font-size:14px;line-height:1}
+    .icon-box{width:48px;height:48px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.11);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));color:#fff;flex:0 0 auto}
+    .icon-box i{font-size:18px}
+    .icon-box.red{border-color:rgba(232,59,71,.28);background:rgba(200,22,36,.10);color:#f15a64}
+    .icon-box.gold{border-color:var(--gold-line);color:var(--gold-soft)}
+
+    /* HEADER */
+    .header{
+      position:fixed;
+      z-index:500;
+      top:0;left:0;right:0;
+      transition:transform .32s var(--ease),background .25s,border-color .25s;
+      border-bottom:1px solid transparent;
+    }
+    .header.scrolled{
+      background:rgba(8,7,5,.82);
+      backdrop-filter:blur(22px);
+      border-bottom-color:rgba(255,255,255,.08);
+    }
+    .header.hidden{transform:translateY(-110%)}
+    .nav{
+      width:var(--container);
+      height:90px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      align-items:center;
+      gap:30px;
+    }
+    .nav-right,.nav-left{display:flex;align-items:center;gap:28px}
+    .nav-right{justify-self:start}
+    .nav-left{justify-self:end}
+    .nav-link{
+      position:relative;
+      color:#ddd5cd;
+      font-size:13px;
+      font-weight:500;
+      transition:.2s;
+    }
+    .nav-link::after{
+      content:"";
+      position:absolute;
+      height:1px;
+      width:0;
+      right:0;
+      bottom:-9px;
+      background:var(--gold);
+      transition:width .25s var(--ease);
+    }
+    .nav-link:hover{color:white}
+    .nav-link:hover::after{width:100%}
+    .logo-wrap{justify-self:center;display:flex;align-items:center;justify-content:center;min-width:220px}
+    .logo-wrap img{height:46px;width:auto;object-fit:contain}
+    .lang{font-size:11px;letter-spacing:.22em;color:#b0a79e;direction:ltr}
+    .nav-book{min-height:48px;padding:0 18px;border-radius:12px;font-size:13px}
+    .hamburger{
+      display:none;
+      width:48px;height:48px;border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:white;
+      align-items:center;justify-content:center;
+    }
+    .hamburger span,.hamburger span::before,.hamburger span::after{
+      display:block;width:20px;height:1px;background:#fff;position:relative;transition:.2s;
+    }
+    .hamburger span::before,.hamburger span::after{content:"";position:absolute;right:0}
+    .hamburger span::before{top:-6px}
+    .hamburger span::after{top:6px}
+
+    .mobile-menu{
+      position:fixed;inset:0;z-index:450;
+      background:rgba(8,7,5,.98);
+      padding:118px 28px 36px;
+      transform:translateY(-105%);
+      opacity:0;
+      transition:.35s var(--ease);
+      display:flex;flex-direction:column;justify-content:space-between;
+    }
+    .mobile-menu.open{transform:translateY(0);opacity:1}
+    .mobile-menu nav{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+    .mobile-menu a.menu-item{padding:20px 0;border-bottom:1px solid var(--line);font-size:28px;font-weight:500}
+    .mobile-menu .mobile-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;gap:20px;flex-wrap:wrap}
+
+    /* HERO */
+    .hero{
+      min-height:100svh;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      padding:150px 0 76px;
+      border-bottom:1px solid var(--line);
+      isolation:isolate;
+    }
+    .hero-media{position:absolute;inset:0;z-index:-3}
+    .hero-media img{height:100%;object-fit:cover;object-position:35% 52%;transform:scale(1.03)}
+    .hero::before{
+      content:"";position:absolute;inset:0;z-index:-2;
+      background:
+        linear-gradient(90deg,rgba(7,6,5,.08) 0%,rgba(7,6,5,.28) 34%,rgba(7,6,5,.77) 68%,rgba(7,6,5,.97) 100%),
+        linear-gradient(180deg,rgba(5,4,3,.48) 0%,rgba(5,4,3,.04) 35%,rgba(5,4,3,.72) 100%);
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;z-index:-1;
+      background:radial-gradient(circle at 26% 48%,rgba(203,116,39,.11),transparent 32%);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:70px}
+    .hero-copy{grid-column:2;max-width:730px;justify-self:end}
+    .hero-copy .display{max-width:720px}
+    .hero-copy .lead{max-width:610px;color:#c7beb4;font-size:17px;margin:0 0 32px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-side{grid-column:1;align-self:end;justify-self:start;width:min(420px,100%)}
+    .hero-card{
+      padding:24px;
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg,rgba(18,15,12,.54),rgba(8,7,5,.64));
+      backdrop-filter:blur(18px);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+    }
+    .hero-card-top{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .hero-card-top strong{font-size:16px}
+    .hero-card-top span{color:var(--gold-soft);font-size:10px;letter-spacing:.18em;direction:ltr}
+    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .hero-stat{padding:0 12px;border-left:1px solid var(--line)}
+    .hero-stat:last-child{border-left:0}
+    .hero-stat .stat-benefit{display:block;margin-bottom:8px;color:#f3eee8;font-size:11px;font-weight:700;line-height:1.35}
+    .hero-stat b{display:block;font-family:"Cormorant Garamond",serif;font-size:32px;line-height:1;color:#fff;white-space:nowrap}
+    .hero-stat small{display:block;margin-top:7px;color:#a79f97;font-size:9px;line-height:1.45}
+    .hero-rail{
+      position:absolute;right:24px;top:50%;transform:translateY(-50%);
+      display:flex;flex-direction:column;gap:14px;align-items:center;
+      color:#8e867e;font-size:9px;letter-spacing:.12em;direction:ltr;
+    }
+    .hero-rail i{width:1px;height:34px;background:linear-gradient(var(--gold),transparent);display:block}
+    .scroll-note{
+      position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+      display:flex;align-items:center;gap:12px;color:#918980;font-size:10px;letter-spacing:.18em;direction:ltr;
+    }
+    .scroll-note::before{content:"";width:46px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+
+    /* TICKER */
+    .ticker{border-bottom:1px solid var(--line);background:#0b0907;overflow:hidden}
+    .ticker-track{
+      width:max-content;display:flex;align-items:center;gap:34px;
+      padding:17px 0;
+      animation:ticker 28s linear infinite;
+      color:#c9c0b7;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      font-size:10px;
+      direction:ltr;
+    }
+    .ticker-track span{display:flex;align-items:center;gap:34px;white-space:nowrap}
+    .ticker-track span::after{content:"◆";font-size:8px;color:var(--gold)}
+    @keyframes ticker{to{transform:translateX(-50%)}}
+
+    /* COMMON SECTIONS */
+    .section{position:relative;padding:128px 0}
+    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:50px;margin-bottom:54px}
+    .section-head .copy{max-width:610px}
+    .section-head p{margin:0;max-width:520px;color:var(--muted);font-size:14px}
+
+    /* SIGNATURE CUTS */
+    .cuts-section{background:linear-gradient(180deg,#0b0907 0%,#0f0d0a 100%);border-bottom:1px solid var(--line)}
+    .cuts-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:350px 350px;gap:18px}
+    .cut-card{
+      position:relative;overflow:hidden;border-radius:26px;border:1px solid var(--line);
+      background:#15110d;min-height:350px;box-shadow:var(--shadow)
+    }
+    .cut-card.large{grid-row:1 / 3}
+    .cut-card img{height:100%;object-fit:cover;transition:transform .75s var(--ease),filter .4s}
+    .cut-card:hover img{transform:scale(1.05);filter:saturate(1.08)}
+    .cut-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,3,2,.08) 26%,rgba(4,3,2,.78) 100%)}
+    .cut-badge{position:absolute;z-index:2;top:22px;right:22px;padding:8px 10px;border-radius:999px;border:1px solid var(--gold-line);background:rgba(8,7,5,.5);backdrop-filter:blur(12px);color:var(--gold-soft);font-size:9px;letter-spacing:.13em;direction:ltr}
+    .cut-content{position:absolute;z-index:2;right:0;left:0;bottom:0;padding:28px}
+    .cut-content .metric{font-family:"Cormorant Garamond",serif;font-size:58px;line-height:.85;margin-bottom:8px}
+    .cut-card.large .metric{font-size:84px}
+    .cut-content h3{margin:0 0 8px;font-size:23px}
+    .cut-content p{margin:0;color:#c4bbb2;font-size:12px;max-width:380px}
+    .cut-arrow{position:absolute;z-index:2;left:22px;bottom:22px;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--line-strong);background:rgba(9,8,6,.44);backdrop-filter:blur(10px);transition:.25s}
+    .cut-arrow i{font-size:13px}.cut-card:hover .cut-arrow{border-color:rgba(232,59,71,.48);color:#ef5661;transform:translate(-3px,-3px)}
+
+    /* MANIFESTO */
+    .manifesto{padding:0;border-bottom:1px solid var(--line);background:#090806}
+    .manifesto-grid{display:grid;grid-template-columns:1.03fr .97fr;min-height:820px}
+    .manifesto-media{position:relative;overflow:hidden}
+    .manifesto-media img{height:100%;object-fit:cover}
+    .manifesto-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,8,6,.02),rgba(9,8,6,.22) 70%,rgba(9,8,6,.74))}
+    .manifesto-label{position:absolute;z-index:2;left:34px;bottom:32px;direction:ltr;color:var(--gold-soft);letter-spacing:.18em;font-size:11px}
+    .manifesto-copy{padding:110px 8vw 100px 7vw;display:flex;flex-direction:column;justify-content:center}
+    .manifesto-copy .index{font-family:"Cormorant Garamond",serif;font-size:92px;color:#29241f;line-height:1;margin-bottom:6px}
+    .manifesto-copy p{color:var(--muted);font-size:15px;max-width:600px;margin:24px 0 34px}
+    .manifesto-points{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:12px}
+    .manifesto-point{padding-top:18px;border-top:1px solid var(--line)}
+    .manifesto-point b{display:block;margin-bottom:5px;font-size:14px}
+    .manifesto-point span{font-size:11px;color:#8e867f}
+
+    /* MENU EXPERIENCE */
+    .menu-section{background:#0b0907;border-bottom:1px solid var(--line)}
+    .menu-shell{display:grid;grid-template-columns:.94fr 1.06fr;gap:18px;align-items:stretch}
+    .menu-visual{position:relative;min-height:760px;border-radius:28px;overflow:hidden;border:1px solid var(--line);background:#12100d}
+    .menu-visual img{height:100%;object-fit:cover;transition:opacity .35s,transform .6s var(--ease)}
+    .menu-visual:hover img{transform:scale(1.025)}
+    .menu-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 34%,rgba(0,0,0,.82) 100%)}
+    .menu-visual-copy{position:absolute;z-index:2;left:30px;right:30px;bottom:28px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+    .menu-visual-copy .overline{color:var(--gold-soft);font-size:10px;letter-spacing:.19em;direction:ltr}
+    .menu-visual-copy strong{display:block;font-family:"Cormorant Garamond",serif;font-size:56px;line-height:.9;margin-top:7px;direction:ltr}
+    .menu-visual-copy .round{width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+    .menu-panel{border:1px solid var(--line);border-radius:28px;background:linear-gradient(180deg,#13100d 0%,#0d0b09 100%);padding:28px;display:flex;flex-direction:column}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--line)}
+    .tab{border:1px solid transparent;background:transparent;color:#aaa198;padding:10px 15px;border-radius:11px;font-size:12px;transition:.2s}
+    .tab:hover{color:white}
+    .tab.active{background:linear-gradient(135deg,var(--red-soft),var(--red-deep));color:#fff;font-weight:700;box-shadow:0 10px 28px rgba(200,22,36,.20)}
+    .menu-list{display:none;flex:1;padding-top:4px}
+    .menu-list.active{display:block}
+    .menu-item-row{
+      display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;
+      padding:24px 4px;border-bottom:1px solid var(--line);
+      transition:.2s;
+    }
+    .menu-item-row:hover{padding-right:11px;background:linear-gradient(90deg,transparent,rgba(198,148,83,.035))}
+    .menu-item-row h4{margin:0 0 5px;font-size:16px;font-weight:600}
+    .menu-item-row p{margin:0;color:#8f877f;font-size:11px;line-height:1.7;max-width:520px}
+    .menu-price{text-align:left;direction:ltr;white-space:nowrap}
+    .menu-price strong{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:600}
+    .menu-price small{font-size:9px;color:#8c847c;margin-left:5px}
+    .menu-footer{margin-top:auto;padding-top:22px;display:flex;align-items:center;justify-content:space-between;gap:24px;color:#aaa198;font-size:11px}
+    .menu-footer a{color:var(--gold-soft);font-weight:600;display:flex;align-items:center;gap:8px}
+
+
+    /* MENU PRODUCT SHOWCASE */
+    .menu-showcase{margin-top:22px}
+    .menu-category-panel{display:none}
+    .menu-category-panel.active{display:block;animation:menuFade .28s ease}
+    @keyframes menuFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .menu-product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .menu-product-card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,#15120f,#0d0b09);transition:transform .28s var(--ease),border-color .28s,box-shadow .28s}
+    .menu-product-card:hover{transform:translateY(-5px);border-color:rgba(232,59,71,.32);box-shadow:0 20px 60px rgba(0,0,0,.32)}
+    .menu-product-media{position:relative;aspect-ratio:1/1;overflow:hidden;background:#15120f}
+    .menu-product-media img{height:100%;object-fit:cover;transition:transform .55s var(--ease)}
+    .menu-product-card:hover .menu-product-media img{transform:scale(1.045)}
+    .menu-product-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(5,4,3,.58))}
+    .menu-product-price{position:absolute;z-index:2;left:14px;bottom:14px;direction:ltr;background:linear-gradient(135deg,var(--red-soft),var(--red-deep));color:#fff;border-radius:999px;padding:8px 11px;font-weight:700;font-size:13px;box-shadow:0 8px 26px rgba(200,22,36,.27)}
+    .menu-product-price small{font-size:8px;opacity:.78;margin-left:3px}
+    .menu-product-body{padding:18px}
+    .menu-product-body .eyebrow{font-size:9px;letter-spacing:.15em;direction:ltr;color:#9f958d;margin-bottom:5px;text-transform:uppercase}
+    .menu-product-body h4{margin:0 0 7px;font-size:16px;font-weight:600;line-height:1.45}
+    .menu-product-body p{margin:0;color:#968d85;font-size:11px;line-height:1.8;min-height:40px}
+    .menu-topbar{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:26px;padding:14px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.018)}
+    .menu-topbar .tabs{border-bottom:0;padding-bottom:0}
+    .menu-topbar .menu-note{display:flex;align-items:center;gap:10px;color:#9c938a;font-size:11px;white-space:nowrap}
+    .menu-topbar .menu-note i{color:#dc3a45;font-size:15px}
+    .menu-cta-row{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+    .menu-cta-row p{margin:0;color:#9e958d;font-size:12px}
+    .menu-cta-row .btn{min-height:50px}
+
+    /* FEATURE BANNER */
+    .feature-banner{position:relative;min-height:84vh;overflow:hidden;display:flex;align-items:center;border-bottom:1px solid var(--line);isolation:isolate}
+    .feature-banner img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:center 52%;z-index:-3}
+    .feature-banner::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(7,6,5,.94) 0%,rgba(7,6,5,.72) 40%,rgba(7,6,5,.18) 73%,rgba(7,6,5,.42) 100%)}
+    .feature-banner::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.32),transparent 28%,rgba(0,0,0,.48))}
+    .feature-copy{max-width:650px;padding:110px 0}
+    .feature-copy .serif-title{font-family:"Cormorant Garamond",serif;font-size:clamp(66px,10vw,150px);line-height:.72;letter-spacing:-.04em;margin:18px 0 24px;direction:ltr}
+    .feature-copy p{color:#c6beb6;max-width:540px;margin:0 0 30px}
+    .feature-meta{display:flex;gap:34px;flex-wrap:wrap;margin-bottom:30px}
+    .feature-meta div{padding-right:18px;border-right:1px solid var(--gold-line)}
+    .feature-meta small{display:block;color:#8e867e;font-size:9px;text-transform:uppercase;letter-spacing:.14em;direction:ltr}
+    .feature-meta b{display:block;margin-top:3px;font-size:14px}
+
+    /* EXPERIENCE */
+    .experience{background:#0a0907;border-bottom:1px solid var(--line)}
+    .experience-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+    .experience-main{position:relative;min-height:670px;border-radius:28px;overflow:hidden;border:1px solid var(--line)}
+    .experience-main img{height:100%;object-fit:cover}
+    .experience-main::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(0,0,0,.78) 100%)}
+    .experience-caption{position:absolute;z-index:2;right:30px;left:30px;bottom:28px;display:flex;align-items:flex-end;justify-content:space-between;gap:25px}
+    .experience-caption h3{font-size:32px;margin:7px 0 0}
+    .experience-caption span{font-size:10px;color:var(--gold-soft);letter-spacing:.16em;direction:ltr}
+    .experience-caption p{max-width:430px;margin:0;color:#c0b7ae;font-size:12px}
+    .experience-side{display:grid;grid-template-rows:1fr 1fr;gap:18px}
+    .experience-card{position:relative;min-height:325px;border-radius:28px;overflow:hidden;border:1px solid var(--line)}
+    .experience-card img{height:100%;object-fit:cover}
+    .experience-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.76))}
+    .experience-card .caption{position:absolute;z-index:2;right:24px;left:24px;bottom:22px}
+    .experience-card .caption b{font-size:18px;display:flex;align-items:center;gap:9px}.experience-card .caption b i{font-size:15px;color:#ef5661}
+    .experience-card .caption small{display:block;color:#aaa198;margin-top:4px}
+
+    /* VALUES */
+    .values{background:linear-gradient(180deg,#0d0b09,#090806);border-bottom:1px solid var(--line)}
+    .values-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .value{padding:34px 28px;border-left:1px solid var(--line);min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+    .value:last-child{border-left:0}
+    .value .num{font-family:"Cormorant Garamond",serif;font-size:58px;line-height:1;color:#3a3129}
+    .value svg{width:28px;height:28px;stroke:var(--gold-soft);margin-bottom:18px}
+    .value h4{margin:0 0 8px;font-size:15px}
+    .value p{margin:0;color:#8f877f;font-size:11px;line-height:1.75}
+
+    /* GALLERY */
+    .gallery-section{background:#090806;border-bottom:1px solid var(--line)}
+    .gallery-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:320px 320px;gap:16px}
+    .gallery-item{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+    .gallery-item:first-child{grid-row:1/3}
+    .gallery-item:nth-child(4){grid-column:2/4}
+    .gallery-item img{height:100%;object-fit:cover;transition:transform .75s var(--ease),filter .4s}
+    .gallery-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(0,0,0,.62));opacity:.8;transition:.3s}
+    .gallery-item:hover img{transform:scale(1.05);filter:saturate(1.08)}
+    .gallery-item:hover::after{opacity:.55}
+    .gallery-item span{position:absolute;z-index:2;right:18px;bottom:16px;font-size:10px;letter-spacing:.12em;color:#e6ddd4;direction:ltr}
+
+    /* QUOTE */
+    .quote-section{padding:110px 0;background:#0b0907;border-bottom:1px solid var(--line)}
+    .quote-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+    .quote-mark{font-family:"Cormorant Garamond",serif;font-size:180px;color:#332a22;line-height:.6;align-self:start}
+    .quote-text{font-size:clamp(34px,4.2vw,68px);line-height:1.25;letter-spacing:-.035em;margin:0;max-width:940px}
+    .quote-by{margin-top:26px;color:#8f877f;font-size:11px;letter-spacing:.08em}
+
+    /* RESERVATION */
+    .reservation{position:relative;overflow:hidden;background:#090806;border-bottom:1px solid var(--line)}
+    .reservation-grid{display:grid;grid-template-columns:1fr 1fr;min-height:760px}
+    .reservation-media{position:relative}
+    .reservation-media img{height:100%;object-fit:cover}
+    .reservation-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,8,6,.05),rgba(9,8,6,.42) 80%,rgba(9,8,6,.82))}
+    .reservation-content{padding:92px 7vw;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#100d0a,#0b0907)}
+    .reservation-content p{color:var(--muted);max-width:540px;margin:20px 0 30px}
+    .reserve-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+    .field{position:relative}
+    .field.full{grid-column:1/-1}
+    .field input,.field select{
+      width:100%;height:58px;border-radius:13px;border:1px solid var(--line);background:#0b0907;color:#eee7df;padding:0 16px;outline:none;transition:.2s;color-scheme:dark;
+    }
+    .field input:focus,.field select:focus{border-color:var(--gold-line);box-shadow:0 0 0 3px rgba(198,148,83,.06)}
+    .reserve-submit{grid-column:1/-1;margin-top:4px;width:100%}
+    .reserve-note{grid-column:1/-1;margin-top:7px;color:#716a63;font-size:10px}
+
+    /* LOCATION */
+    .location-section{background:#0a0907;padding:110px 0;border-bottom:1px solid var(--line)}
+    .location-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .location-card,.hours-card{border:1px solid var(--line);border-radius:26px;background:linear-gradient(180deg,#12100d,#0c0a08);padding:34px;min-height:360px;position:relative;overflow:hidden}
+    .location-card::before{content:"THERMO";position:absolute;left:-12px;bottom:-34px;font-family:"Cormorant Garamond",serif;font-size:128px;color:#18130f;line-height:1;direction:ltr}
+    .location-card h3,.hours-card h3{font-size:28px;margin:10px 0 24px}
+    .location-info{display:grid;gap:18px;position:relative;z-index:2}
+    .location-info div{padding-bottom:17px;border-bottom:1px solid var(--line)}
+    .location-info span{display:block;color:#837b74;font-size:10px;margin-bottom:4px}
+    .location-info b{font-size:14px}
+    .hours-list{display:grid;gap:0}
+    .hours-row{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--line);font-size:12px}
+    .hours-row span{color:#938a82}
+    .hours-row b{direction:ltr;font-weight:500}
+
+    /* FOOTER */
+    .footer{background:#080705;padding:72px 0 28px}
+    .footer-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:50px;padding-bottom:48px;border-bottom:1px solid var(--line)}
+    .footer-brand{text-align:center;min-width:250px}
+    .footer-brand img{height:48px;width:auto;margin:0 auto 18px}
+    .footer-brand p{margin:0 auto;color:#7d756e;font-size:10px;max-width:260px}
+    .footer-links,.footer-social{display:flex;flex-direction:column;gap:10px;font-size:12px;color:#a79f97}
+    .footer-social{align-items:flex-end}
+    .social-row{display:flex;gap:8px;margin-top:8px}
+    .social{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;transition:.2s}
+    .social:hover{border-color:var(--gold-line);color:var(--gold-soft);transform:translateY(-2px)}
+    .footer-bottom{padding-top:24px;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:#655e58;font-size:10px}
+    .footer-bottom nav{display:flex;gap:18px}
+
+    .mobile-sticky-book{display:none}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+    .reveal.in{opacity:1;transform:none}
+
+    /* RESPONSIVE */
+    @media (max-width:1180px){
+      .menu-product-grid{grid-template-columns:repeat(3,1fr)}
+      :root{--container:min(100% - 40px, 1180px)}
+      .nav-right{gap:18px}.nav-right .nav-link:nth-child(2){display:none}
+      .hero-grid{gap:34px}
+      .cuts-grid{grid-template-columns:1fr 1fr;grid-template-rows:520px 340px}.cut-card.large{grid-column:1/3;grid-row:auto}
+      .menu-shell,.experience-grid{grid-template-columns:1fr}
+      .menu-visual{min-height:620px}
+      .experience-side{grid-template-columns:1fr 1fr;grid-template-rows:none}
+      .values-grid{grid-template-columns:1fr 1fr}.value:nth-child(2){border-left:0}.value:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    }
+
+    @media (max-width:900px){
+      .menu-product-grid{grid-template-columns:repeat(2,1fr)}
+      .menu-topbar{align-items:flex-start;flex-direction:column}.menu-topbar .menu-note{white-space:normal}
+      :root{--container:calc(100% - 32px)}
+      .header .nav{height:78px;grid-template-columns:1fr auto 1fr}
+      .nav-right .nav-link,.nav-left .lang,.nav-left .nav-book{display:none}
+      .hamburger{display:flex;justify-self:start}
+      .nav-right{justify-self:start}.nav-left{justify-self:end}
+      .logo-wrap{min-width:0}.logo-wrap img{height:40px}
+      .hero{padding-top:120px;min-height:920px;align-items:end}
+      .hero::before{background:linear-gradient(180deg,rgba(7,6,5,.24) 0%,rgba(7,6,5,.18) 28%,rgba(7,6,5,.92) 66%,rgba(7,6,5,.99) 100%)}
+      .hero-media img{object-position:50% 20%}
+      .hero-grid{display:flex;flex-direction:column;gap:28px;align-items:stretch}
+      .hero-copy{order:1;max-width:100%}.hero-side{order:2;width:100%}.hero-card{max-width:560px}
+      .hero-rail{display:none}
+      .section{padding:92px 0}.section-head{align-items:flex-start;flex-direction:column;margin-bottom:38px}
+      .cuts-grid{display:grid;grid-template-columns:1fr;grid-template-rows:none}.cut-card.large{grid-column:auto;min-height:560px}.cut-card{min-height:390px}
+      .manifesto-grid,.reservation-grid,.location-grid{grid-template-columns:1fr}
+      .manifesto-media,.reservation-media{min-height:560px}.manifesto-copy,.reservation-content{padding:78px 28px}
+      .feature-banner{min-height:760px}.feature-banner::before{background:linear-gradient(180deg,rgba(7,6,5,.30),rgba(7,6,5,.88) 65%,rgba(7,6,5,.96))}.feature-copy{padding-top:360px}.feature-copy .serif-title{font-size:92px}
+      .experience-main{min-height:560px}.experience-side{grid-template-columns:1fr 1fr}
+      .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:420px 260px 260px}.gallery-item:first-child{grid-column:1/3;grid-row:auto}.gallery-item:nth-child(4){grid-column:1/3}
+      .quote-wrap{grid-template-columns:1fr}.quote-mark{font-size:120px;margin-bottom:-50px}
+      .footer-top{grid-template-columns:1fr;text-align:center}.footer-brand{order:-1}.footer-social{align-items:center}.footer-links{align-items:center}
+    }
+
+    @media (max-width:640px){
+      :root{--container:calc(100% - 24px);--radius:20px}
+      .display{font-size:48px;line-height:1.04}.section-title{font-size:38px}
+      .hero{min-height:840px;padding-bottom:46px}.hero-copy .lead{font-size:14px}.hero-actions{display:grid;grid-template-columns:1fr 1fr}.hero-actions .btn{padding:0 12px;font-size:12px}
+      .hero-card{padding:18px}.hero-stats{grid-template-columns:repeat(3,1fr);gap:0}.hero-stat{padding:0 7px}.hero-stat .stat-benefit{font-size:9px;margin-bottom:6px}.hero-stat b{font-size:24px}.hero-stat small{font-size:7.5px}
+      .scroll-note{display:none}
+      .ticker-track{padding:13px 0}
+      .section{padding:72px 0}
+      .cuts-grid{gap:12px}.cut-card.large{min-height:470px}.cut-card{min-height:330px;border-radius:20px}.cut-content{padding:20px}.cut-content .metric{font-size:50px}.cut-card.large .metric{font-size:64px}
+      .manifesto-media,.reservation-media{min-height:430px}.manifesto-copy,.reservation-content{padding:58px 20px}.manifesto-copy .index{font-size:66px}.manifesto-points{grid-template-columns:1fr}
+      .menu-panel{padding:18px;border-radius:20px}.menu-visual{min-height:470px;border-radius:20px}.menu-visual-copy strong{font-size:42px}.menu-item-row{gap:14px;padding:19px 0}.menu-item-row h4{font-size:14px}.menu-price strong{font-size:25px}.menu-footer{flex-direction:column;align-items:flex-start}
+      .feature-banner{min-height:690px}.feature-copy{padding:350px 0 70px}.feature-copy .serif-title{font-size:72px}.feature-meta{gap:18px}
+      .experience-main{min-height:500px;border-radius:20px}.experience-caption{right:20px;left:20px;bottom:20px;flex-direction:column;align-items:flex-start}.experience-side{grid-template-columns:1fr}.experience-card{min-height:290px;border-radius:20px}
+      .values-grid{grid-template-columns:1fr}.value{border-left:0;border-bottom:1px solid var(--line)!important}.value:last-child{border-bottom:0!important}
+      .gallery-grid{grid-template-columns:1fr;grid-template-rows:none}.gallery-item,.gallery-item:first-child,.gallery-item:nth-child(4){grid-column:auto;grid-row:auto;min-height:300px}.gallery-item:first-child{min-height:440px}
+      .quote-section{padding:76px 0}.quote-text{font-size:31px}.quote-mark{font-size:90px}
+      .reserve-form{grid-template-columns:1fr}.field.full,.reserve-submit,.reserve-note{grid-column:auto}
+      .location-card,.hours-card{padding:24px;border-radius:20px}
+      .footer{padding-bottom:90px}.footer-bottom{justify-content:center;text-align:center}.footer-bottom nav{width:100%;justify-content:center}
+      .mobile-sticky-book{display:flex;position:fixed;z-index:420;bottom:12px;left:12px;right:12px;min-height:56px;border-radius:14px;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--red-soft),var(--red-deep));color:#fff;font-weight:700;box-shadow:0 12px 40px rgba(0,0,0,.46)}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/><style>
+    /* V4 refinement: bilingual, more compact, more disciplined icon usage */
+    .i18n-pending{visibility:hidden}
+    html[lang="en"] body{font-family:"Manrope",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    html[lang="ar"] body{font-family:"Alexandria",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+
+    .section{padding:102px 0}
+    .section-title{
+      font-size:clamp(28px,2.45vw,44px);
+      line-height:1.28;
+      letter-spacing:-.02em;
+      max-width:19ch;
+      text-wrap:pretty;
+    }
+    .display{font-size:clamp(46px,5.35vw,88px);line-height:1.02}
+    .section-head{align-items:flex-start;margin-bottom:38px;gap:34px}
+    .section-head .copy{max-width:680px}
+    .section-head p{max-width:540px;font-size:13px;line-height:1.9}
+
+    .lang-switch,.mobile-lang-switch{
+      border:1px solid var(--line);background:rgba(255,255,255,.025);color:#eee7df;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;
+      min-height:40px;padding:0 12px;font-size:11px;font-weight:700;transition:.2s
+    }
+    .lang-switch:hover,.mobile-lang-switch:hover{border-color:rgba(232,59,71,.45);background:rgba(200,22,36,.08)}
+    .lang-switch i,.mobile-lang-switch i{font-size:12px;color:#d8d0c8}
+    .mobile-lang-switch{min-height:38px}
+
+    .icon-box{width:38px;height:38px;border-radius:11px;margin-bottom:10px}
+    .icon-box i{font-size:14px}
+    .manifesto-point{display:flex;flex-direction:column;align-items:flex-start}
+
+    .experience{padding:96px 0}
+    .experience .section-head{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.75fr);align-items:end}
+    .experience .section-title{max-width:17ch}
+    .experience-grid{grid-template-columns:1.15fr .85fr;gap:16px}
+    .experience-main{min-height:460px;border-radius:22px}
+    .experience-side{gap:16px}
+    .experience-card{min-height:222px;border-radius:22px}
+    .experience-caption{right:24px;left:24px;bottom:22px}
+    .experience-caption h3{font-size:clamp(22px,1.8vw,30px);line-height:1.35}
+    .experience-caption p{font-size:11px;max-width:390px}
+    .experience-card .caption{right:20px;left:20px;bottom:18px}
+    .experience-card .caption b{font-size:16px;display:block}
+    .experience-card .caption small{font-size:10px;line-height:1.7;max-width:360px}
+
+    .values{padding:84px 0}
+    .values .section-head{margin-bottom:28px}
+    .values-grid{gap:12px;border:0}
+    .value{
+      padding:22px 22px;min-height:150px;border:1px solid var(--line)!important;border-radius:18px;
+      background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.008));
+      justify-content:flex-start;gap:18px
+    }
+    .value .num{font-size:38px;color:#2d2722}
+    .value h4{font-size:14px;margin:0 0 5px}
+    .value p{font-size:10px;line-height:1.7}
+
+    .feature-banner{min-height:72vh}
+    .feature-copy{padding:88px 0}
+    .feature-copy .serif-title{font-size:clamp(60px,8.5vw,118px)}
+    .quote-section{padding:88px 0}
+    .quote-text{font-size:clamp(30px,3.2vw,52px);line-height:1.3}
+    .manifesto-grid{min-height:690px}
+    .manifesto-copy{padding-top:82px;padding-bottom:82px}
+    .manifesto-copy .index{font-size:68px}
+    .reservation-grid{min-height:660px}
+
+    /* Direction-aware details */
+    html[dir="ltr"] .nav-link::after{left:0;right:auto}
+    html[dir="ltr"] .hero-rail{left:24px;right:auto}
+    html[dir="ltr"] .cut-badge{left:22px;right:auto}
+    html[dir="ltr"] .manifesto-label{right:34px;left:auto}
+    html[dir="ltr"] .gallery-item span{left:18px;right:auto}
+    html[dir="ltr"] .menu-product-price{right:14px;left:auto}
+    html[dir="ltr"] .hero-stat{border-right:1px solid var(--line);border-left:0}
+    html[dir="ltr"] .hero-stat:last-child{border-right:0}
+    html[dir="ltr"] .feature-meta div{padding-left:18px;padding-right:0;border-left:1px solid var(--gold-line);border-right:0}
+    html[dir="ltr"] .menu-item-row:hover{padding-left:11px;padding-right:4px}
+
+    @media(max-width:1024px){
+      .experience .section-head{grid-template-columns:1fr}
+      .experience-grid{grid-template-columns:1fr}
+      .experience-main{min-height:440px}
+      .experience-side{grid-template-columns:1fr 1fr;grid-template-rows:none}
+      .experience-card{min-height:250px}
+    }
+    @media(max-width:720px){
+      .section{padding:78px 0}
+      .section-title{font-size:clamp(26px,8vw,36px);max-width:100%}
+      .display{font-size:clamp(42px,13vw,64px)}
+      .experience{padding:74px 0}
+      .experience-main{min-height:380px}
+      .experience-side{grid-template-columns:1fr}
+      .experience-card{min-height:230px}
+      .values{padding:68px 0}
+      .values-grid{grid-template-columns:1fr 1fr;gap:10px}
+      .value{min-height:138px;padding:18px}
+      .value .num{font-size:32px}
+    }
+    @media(max-width:480px){
+      .values-grid{grid-template-columns:1fr}
+      .value{min-height:auto}
+    }
+
+
+    /* =========================================================
+       V5 — Compact editorial Experience section
+       Prevent source-image dimensions from expanding the layout.
+       ========================================================= */
+    .experience{
+      padding:78px 0;
+      overflow:hidden;
+    }
+    .experience .section-head{
+      margin-bottom:30px;
+      gap:28px;
+    }
+    .experience .section-title{
+      max-width:15ch;
+      font-size:clamp(32px,3.25vw,52px);
+      line-height:1.12;
+    }
+    .experience .section-head p{
+      max-width:500px;
+      font-size:12px;
+      line-height:1.85;
+    }
+    .experience-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.45fr) minmax(300px,.55fr);
+      gap:14px;
+      height:420px;
+      align-items:stretch;
+    }
+    .experience-main,
+    .experience-card{
+      position:relative;
+      min-height:0 !important;
+      height:100%;
+      overflow:hidden;
+      border-radius:20px;
+      isolation:isolate;
+      background:#111;
+    }
+    .experience-main > img,
+    .experience-card > img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100% !important;
+      max-height:none !important;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      transition:transform .65s cubic-bezier(.2,.7,.2,1), filter .35s ease;
+    }
+    .experience-main:hover > img,
+    .experience-card:hover > img{
+      transform:scale(1.025);
+    }
+    .experience-main::after{
+      z-index:1;
+      background:linear-gradient(180deg,rgba(0,0,0,.04) 30%,rgba(0,0,0,.82) 100%);
+    }
+    .experience-side{
+      display:grid;
+      grid-template-columns:1fr;
+      grid-template-rows:1fr 1fr;
+      gap:14px;
+      height:420px;
+      min-height:0;
+    }
+    .experience-card::after{
+      z-index:1;
+      background:linear-gradient(180deg,rgba(0,0,0,.04) 25%,rgba(0,0,0,.78) 100%);
+    }
+    .experience-caption{
+      right:22px;
+      left:22px;
+      bottom:20px;
+      gap:18px;
+    }
+    .experience-caption h3{
+      font-size:clamp(20px,1.55vw,27px);
+      line-height:1.28;
+      margin-top:6px;
+      max-width:17ch;
+    }
+    .experience-caption p{
+      max-width:350px;
+      font-size:10.5px;
+      line-height:1.75;
+    }
+    .experience-card .caption{
+      right:18px;
+      left:18px;
+      bottom:16px;
+    }
+    .experience-card .caption b{
+      font-size:14px;
+      line-height:1.35;
+    }
+    .experience-card .caption small{
+      font-size:9.5px;
+      line-height:1.65;
+      max-width:300px;
+    }
+
+    @media(max-width:1024px){
+      .experience{padding:70px 0}
+      .experience-grid{
+        grid-template-columns:1.25fr .75fr;
+        height:390px;
+      }
+      .experience-side{height:390px}
+    }
+    @media(max-width:780px){
+      .experience .section-head{margin-bottom:24px}
+      .experience-grid{
+        grid-template-columns:1fr;
+        height:auto;
+        gap:12px;
+      }
+      .experience-main{
+        height:310px;
+      }
+      .experience-side{
+        height:auto;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:none;
+        gap:12px;
+      }
+      .experience-card{
+        height:190px;
+      }
+      .experience-caption{
+        right:18px;left:18px;bottom:17px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:5px;
+      }
+      .experience-caption p{display:none}
+    }
+    @media(max-width:540px){
+      .experience{padding:60px 0}
+      .experience .section-title{font-size:clamp(29px,9vw,38px)}
+      .experience-main{height:270px;border-radius:17px}
+      .experience-side{grid-template-columns:1fr}
+      .experience-card{height:170px;border-radius:17px}
+      .experience-card .caption small{font-size:9px}
+    }
+
+</style>
+</head>
+<body class="i18n-pending">
+<header class="header" id="header">
+<div class="nav">
+<div class="nav-right">
+<button aria-label="فتح القائمة" class="hamburger" data-aria-ar="فتح القائمة" data-aria-en="Open menu" id="menuToggle"><span></span></button>
+<a class="nav-link" href="#experience">التجربة</a>
+<a class="nav-link" href="#cuts">مختارات ثيرمو</a>
+<a class="nav-link" href="#menu">القائمة</a>
+</div>
+<a aria-label="Thermo Steakhouse" class="logo-wrap" href="#top">
+<img alt="THERMO Steakhouse logo" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/03/Artboard-1logo_header-1.png"/>
+</a>
+<div class="nav-left">
+<a class="nav-link" href="#story">قصتنا</a>
+<a class="nav-link" href="#location">الموقع</a>
+<button aria-label="Switch language" class="lang-switch" id="langToggle" type="button"><i class="fa-solid fa-globe"></i><span id="langToggleText">العربية</span></button>
+<a class="btn btn-primary nav-book" href="#reservation">احجز طاولتك <i class="fa-solid fa-arrow-left"></i>
+</a>
+</div>
+</div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+<nav>
+<a class="menu-item" href="#experience">التجربة</a>
+<a class="menu-item" href="#cuts">مختارات ثيرمو</a>
+<a class="menu-item" href="#menu">القائمة</a>
+<a class="menu-item" href="#story">قصتنا</a>
+<a class="menu-item" href="#location">الموقع</a>
+<a class="menu-item" href="#reservation">احجز طاولتك</a>
+</nav>
+<div class="mobile-meta"><span>Al Khobar, Saudi Arabia</span><button aria-label="Switch language" class="mobile-lang-switch" id="mobileLangToggle" type="button"><i class="fa-solid fa-globe"></i><span id="mobileLangToggleText">العربية</span></button></div>
+</div>
+<main id="top">
+<section class="hero">
+<div class="hero-media">
+<img alt="Premium grilled steak" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&amp;fit=crop&amp;w=2200&amp;q=92"/>
+</div>
+<div class="hero-rail"><span>01</span><i></i><span>THERMO</span><i></i><span>2026</span></div>
+<div class="container hero-grid">
+<div class="hero-side reveal">
+<div class="hero-card">
+<div class="hero-card-top">
+<strong>وش يميز ستيك ثيرمو؟</strong>
+<span>WHY THERMO</span>
+</div>
+<div class="hero-stats">
+<div class="hero-stat"><span class="stat-benefit">نكهة أعمق</span><b>21+ يوم</b><small>تعتيق جاف</small></div>
+<div class="hero-stat"><span class="stat-benefit">عصارة وطراوة</span><b>MB4+</b><small>بلاك أنجوس مختار</small></div>
+<div class="hero-stat"><span class="stat-benefit">رخامية أغنى</span><b>6/7</b><small>واغيو أسترالي فاخر</small></div>
+</div>
+</div>
+</div>
+<div class="hero-copy reveal">
+<span class="kicker">A CUT ABOVE EXPERIENCE</span>
+<h1 class="display">تجربة ستيك<br/>استثنائية.</h1>
+<p class="lead">اختَر قطعتك، وحدد درجة الاستواء اللي تفضلها، وخلّ الباقي علينا. في ثيرمو نهتم بكل تفصيلة من أول اختيارك إلى آخر لقمة.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#reservation">احجز طاولتك <i class="fa-solid fa-arrow-left"></i>
+</a>
+<a class="btn btn-outline" href="#menu">استعرض القائمة <i class="fa-solid fa-book-open"></i></a>
+</div>
+</div>
+</div>
+<div class="scroll-note">SCROLL TO DISCOVER</div>
+</section>
+<div aria-hidden="true" class="ticker">
+<div class="ticker-track">
+<span>DRY AGED 21+ DAYS</span><span>BLACK ANGUS MB4+</span><span>AUSTRALIAN WAGYU</span><span>FIRE • CRAFT • PRECISION</span><span>THERMO STEAKHOUSE</span>
+<span>DRY AGED 21+ DAYS</span><span>BLACK ANGUS MB4+</span><span>AUSTRALIAN WAGYU</span><span>FIRE • CRAFT • PRECISION</span><span>THERMO STEAKHOUSE</span>
+</div>
+</div>
+<section class="section cuts-section" id="cuts">
+<div class="container">
+<div class="section-head reveal">
+<div class="copy">
+<span class="kicker">PREMIUM CUTS</span>
+<h2 class="section-title">اختَر القطعة اللي تناسب ذوقك.</h2>
+</div>
+<p>من الريب آي المعتّق جافًا إلى الواغيو والتوماهوك، عندك خيارات مختلفة في الرخامية والطراوة والنكهة عشان تختار اللي يناسب مزاجك.</p>
+</div>
+<div class="cuts-grid">
+<article class="cut-card large reveal">
+<img alt="Dry aged ribeye" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3593-scaled-e1629295745459-600x600.jpg"/>
+<span class="cut-badge">SIGNATURE CUT</span>
+<div class="cut-content">
+<div class="metric">21+</div>
+<h3>Dry-Aged Ribeye</h3>
+<p>ريب آي معتّق جافًا لمدة 21 يوم على الأقل لنكهة أعمق وطراوة مميزة.</p>
+</div>
+
+</article>
+<article class="cut-card reveal">
+<img alt="Wagyu steak" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/06/AAK_3576-scaled-e1629287352130-600x600.jpg"/>
+<span class="cut-badge">WAGYU</span>
+<div class="cut-content"><div class="metric">6/7</div><h3>Australian Wagyu</h3><p>رخامية عالية وطراوة واضحة تعطيك نكهة غنية في كل لقمة.</p></div>
+
+</article>
+<article class="cut-card reveal">
+<img alt="Black Angus steak" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3581-scaled-e1629299639388-600x600.jpg"/>
+<span class="cut-badge">BLACK ANGUS</span>
+<div class="cut-content"><div class="metric">MB4+</div><h3>Black Angus</h3><p>Black Angus بدرجة MB4+ بتوازن ممتاز بين الطراوة والنكهة.</p></div>
+
+</article>
+<article class="cut-card reveal">
+<img alt="Tomahawk steak" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/4-600x600.jpg"/>
+<span class="cut-badge">FOR SHARING</span>
+<div class="cut-content"><div class="metric">1.2KG</div><h3>Tomahawk</h3><p>قطعة كبيرة للمشاركة، مناسبة إذا تبغون خيار يلفت النظر على الطاولة.</p></div>
+
+</article>
+<article class="cut-card reveal">
+<img alt="Chef searing steak" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3566-scaled-e1629295380256-600x600.jpg"/>
+<span class="cut-badge">FIRE CONTROL</span>
+<div class="cut-content"><div class="metric">°C</div><h3>درجة استواء على اختيارك</h3><p>اختَر درجة الاستواء اللي تفضلها، ونجهّز قطعتك بالشكل اللي يناسب ذوقك.</p></div>
+
+</article>
+</div>
+</div>
+</section>
+<section class="manifesto" id="story">
+<div class="manifesto-grid">
+<div class="manifesto-media reveal">
+<img alt="ستيك ثيرمو من قائمة المطعم" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3599-scaled-e1629299065484-600x600.jpg"/>
+<div class="manifesto-label">CRAFTED FOR YOUR TABLE</div>
+</div>
+<div class="manifesto-copy reveal">
+<div class="index serif">01</div>
+<span class="kicker">YOUR STEAK, YOUR WAY</span>
+<h2 class="section-title">قطعتك، بالطريقة اللي تحبها.</h2>
+<p>من نوع القطعة ودرجة الاستواء إلى الجوانب والصوصات، أنت تختار تفاصيل وجبتك وإحنا نهتم إن كل شيء يوصل طاولتك بالشكل الصح.</p>
+<div class="manifesto-points">
+<div class="manifesto-point"><span class="icon-box red"><i class="fa-solid fa-drumstick-bite"></i></span><b>اختيارات تناسب ذوقك</b><span>Ribeye، Filet Mignon، Wagyu وغيرها من القطع المميزة.</span></div>
+<div class="manifesto-point"><span class="icon-box red"><i class="fa-solid fa-fire-flame-curved"></i></span><b>درجة الاستواء اللي تفضلها</b><span>من Rare إلى Well Done — اختَر الدرجة المناسبة لك.</span></div>
+<div class="manifesto-point"><span class="icon-box red"><i class="fa-solid fa-clock"></i></span><b>تعتيق جاف لنكهة أعمق</b><span>قطع مختارة معتّقة جافًا لمحبي النكهة المركزة.</span></div>
+<div class="manifesto-point"><span class="icon-box red"><i class="fa-solid fa-utensils"></i></span><b>كمّل وجبتك</b><span>أضف المقبلات والجوانب والصوصات اللي تناسب اختيارك.</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section menu-section" id="menu">
+<div class="container">
+<div class="section-head reveal">
+<div class="copy"><span class="kicker">THERMO MENU</span><h2 class="section-title">اختَر اللي تشتهيه من قائمة ثيرمو.</h2></div>
+<p>تصفّح أشهر الأطباق بالصور والأسعار، وانتقل بين الفئات بسهولة قبل زيارتك.</p>
+</div>
+<div class="menu-topbar reveal">
+<div aria-label="فئات منيو ثيرمو" class="tabs" data-aria-ar="فئات قائمة ثيرمو" data-aria-en="Thermo menu categories" role="tablist">
+<button class="tab active" data-menu-category="steak">الستيك</button>
+<button class="tab" data-menu-category="signature">ستيك ثيرمو الخاص</button>
+<button class="tab" data-menu-category="starters">المقبلات</button>
+<button class="tab" data-menu-category="salads">السلطات والشوربة</button>
+<button class="tab" data-menu-category="sides">الأطباق الجانبية</button>
+</div>
+<div class="menu-note"><i class="fa-solid fa-circle-info"></i><span>الأسعار بالريال السعودي</span></div>
+</div>
+<div class="menu-showcase reveal">
+<div class="menu-category-panel active" data-menu-panel="steak">
+<div class="menu-product-grid">
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Dry-aged Ribeye" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3593-scaled-e1629295745459-600x600.jpg"/><span class="menu-product-price">275 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">300 G • DRY AGED 21+ DAYS</div><h4>Dry-aged Ribeye</h4><p>Black Angus MB4+ معتّق جافًا 21 يوم على الأقل، بنكهة مركزة وطراوة مميزة.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Fillet Mignon" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3566-scaled-e1629295380256-600x600.jpg"/><span class="menu-product-price">209 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">200 G • BLACK ANGUS MB4+</div><h4>Fillet Mignon</h4><p>قطعة تندرليون طرية جدًا بنكهة خفيفة ومتوازنة.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="New York Strip" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3581-scaled-e1629299639388-600x600.jpg"/><span class="menu-product-price">189 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">300 G • BLACK ANGUS MB4+</div><h4>New York Strip</h4><p>خيار متوازن بنكهة واضحة ونسبة دهون أخف من الريب آي.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Wet-Aged Ribeye" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3599-scaled-e1629299065484-600x600.jpg"/><span class="menu-product-price">209 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">300 G • WET AGED</div><h4>Wet-Aged Ribeye</h4><p>ريب آي طري وعصاري، خيار كلاسيكي لمحبي النكهة الغنية.</p></div></article>
+</div>
+</div>
+<div class="menu-category-panel" data-menu-panel="signature">
+<div class="menu-product-grid">
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Cowboy Steak" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/6-e1619900223724-600x600.jpg"/><span class="menu-product-price">449 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">650 G • FOR 2–3</div><h4>Cowboy Steak</h4><p>ريب آي بالعظم بحجم مناسب للمشاركة ونكهة غنية على الطاولة.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Porterhouse Steak" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/8-e1619807342486-600x600.jpg"/><span class="menu-product-price">599 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">1.1 KG • FOR 2–3</div><h4>Porterhouse Steak</h4><p>قطعتان في قطعة واحدة: New York Strip وتندرليون حول العظم.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="T-Bone Steak" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3749-scaled-e1629296000879-600x600.jpg"/><span class="menu-product-price">275 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">500 G • BLACK ANGUS MB4+</div><h4>T-Bone Steak</h4><p>خيار كلاسيكي يجمع نكهة الـStrip مع طراوة التندرليون.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Wagyu Ribeye" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/06/AAK_3576-scaled-e1629287352130-600x600.jpg"/><span class="menu-product-price">329 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">300 G • WAGYU 6/7</div><h4>Wagyu Ribeye</h4><p>رخامية عالية وطراوة مميزة لعشاق الواغيو.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Tomahawk" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/4-600x600.jpg"/><span class="menu-product-price">599 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">1.1–1.3 KG • FOR 2–3</div><h4>Tomahawk</h4><p>قطعة كبيرة بضلعة طويلة، مناسبة للمشاركة وتلفت النظر على الطاولة.</p></div></article>
+</div>
+</div>
+<div class="menu-category-panel" data-menu-panel="starters">
+<div class="menu-product-grid">
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Experimental Chips" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_2335-scaled-e1629299723437-600x600.jpg"/><span class="menu-product-price">45 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">THERMO STARTER</div><h4>Experimental Chips</h4><p>باسترامي مدخن مع رقائق بطاطا حلوة ولمسة Umami بطابع ثيرمو.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Mushroom Arancini" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_2348-scaled-e1629300541579-600x600.jpg"/><span class="menu-product-price">35 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">PORCINI • SMOKED AIOLI</div><h4>Mushroom Arancini</h4><p>كرات ريزوتو بالفطر، مقرمشة من الخارج وتُقدّم مع أيولي مدخن.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Samba Shrimp" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_2376-scaled-e1629133487837-600x600.jpg"/><span class="menu-product-price">55 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">SHRIMP • PINEAPPLE</div><h4>Samba Shrimp</h4><p>روبيان متبّل على رقائق مقرمشة مع Pineapple Pico de Gallo.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Buffalo Chicken Bites" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_2395-600x600.jpg"/><span class="menu-product-price">42 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">BUFFALO • RANCH</div><h4>Buffalo Chicken Bites</h4><p>قطع دجاج بصوص البوفالو، تُقدّم مع صوص الرانش.</p></div></article>
+</div>
+</div>
+<div class="menu-category-panel" data-menu-panel="salads">
+<div class="menu-product-grid">
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Caesar Salad Bites" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_2298-scaled-e1629297945907-600x600.jpg"/><span class="menu-product-price">53 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">CAESAR • SMOKED CHICKEN</div><h4>Caesar Salad Bites</h4><p>خس روماني، دجاج مدخن، كروتون مقرمش وبارميزان.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Smoked Green Salad" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_2291-scaled-e1629297649210-600x600.jpg"/><span class="menu-product-price">35 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">FETA • ALMOND • POMEGRANATE</div><h4>Smoked Green Salad</h4><p>سلطة خضراء بلمسة مدخنة، فيتا، لوز محمّص ورمان.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Steak Salad" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_2283-scaled-e1629298230236-600x600.jpg"/><span class="menu-product-price">69 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">STEAK • MUSHROOM • CHIMICHURRI</div><h4>Steak Salad</h4><p>خضار مشكلة مع شرائح ستيك، فطر، بصل مقرمش وشيميتشوري.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="French Onion Soup" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_2425-scaled-e1629298481773-600x600.jpg"/><span class="menu-product-price">32 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">FRENCH ONION • GRUYÈRE</div><h4>French Onion Soup</h4><p>شوربة بصل فرنسية مع Gruyère بطابع ثيرمو.</p></div></article>
+</div>
+</div>
+<div class="menu-category-panel" data-menu-panel="sides">
+<div class="menu-product-grid">
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Cole Slaw" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3535-scaled-e1629292164374-600x600.jpg"/><span class="menu-product-price">15 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">SIDE</div><h4>Cole Slaw</h4><p>جانب خفيف ومنعش يوازن النكهات الغنية للستيك.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Grilled Mushroom and Onions" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3543-scaled-e1629291295637-600x600.jpg"/><span class="menu-product-price">15 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">SIDE</div><h4>Grilled Mushroom &amp; Onions</h4><p>فطر وبصل مشويان يكملان نكهة الستيك بدون أن يغطيا عليها.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Mashed Potatoes" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3533-scaled-e1629290989585-600x600.jpg"/><span class="menu-product-price">15 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">SIDE</div><h4>Mashed Potatoes</h4><p>بطاطس مهروسة بقوام كريمي، اختيار كلاسيكي مع قطع اللحم.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Roasted Vegetables" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3540-scaled-e1629291149548-600x600.jpg"/><span class="menu-product-price">15 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">SIDE</div><h4>Roasted Vegetables</h4><p>خضروات موسمية مشوية لمن يفضل جانبًا أخف.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Rosemary French Fries" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3526-scaled-e1629294832299-600x600.jpg"/><span class="menu-product-price">15 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">SIDE</div><h4>Rosemary French Fries</h4><p>بطاطس مقرمشة مع الروزماري ورائحة عشبية واضحة.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Mac n Cheese" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3564-scaled-e1629289147273-600x600.jpg"/><span class="menu-product-price">21 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">PREMIUM SIDE</div><h4>Mac n Cheese</h4><p>جانب غني بالجبن لمن يريد تجربة أكثر امتلاءً.</p></div></article>
+<article class="menu-product-card"><div class="menu-product-media"><img alt="Sweet Potato Fries" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3515-scaled-e1629289353441-600x600.jpg"/><span class="menu-product-price">21 <small>SAR</small></span></div><div class="menu-product-body"><div class="eyebrow">PREMIUM SIDE</div><h4>Sweet Potato Fries</h4><p>بطاطا حلوة مقرمشة بطعم متوازن بين الحلاوة والملوحة.</p></div></article>
+</div>
+</div>
+</div>
+<div class="menu-cta-row reveal">
+<p>هذه معاينة مختصرة. افتح القائمة الكاملة لكل الأصناف وتفاصيل الحساسية.</p>
+<a class="btn btn-primary" href="https://thermo.sa/ar/%D9%82%D8%A7%D8%A6%D9%85%D8%A9/" rel="noopener" target="_blank">عرض القائمة الكاملة <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+</div>
+</div>
+</section>
+<section class="feature-banner">
+<img alt="Tomahawk steak feature" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/4-600x600.jpg">
+<div class="container">
+<div class="feature-copy reveal">
+<span class="kicker">THERMO SIGNATURE</span>
+<div class="serif-title">TOMA<br/>HAWK</div>
+<div class="feature-meta">
+<div><small>WEIGHT</small><b>1.1 — 1.3 KG</b></div>
+<div><small>SHARING</small><b>2 — 3 GUESTS</b></div>
+<div><small>STYLE</small><b>FIRE FINISHED</b></div>
+</div>
+<p>إذا كانت زيارتكم لشخصين أو ثلاثة، التوماهوك خيار ممتاز للمشاركة وحضور مميز على الطاولة.</p>
+<a class="btn btn-primary" href="#reservation">احجز طاولتك <i class="fa-solid fa-arrow-left"></i></a>
+</div>
+</div>
+</img></section>
+<section class="section experience" id="experience">
+<div class="container">
+<div class="section-head reveal">
+<div class="copy"><span class="kicker">THE EXPERIENCE</span><h2 class="section-title">ليلة مرتبة من أول ما توصل.</h2></div>
+<p>سواء كانت زيارتك عشاء هادئ، احتفال أو لقاء خاص، نرتّب التجربة عشان تكون سلسة من الحجز إلى آخر طبق.</p>
+</div>
+<div class="experience-grid">
+<article class="experience-main reveal">
+<img alt="Fine dining atmosphere" loading="lazy" src="https://d8aaen7rph5y9.cloudfront.net/app/mediafiles/t_1758555148_7ayv00/restaurants/thermo_steakhouse_-_asharrythermo.sa_17590580088016374.jpg">
+<div class="experience-caption"><div><span>DINING ROOM</span><h3>أجواء مريحة لعشاء يستاهل وقته.</h3></div><p>جلسات مريحة وإضاءة هادئة تناسب العشاء الثنائي، العائلة والمناسبات الصغيرة.</p></div>
+</article>
+<div class="experience-side">
+<article class="experience-card reveal"><img alt="Restaurant table" loading="lazy" src="https://d8aaen7rph5y9.cloudfront.net/app/mediafiles/t_1758555148_7ayv00/categories/prive_dine_in_17877520337576464.webp"/><div class="caption"><b> احجز لمناسبتك</b><small>عشاء، احتفال أو لقاء خاص — اختَر الوقت المناسب لك.</small></div></article>
+<article class="experience-card reveal"><img alt="Restaurant ambience" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/04/AAK_3593-scaled-e1629295745459-600x600.jpg"/><div class="caption"><b> Private Dining</b><small>غرفة خاصة في الخبر تستوعب حتى 10 ضيوف، ومجهزة ببروجكتر للاجتماعات والمناسبات الخاصة.</small></div></article>
+</div>
+</div>
+</div>
+</section>
+<section class="section values">
+<div class="container">
+<div class="section-head reveal"><div class="copy"><span class="kicker">YOUR EXPERIENCE</span><h2 class="section-title">أربع خطوات وتكون تجربتك مرتبة.</h2></div><p>اختَر القطعة، درجة الاستواء، الجوانب ووقت الزيارة — وإحنا نهتم بالباقي.</p></div>
+<div class="values-grid reveal">
+<div class="value"><div class="num">01</div><div><h4>اختَر قطعتك</h4><p>من Ribeye إلى Wagyu وTomahawk، كل قطعة لها نكهة وقوام مختلف.</p></div></div>
+<div class="value"><div class="num">02</div><div><h4>حدّد درجة الاستواء</h4><p>اختَر Rare، Medium أو Well Done حسب ذوقك.</p></div></div>
+<div class="value"><div class="num">03</div><div><h4>كمّل وجبتك</h4><p>أضف الجوانب والصوصات اللي تناسب قطعتك.</p></div></div>
+<div class="value"><div class="num">04</div><div><h4>احجز طاولتك</h4><p>احجز قبل الزيارة وخَلّ طاولتك جاهزة وقت وصولك.</p></div></div>
+</div>
+</div>
+</section>
+<section class="section gallery-section">
+<div class="container">
+<div class="section-head reveal"><div class="copy"><span class="kicker">THERMO MOMENTS</span><h2 class="section-title">شوف أجواء ثيرمو قبل زيارتك.</h2></div><p>صور من الأطباق والجلسات والتفاصيل اللي تعيشها في ثيرمو.</p></div>
+<div class="gallery-grid">
+<figure class="gallery-item reveal"><img alt="Dining room" loading="lazy" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&amp;fit=crop&amp;w=1400&amp;q=90"/><span>01 — ATMOSPHERE</span></figure>
+<figure class="gallery-item reveal"><img alt="Steak detail" loading="lazy" src="https://images.unsplash.com/photo-1546241072-48010ad2862c?auto=format&amp;fit=crop&amp;w=900&amp;q=90"/><span>02 — DETAIL</span></figure>
+<figure class="gallery-item reveal"><img alt="Restaurant dinner" loading="lazy" src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&amp;fit=crop&amp;w=900&amp;q=90"/><span>03 — TABLE</span></figure>
+<figure class="gallery-item reveal"><img alt="Dining spread" loading="lazy" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&amp;fit=crop&amp;w=1500&amp;q=90"/><span>04 — THE NIGHT</span></figure>
+</div>
+</div>
+</section>
+<section class="quote-section">
+<div class="container quote-wrap reveal">
+<div class="quote-mark">“</div>
+<div><p class="quote-text">اختَر قطعتك، اجمع اللي تحبهم، وخلّ علينا باقي تفاصيل الليلة.</p><div class="quote-by">THERMO STEAKHOUSE — A CUT ABOVE EXPERIENCE</div></div>
+</div>
+</section>
+<section class="reservation" id="reservation">
+<div class="reservation-grid">
+<div class="reservation-media reveal"><img alt="Restaurant table reservation" loading="lazy" src="https://d8aaen7rph5y9.cloudfront.net/app/mediafiles/t_1758555148_7ayv00/restaurants/thermo_steakhouse_-_asharrythermo.sa_17590580088016374.jpg"/></div>
+<div class="reservation-content reveal">
+<span class="kicker">RESERVATIONS</span>
+<h2 class="section-title">احجز طاولتك في ثيرمو.</h2>
+<p>حدّد التاريخ والوقت وعدد الضيوف، وأرسل طلب الحجز بخطوات بسيطة.</p>
+<form class="reserve-form" id="reservationForm">
+<div class="field"><input aria-label="التاريخ" required="" type="date"/></div>
+<div class="field"><select aria-label="الوقت" required=""><option value="">اختر الوقت</option><option>06:00 PM</option><option>07:00 PM</option><option>08:00 PM</option><option>09:00 PM</option><option>10:00 PM</option><option>11:00 PM</option></select></div>
+<div class="field"><select aria-label="عدد الضيوف" required=""><option value="">عدد الضيوف</option><option>2 ضيوف</option><option>3 ضيوف</option><option>4 ضيوف</option><option>5 ضيوف</option><option>6+ ضيوف</option></select></div>
+<div class="field"><input aria-label="رقم الجوال" data-aria-ar="رقم الجوال" data-aria-en="Mobile number" data-placeholder-ar="رقم الجوال" data-placeholder-en="Mobile number" placeholder="رقم الجوال" type="tel"/></div>
+<button class="btn btn-primary reserve-submit" type="submit">تحقق من التوفر <i class="fa-solid fa-calendar-check"></i></button>
+<div class="reserve-note">للمجموعات والمناسبات الخاصة، تواصل معنا مباشرة ونرتّب لكم التفاصيل.</div>
+</form>
+</div>
+</div>
+</section>
+<section class="location-section" id="location">
+<div class="container location-grid">
+<article class="location-card reveal">
+<span class="kicker">VISIT THERMO</span>
+<h3>الخبر، المملكة العربية السعودية</h3>
+<div class="location-info">
+<div><span>LOCATION</span><b>8841 طريق الملك سعود بن عبدالعزيز، الأندلس، الخبر</b></div>
+<div><span>CONTACT</span><b>055 050 2275</b></div>
+<div><span>DRESS CODE</span><b>Smart Casual</b></div>
+</div>
+</article>
+<article class="hours-card reveal">
+<span class="kicker">OPENING HOURS</span>
+<h3>مواعيد العمل</h3>
+<div class="hours-list">
+<div class="hours-row"><span>الأحد — الأربعاء</span><b>4:00 PM — 12:00 AM</b></div>
+<div class="hours-row"><span>الخميس</span><b>4:00 PM — 1:00 AM</b></div>
+<div class="hours-row"><span>الجمعة</span><b>1:00 PM — 1:00 AM</b></div>
+<div class="hours-row"><span>السبت</span><b>1:00 PM — 12:00 AM</b></div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer-top">
+<div class="footer-links">
+<a href="#experience">التجربة</a><a href="#cuts">مختارات ثيرمو</a><a href="#menu">القائمة</a><a href="#reservation">الحجز</a><a href="#location">الموقع</a>
+</div>
+<div class="footer-brand">
+<img alt="THERMO Steakhouse logo" loading="lazy" src="https://thermo.sa/wp-content/uploads/2021/03/Artboard-1logo_header-1.png">
+<p>ستيك هاوس في الخبر يجمع بين القطع المميزة، الأجواء الراقية وتجربة ضيافة مرتبة من أول زيارة.</p>
+</img></div>
+<div class="footer-social">
+<span>تابع ثيرمو</span>
+<div class="social-row"><a aria-label="Instagram" class="social" href="#"><i class="fa-brands fa-instagram"></i></a><a aria-label="X" class="social" href="#"><i class="fa-brands fa-x-twitter"></i></a><a aria-label="TikTok" class="social" href="#"><i class="fa-brands fa-tiktok"></i></a></div>
+</div>
+</div>
+<div class="footer-bottom"><span>© 2026 THERMO Steakhouse. Concept homepage.</span><nav><a href="#">الخصوصية</a><a href="#">الشروط والأحكام</a><a href="#">تواصل معنا</a></nav></div>
+</div>
+</footer>
+<a class="mobile-sticky-book" href="#reservation">احجز طاولتك <i class="fa-solid fa-calendar-check"></i></a>
+<script>
+    const header = document.getElementById('header');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let lastY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      header.classList.toggle('scrolled', y > 30);
+      if (y > 500 && y > lastY + 10) header.classList.add('hidden');
+      if (y < lastY - 10) header.classList.remove('hidden');
+      lastY = y;
+    }, {passive:true});
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      document.body.classList.toggle('menu-open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    }));
+
+    const menuTabs = document.querySelectorAll('[data-menu-category]');
+    const menuPanels = document.querySelectorAll('[data-menu-panel]');
+    menuTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        menuTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        menuPanels.forEach(panel => {
+          panel.classList.toggle('active', panel.dataset.menuPanel === tab.dataset.menuCategory);
+        });
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+<script>
+  (() => {
+    const arToEn = {"التجربة": "Experience", "مختارات ثيرمو": "Signature Cuts", "وش يميز ستيك ثيرمو؟": "Why Thermo?", "نكهة أعمق": "Deeper flavor", "21+ يوم": "21+ days", "تعتيق جاف": "Dry aged", "عصارة وطراوة": "Juicy & tender", "بلاك أنجوس مختار": "Selected Black Angus", "رخامية أغنى": "Richer marbling", "واغيو أسترالي فاخر": "Premium Australian Wagyu", "القائمة": "Menu", "قصتنا": "Our Craft", "الموقع": "Location", "احجز طاولتك": "Book a Table", "تعتيق جاف 21+ يوم": "21+ Day Dry Aging", "Black Angus بدرجة MB4+": "Black Angus MB4+", "Wagyu أسترالي 6/7": "Australian Wagyu 6/7", "تجربة ستيك": "An exceptional", "استثنائية.": "steak experience.", "اختَر قطعتك، وحدد درجة الاستواء اللي تفضلها، وخلّ الباقي علينا. في ثيرمو نهتم بكل تفصيلة من أول اختيارك إلى آخر لقمة.": "Choose your cut, select your preferred doneness, and leave the rest to us. At Thermo, every detail is considered from your first choice to the final bite.", "استعرض القائمة": "Explore the Menu", "اختَر القطعة اللي تناسب ذوقك.": "Choose the cut that suits your taste.", "من الريب آي المعتّق جافًا إلى الواغيو والتوماهوك، عندك خيارات مختلفة في الرخامية والطراوة والنكهة عشان تختار اللي يناسب مزاجك.": "From dry-aged ribeye to Wagyu and Tomahawk, explore different levels of marbling, tenderness, and flavor to find your ideal cut.", "ريب آي معتّق جافًا لمدة 21 يوم على الأقل لنكهة أعمق وطراوة مميزة.": "Dry-aged for at least 21 days for deeper flavor and exceptional tenderness.", "رخامية عالية وطراوة واضحة تعطيك نكهة غنية في كل لقمة.": "Rich marbling and exceptional tenderness for a fuller flavor in every bite.", "Black Angus بدرجة MB4+ بتوازن ممتاز بين الطراوة والنكهة.": "Black Angus MB4+ with an excellent balance of tenderness and flavor.", "قطعة كبيرة للمشاركة، مناسبة إذا تبغون خيار يلفت النظر على الطاولة.": "A generous sharing cut made to take center stage at the table.", "درجة استواء على اختيارك": "Doneness, your way", "اختَر درجة الاستواء اللي تفضلها، ونجهّز قطعتك بالشكل اللي يناسب ذوقك.": "Choose your preferred doneness and we will prepare your steak exactly the way you like it.", "قطعتك، بالطريقة اللي تحبها.": "Your steak, exactly your way.", "من نوع القطعة ودرجة الاستواء إلى الجوانب والصوصات، أنت تختار تفاصيل وجبتك وإحنا نهتم إن كل شيء يوصل طاولتك بالشكل الصح.": "From the cut and doneness to sides and sauces, you choose the details and we make sure everything reaches your table just right.", "اختيارات تناسب ذوقك": "Cuts for every preference", "Ribeye، Filet Mignon، Wagyu وغيرها من القطع المميزة.": "Ribeye, Filet Mignon, Wagyu, and more premium cuts.", "درجة الاستواء اللي تفضلها": "Your preferred doneness", "من Rare إلى Well Done — اختَر الدرجة المناسبة لك.": "From Rare to Well Done — choose the finish that suits you.", "تعتيق جاف لنكهة أعمق": "Dry aging for deeper flavor", "قطع مختارة معتّقة جافًا لمحبي النكهة المركزة.": "Selected dry-aged cuts for guests who prefer a deeper, more concentrated flavor.", "كمّل وجبتك": "Complete your meal", "أضف المقبلات والجوانب والصوصات اللي تناسب اختيارك.": "Add starters, sides, and sauces that pair with your cut.", "اختَر اللي تشتهيه من قائمة ثيرمو.": "Choose what you are craving from the Thermo menu.", "تصفّح أشهر الأطباق بالصور والأسعار، وانتقل بين الفئات بسهولة قبل زيارتك.": "Browse Thermo favorites with photos and prices, then move between categories before your visit.", "الستيك": "Steaks", "ستيك ثيرمو الخاص": "Thermo Signatures", "المقبلات": "Starters", "السلطات والشوربة": "Salads & Soup", "الأطباق الجانبية": "Sides", "الأسعار بالريال السعودي": "Prices are in SAR", "Black Angus MB4+ معتّق جافًا 21 يوم على الأقل، بنكهة مركزة وطراوة مميزة.": "Black Angus MB4+, dry-aged for at least 21 days for concentrated flavor and exceptional tenderness.", "قطعة تندرليون طرية جدًا بنكهة خفيفة ومتوازنة.": "A remarkably tender cut of tenderloin with a clean, balanced flavor.", "خيار متوازن بنكهة واضحة ونسبة دهون أخف من الريب آي.": "A balanced cut with bold flavor and less fat than ribeye.", "ريب آي طري وعصاري، خيار كلاسيكي لمحبي النكهة الغنية.": "A tender, juicy ribeye with the rich profile steak lovers expect.", "ريب آي بالعظم بحجم مناسب للمشاركة ونكهة غنية على الطاولة.": "Bone-in ribeye built for sharing, with a bold presence and rich flavor.", "قطعتان في قطعة واحدة: New York Strip وتندرليون حول العظم.": "Two cuts in one: New York Strip and tenderloin around the bone.", "خيار كلاسيكي يجمع نكهة الـStrip مع طراوة التندرليون.": "A classic pairing of strip flavor with tenderloin tenderness.", "رخامية عالية وطراوة مميزة لعشاق الواغيو.": "High marbling and exceptional tenderness for Wagyu lovers.", "قطعة كبيرة بضلعة طويلة، مناسبة للمشاركة وتلفت النظر على الطاولة.": "A dramatic long-bone cut, ideal for sharing and made to stand out.", "باسترامي مدخن مع رقائق بطاطا حلوة ولمسة Umami بطابع ثيرمو.": "Smoked pastrami with sweet potato chips and Thermo-style umami.", "كرات ريزوتو بالفطر، مقرمشة من الخارج وتُقدّم مع أيولي مدخن.": "Crispy mushroom risotto bites served with smoked aioli.", "روبيان متبّل على رقائق مقرمشة مع Pineapple Pico de Gallo.": "Seasoned shrimp over crispy chips with pineapple pico de gallo.", "قطع دجاج بصوص البوفالو، تُقدّم مع صوص الرانش.": "Chicken bites tossed in buffalo sauce and served with ranch.", "خس روماني، دجاج مدخن، كروتون مقرمش وبارميزان.": "Baby romaine, smoked chicken, crisp croutons, and parmesan.", "سلطة خضراء بلمسة مدخنة، فيتا، لوز محمّص ورمان.": "Smoked greens with feta, toasted almonds, and pomegranate.", "خضار مشكلة مع شرائح ستيك، فطر، بصل مقرمش وشيميتشوري.": "Mixed greens with sliced steak, mushroom, crispy onion, and chimichurri.", "شوربة بصل فرنسية مع Gruyère بطابع ثيرمو.": "Classic French onion soup with Gruyère, finished the Thermo way.", "جانب خفيف ومنعش يوازن النكهات الغنية للستيك.": "A light, refreshing side that balances the richness of steak.", "فطر وبصل مشويان يكملان نكهة الستيك بدون أن يغطيا عليها.": "Grilled mushrooms and onions that complement the steak without overpowering it.", "بطاطس مهروسة بقوام كريمي، اختيار كلاسيكي مع قطع اللحم.": "Creamy mashed potatoes — a classic pairing for steak.", "خضروات موسمية مشوية لمن يفضل جانبًا أخف.": "Roasted seasonal vegetables for a lighter side.", "بطاطس مقرمشة مع الروزماري ورائحة عشبية واضحة.": "Crisp fries with rosemary and an aromatic finish.", "جانب غني بالجبن لمن يريد تجربة أكثر امتلاءً.": "A rich, cheesy side for a more indulgent meal.", "بطاطا حلوة مقرمشة بطعم متوازن بين الحلاوة والملوحة.": "Crisp sweet potato fries with a balanced sweet-and-savory profile.", "هذه معاينة مختصرة. افتح القائمة الكاملة لكل الأصناف وتفاصيل الحساسية.": "This is a menu preview. Open the full menu for all dishes and allergen details.", "عرض القائمة الكاملة": "View Full Menu", "إذا كانت زيارتكم لشخصين أو ثلاثة، التوماهوك خيار ممتاز للمشاركة وحضور مميز على الطاولة.": "For two or three guests, the Tomahawk is an excellent sharing cut with unmistakable table presence.", "ليلة مرتبة من أول ما توصل.": "A night that feels right from the moment you arrive.", "سواء كانت زيارتك عشاء هادئ، احتفال أو لقاء خاص، نرتّب التجربة عشان تكون سلسة من الحجز إلى آخر طبق.": "Whether it is a quiet dinner, a celebration, or a private gathering, we make the experience seamless from reservation to the final course.", "أجواء مريحة لعشاء يستاهل وقته.": "An atmosphere made for a dinner worth slowing down for.", "جلسات مريحة وإضاءة هادئة تناسب العشاء الثنائي، العائلة والمناسبات الصغيرة.": "Comfortable seating and warm lighting for date nights, family dinners, and intimate celebrations.", "احجز لمناسبتك": "Reserve for your occasion", "عشاء، احتفال أو لقاء خاص — اختَر الوقت المناسب لك.": "Dinner, celebration, or a private gathering — choose the time that works for you.", "Private Dining": "Private Dining", "غرفة خاصة في الخبر تستوعب حتى 10 ضيوف، ومجهزة ببروجكتر للاجتماعات والمناسبات الخاصة.": "A private room in Khobar for up to 10 guests, equipped with a projector for meetings and special occasions.", "أربع خطوات وتكون تجربتك مرتبة.": "Four simple steps to shape your visit.", "اختَر القطعة، درجة الاستواء، الجوانب ووقت الزيارة — وإحنا نهتم بالباقي.": "Choose your cut, doneness, sides, and time — we will take care of the rest.", "اختَر قطعتك": "Choose your cut", "من Ribeye إلى Wagyu وTomahawk، كل قطعة لها نكهة وقوام مختلف.": "From Ribeye to Wagyu and Tomahawk, every cut brings a different texture and flavor.", "حدّد درجة الاستواء": "Choose your doneness", "اختَر Rare، Medium أو Well Done حسب ذوقك.": "Choose Rare, Medium, or Well Done based on your preference.", "أضف الجوانب والصوصات اللي تناسب قطعتك.": "Add sides and sauces that pair with your steak.", "احجز قبل الزيارة وخَلّ طاولتك جاهزة وقت وصولك.": "Reserve ahead so your table is ready when you arrive.", "شوف أجواء ثيرمو قبل زيارتك.": "Get a feel for Thermo before you arrive.", "صور من الأطباق والجلسات والتفاصيل اللي تعيشها في ثيرمو.": "A look at the dishes, tables, and atmosphere waiting for you at Thermo.", "اختَر قطعتك، اجمع اللي تحبهم، وخلّ علينا باقي تفاصيل الليلة.": "Choose your cut, bring your people, and leave the rest of the night to us.", "احجز طاولتك في ثيرمو.": "Reserve your table at Thermo.", "حدّد التاريخ والوقت وعدد الضيوف، وأرسل طلب الحجز بخطوات بسيطة.": "Choose a date, time, and party size, then send your reservation request in a few simple steps.", "اختر الوقت": "Choose a time", "عدد الضيوف": "Guests", "2 ضيوف": "2 guests", "3 ضيوف": "3 guests", "4 ضيوف": "4 guests", "5 ضيوف": "5 guests", "6+ ضيوف": "6+ guests", "تحقق من التوفر": "Check Availability", "للمجموعات والمناسبات الخاصة، تواصل معنا مباشرة ونرتّب لكم التفاصيل.": "For groups and special occasions, contact us directly and we will help arrange the details.", "الخبر، المملكة العربية السعودية": "Al Khobar, Saudi Arabia", "8841 طريق الملك سعود بن عبدالعزيز، الأندلس، الخبر": "8841 King Saud Bin Abdulaziz Road, Al Andalus, Al Khobar", "مواعيد العمل": "Opening Hours", "الأحد — الأربعاء": "Sunday — Wednesday", "الخميس": "Thursday", "الجمعة": "Friday", "السبت": "Saturday", "الحجز": "Reservations", "ستيك هاوس في الخبر يجمع بين القطع المميزة، الأجواء الراقية وتجربة ضيافة مرتبة من أول زيارة.": "A Khobar steakhouse bringing together premium cuts, a refined atmosphere, and hospitality designed around a seamless visit.", "تابع ثيرمو": "Follow Thermo", "الخصوصية": "Privacy", "الشروط والأحكام": "Terms & Conditions", "تواصل معنا": "Contact Us"};
+    const enToAr = {"WHY THERMO": "ليش ثيرمو؟", "PREMIUM CUTS": "مختارات مميزة", "YOUR STEAK, YOUR WAY": "قطعتك على ذوقك", "THERMO MENU": "قائمة ثيرمو", "THE EXPERIENCE": "تجربة ثيرمو", "YOUR EXPERIENCE": "تجربتك", "THERMO MOMENTS": "لحظات ثيرمو", "RESERVATIONS": "الحجوزات", "VISIT THERMO": "زيارة ثيرمو", "OPENING HOURS": "مواعيد العمل", "LOCATION": "الموقع", "CONTACT": "التواصل", "DRESS CODE": "الزي المقترح", "WEIGHT": "الوزن", "SHARING": "المشاركة", "STYLE": "طريقة التقديم", "DINING ROOM": "صالة المطعم", "CRAFTED FOR YOUR TABLE": "مجهّز لطاولتك", "SIGNATURE CUT": "قطعة مميزة", "FOR SHARING": "للمشاركة", "FIRE CONTROL": "تحكم بالنار", "BLACK ANGUS": "بلاك أنجوس", "WAGYU": "واغيو"};
+    const textNodes = [];
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (!node.parentElement) return NodeFilter.FILTER_REJECT;
+        if (['SCRIPT','STYLE'].includes(node.parentElement.tagName)) return NodeFilter.FILTER_REJECT;
+        const t = node.nodeValue.trim();
+        return (arToEn[t] || enToAr[t]) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    let n;
+    while (n = walker.nextNode()) {
+      const raw = n.nodeValue;
+      const trimmed = raw.trim();
+      const leading = raw.slice(0, raw.indexOf(trimmed));
+      const trailing = raw.slice(raw.indexOf(trimmed) + trimmed.length);
+      if (arToEn[trimmed]) textNodes.push({node:n, ar:trimmed, en:arToEn[trimmed], leading, trailing});
+      else textNodes.push({node:n, en:trimmed, ar:enToAr[trimmed], leading, trailing});
+    }
+
+    const langToggle = document.getElementById('langToggle');
+    const mobileLangToggle = document.getElementById('mobileLangToggle');
+    const langToggleText = document.getElementById('langToggleText');
+    const mobileLangToggleText = document.getElementById('mobileLangToggleText');
+    const phone = document.querySelector('input[type="tel"]');
+    const menuToggle = document.getElementById('menuToggle');
+    const tabs = document.querySelector('.tabs');
+    const form = document.getElementById('reservationForm');
+
+    function setLang(lang) {
+      const isAr = lang === 'ar';
+      document.documentElement.lang = isAr ? 'ar' : 'en';
+      document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+      textNodes.forEach(x => x.node.nodeValue = x.leading + (isAr ? x.ar : x.en) + x.trailing);
+      if (langToggleText) langToggleText.textContent = isAr ? 'EN' : 'العربية';
+      if (mobileLangToggleText) mobileLangToggleText.textContent = isAr ? 'EN' : 'العربية';
+      if (phone) {
+        phone.placeholder = isAr ? phone.dataset.placeholderAr : phone.dataset.placeholderEn;
+        phone.setAttribute('aria-label', isAr ? phone.dataset.ariaAr : phone.dataset.ariaEn);
+      }
+      if (menuToggle) menuToggle.setAttribute('aria-label', isAr ? menuToggle.dataset.ariaAr : menuToggle.dataset.ariaEn);
+      if (tabs) tabs.setAttribute('aria-label', isAr ? tabs.dataset.ariaAr : tabs.dataset.ariaEn);
+      document.title = isAr ? 'ثيرمو ستيك هاوس — تجربة استثنائية' : 'THERMO Steakhouse — A Cut Above';
+      localStorage.setItem('thermo-lang', lang);
+      document.body.classList.remove('i18n-pending');
+    }
+    function toggleLang() { setLang(document.documentElement.lang === 'ar' ? 'en' : 'ar'); }
+    langToggle?.addEventListener('click', toggleLang);
+    mobileLangToggle?.addEventListener('click', toggleLang);
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert(document.documentElement.lang === 'ar' ? 'شكرًا لك. سيتم ربط النموذج بنظام الحجز الفعلي عند التنفيذ.' : 'Thank you. This form will connect to the live reservation system during implementation.');
+    });
+    setLang(localStorage.getItem('thermo-lang') === 'ar' ? 'ar' : 'en');
+  })();
+</script></body>
+</html>
